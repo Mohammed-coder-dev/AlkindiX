@@ -18,6 +18,8 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
+  <link rel="stylesheet" href="/alkindix.css">
+
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="AlkindiX — Building Cognition Infrastructure" />
   <meta property="og:description" content="Symbolic AI × Quantum Reasoning × Mathematics. Gateway to ProofX, ProjectX, and essays." />
@@ -33,45 +35,62 @@
   <style>
     /* ----- Base & Theme ----- */
     :root {
+      /* Core Surfaces */
       --bg: #0b0b0c;
       --panel: #111114;
+      --elevated: #1a1a1e;
+
+      /* Text & Content */
       --text: #f5f7fb;
       --muted: #b5b9c9;
-      --accent: #5b8cff; /* deep electric blue */
-      --accent-2: #8aa6ff;
-      --ok: #22c55e;
-      --danger: #ef4444;
+      --heading: #ffffff;
+
+      /* Accents */
+      --accent: #5b8cff;   /* deep electric blue */
+      --accent-2: #8aa6ff; /* softer companion */
+      --ok: #22c55e;       /* green for success */
+      --warn: #f59e0b;     /* amber for warnings */
+      --danger: #ef4444;   /* red for errors */
+
+      /* Effects */
       --ring: color-mix(in oklab, var(--accent) 35%, transparent);
       --shadow: 0 24px 60px rgba(0,0,0,.35);
       --radius: 18px;
+      --blur: 8px;
+
+      /* Layout */
       --maxw: 1120px;
+      --space-xs: clamp(4px, 0.6vw, 8px);
+      --space-sm: clamp(8px, 1vw, 12px);
       --space: clamp(16px, 2.5vw, 24px);
-      --ts: 220ms; /* motion timing */
+      --space-lg: clamp(32px, 5vw, 48px);
+
+      /* Typography */
+      --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --font-size-base: 16px;
+      --line-height: 1.6;
+
+      /* Motion */
+      --ts-fast: 150ms;
+      --ts: 220ms;
+      --ts-slow: 350ms;
     }
+
     @media (prefers-color-scheme: light) {
-      :root { --bg: #fafafa; --panel: #ffffff; --text: #0b0b0c; --muted: #3b4252; --shadow: 0 14px 40px rgba(0,0,0,.08); }
+      :root {
+        --bg: #fafafa;
+        --panel: #ffffff;
+        --elevated: #f4f4f6;
+
+        --text: #0b0b0c;
+        --muted: #3b4252;
+        --heading: #111111;
+
+        --shadow: 0 14px 40px rgba(0,0,0,.08);
+        --ring: color-mix(in srgb, var(--accent) 40%, transparent);
+      }
     }
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color: var(--text);
-      background:
-        radial-gradient(1200px 600px at 75% -10%, rgba(91,140,255,.10), transparent 60%),
-        radial-gradient(900px 500px at -10% 10%, rgba(138,166,255,.10), transparent 55%),
-        var(--bg);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; height: auto; }
-    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--space); }
-
     /* ----- Utilities ----- */
     .btn { display:inline-flex; align-items:center; gap:.6rem; padding:.8rem 1.1rem; border-radius:999px; background: var(--text); color: var(--bg); font-weight: 700; border: 1px solid transparent; transition: transform var(--ts) ease, box-shadow var(--ts) ease, background var(--ts) ease, color var(--ts) ease; }
     .btn:hover { transform: translateY(-1px); box-shadow: 0 8px 30px rgba(0,0,0,.18); }
