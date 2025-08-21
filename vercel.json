@@ -1,6 +1,11 @@
 {
   "redirects": [
-    { "source": "www.alkindix.com", "destination": "https://alkindix.com", "permanent": true }
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.alkindix.com" }],
+      "destination": "https://alkindix.com/:path*",
+      "permanent": true
+    }
   ],
   "headers": [
     {
@@ -11,6 +16,12 @@
         { "key": "X-Frame-Options", "value": "DENY" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "Permissions-Policy", "value": "geolocation=(), microphone=(), camera=()" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(css|js|png|jpg|jpeg|gif|webp|svg|ico|woff2|woff|ttf)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     }
   ]
