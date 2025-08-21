@@ -1,60 +1,81 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>AlkindiX — Building Cognition Infrastructure</title>
   <meta name="description" content="AlkindiX — the personal HQ of Alkindi. Symbolic AI × Quantum Reasoning × Mathematics. Gateway to ProofX, ProjectX, and long-form essays." />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="canonical" href="https://alkindix.com/" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <!-- Icons / Manifest (replace paths when assets exist) -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="AlkindiX — Building Cognition Infrastructure" />
   <meta property="og:description" content="Symbolic AI × Quantum Reasoning × Mathematics. Gateway to ProofX, ProjectX, and essays." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alkindix.com/" />
   <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image:alt" content="AlkindiX brand — Symbolic AI × Quantum Reasoning × Mathematics" />
+  <meta property="og:site_name" content="AlkindiX" />
+  <meta property="og:locale" content="en_GB" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@alkindi_network" />
 
   <style>
     /* ----- Base & Theme ----- */
     :root {
       --bg: #0b0b0c;
-      --panel: #121214;
+      --panel: #111114;
       --text: #f5f7fb;
       --muted: #b5b9c9;
       --accent: #5b8cff; /* deep electric blue */
       --accent-2: #8aa6ff;
-      --ok: #1db954;
-      --danger: #ff5b5b;
-      --ring: rgba(91,140,255,.35);
-      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --ok: #22c55e;
+      --danger: #ef4444;
+      --ring: color-mix(in oklab, var(--accent) 35%, transparent);
+      --shadow: 0 24px 60px rgba(0,0,0,.35);
       --radius: 18px;
       --maxw: 1120px;
+      --space: clamp(16px, 2.5vw, 24px);
+      --ts: 220ms; /* motion timing */
     }
     @media (prefers-color-scheme: light) {
-      :root { --bg: #fafafa; --panel: #ffffff; --text: #0b0b0c; --muted: #3b4252; --shadow: 0 10px 40px rgba(0,0,0,.08); }
+      :root { --bg: #fafafa; --panel: #ffffff; --text: #0b0b0c; --muted: #3b4252; --shadow: 0 14px 40px rgba(0,0,0,.08); }
     }
 
     * { box-sizing: border-box; }
     html, body { height: 100%; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       color: var(--text);
-      background: radial-gradient(1200px 600px at 75% -10%, rgba(91,140,255,.10), transparent 60%),
-                  radial-gradient(900px 500px at -10% 10%, rgba(138,166,255,.10), transparent 55%),
-                  var(--bg);
-      line-height: 1.6;
+      background:
+        radial-gradient(1200px 600px at 75% -10%, rgba(91,140,255,.10), transparent 60%),
+        radial-gradient(900px 500px at -10% 10%, rgba(138,166,255,.10), transparent 55%),
+        var(--bg);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
     }
 
     a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+    img { max-width: 100%; display: block; height: auto; }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--space); }
 
     /* ----- Utilities ----- */
-    .btn { display:inline-flex; align-items:center; gap:.6rem; padding:.8rem 1.1rem; border-radius:999px; background: var(--text); color: var(--bg); font-weight: 700; border: 1px solid transparent; transition: all .22s ease; }
+    .btn { display:inline-flex; align-items:center; gap:.6rem; padding:.8rem 1.1rem; border-radius:999px; background: var(--text); color: var(--bg); font-weight: 700; border: 1px solid transparent; transition: transform var(--ts) ease, box-shadow var(--ts) ease, background var(--ts) ease, color var(--ts) ease; }
     .btn:hover { transform: translateY(-1px); box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+    .btn:active { transform: translateY(0); }
     .btn.secondary { background: transparent; color: var(--text); border-color: rgba(255,255,255,.18); }
     .btn.secondary:hover { border-color: rgba(255,255,255,.35); }
     .btn.accent { background: var(--accent); color: #fff; }
@@ -67,13 +88,19 @@
     .grid { display:grid; gap:20px; }
     @media (min-width: 720px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
 
-    .section { padding: 64px 0; }
-    .section-tight { padding: 44px 0; }
+    .section { padding: clamp(56px, 10vw, 96px) 0; }
+    .section-tight { padding: clamp(36px, 6vw, 56px) 0; }
 
-    h1 { font-size: clamp(2rem, 2.8rem, 3.4rem); line-height: 1.08; margin: 0 0 10px; letter-spacing:-0.02em; }
-    h2 { font-size: clamp(1.4rem, 1.6rem, 2rem); margin: 0 0 10px; letter-spacing:-0.01em; }
+    h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.08; margin: 0 0 10px; letter-spacing:-0.02em; }
+    h2 { font-size: clamp(1.4rem, 3.2vw, 2rem); margin: 0 0 10px; letter-spacing:-0.01em; }
     h3 { font-size: 1.1rem; margin: 0 0 8px; letter-spacing: 0; }
     p.lead { font-size: 1.1rem; color: var(--muted); max-width: 780px; }
+
+    /* Focus & A11y */
+    .focus-ring { outline: none; box-shadow: 0 0 0 0 transparent; }
+    .focus-ring:focus-visible { box-shadow: 0 0 0 4px var(--ring); border-radius: 12px; }
+    .skip-link { position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
+    .skip-link:focus { left: var(--space); top: var(--space); width:auto; height:auto; z-index:999; }
 
     /* ----- Header ----- */
     .header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px); background: color-mix(in oklab, var(--bg) 84%, transparent); border-bottom: 1px solid rgba(255,255,255,.07); }
@@ -92,11 +119,11 @@
     /* ----- Hero ----- */
     .hero { padding: 90px 0 40px; display:grid; gap: 18px; align-items:center; }
     .hero-cta { display:flex; gap:12px; flex-wrap: wrap; margin-top: 8px; }
-    .badge-row { display:flex; gap:10px; align-items:center; color: var(--muted); font-weight:600; }
+    .badge-row { display:flex; gap:10px; align-items:center; color: var(--muted); font-weight:600; flex-wrap: wrap; }
 
     /* ----- Cards / Sections ----- */
-    .project { padding: 22px; transition: transform .2s ease, border-color .2s ease; }
-    .project:hover { transform: translateY(-4px); border-color: rgba(91,140,255,.35); }
+    .project { padding: 22px; transition: transform var(--ts) ease, border-color var(--ts) ease, background var(--ts) ease; }
+    .project:hover { transform: translateY(-4px); border-color: rgba(91,140,255,.35); background: linear-gradient(180deg, rgba(91,140,255,.08), rgba(255,255,255,0)); }
     .project .kicker { color: var(--accent-2); font-weight:700; font-size:.85rem; letter-spacing:.04em; text-transform: uppercase; }
     .project p { color: var(--muted); }
     .project .actions { display:flex; gap:10px; margin-top: 12px; }
@@ -109,35 +136,40 @@
     footer { border-top: 1px solid rgba(255,255,255,.08); padding: 32px 0 48px; color: var(--muted); }
     footer a { color: var(--text); }
 
-    /* ----- Focus / A11y ----- */
-    .focus-ring { outline: none; box-shadow: 0 0 0 0 transparent; }
-    .focus-ring:focus-visible { box-shadow: 0 0 0 4px var(--ring); border-radius: 12px; }
-
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .project { transition: none; }
+    }
   </style>
+  <script>
+    // Replace no-js class for progressive enhancement hooks
+    document.documentElement.classList.remove('no-js');
+  </script>
 </head>
 <body>
-  <a href="#main" class="pill" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+  <a href="#main" class="pill skip-link">Skip to content</a>
 
   <!-- Header -->
-  <header class="header">
+  <header class="header" role="banner">
     <div class="container nav">
       <a href="#top" class="brand focus-ring" aria-label="AlkindiX home">
         <span class="dot" aria-hidden="true"></span>
         <span>AlkindiX</span>
       </a>
       <nav class="menu" aria-label="Primary">
-        <a href="https://proofx.org" class="focus-ring">ProofX</a>
-        <a href="https://architectofsilence.com" class="focus-ring">Essays</a>
+        <a href="https://proofx.org" class="focus-ring" target="_blank" rel="noopener">ProofX</a>
+        <a href="https://architectofsilence.com" class="focus-ring" target="_blank" rel="noopener">Essays</a>
         <a href="#projects" class="focus-ring">Projects</a>
         <a href="#contact" class="focus-ring">Contact</a>
       </nav>
       <div class="menu-btn">
-        <button id="menuToggle" class="btn secondary" aria-expanded="false" aria-controls="menuPanel">Menu</button>
+        <button id="menuToggle" class="btn secondary" aria-expanded="false" aria-controls="menuPanel" aria-haspopup="dialog" aria-label="Open menu">Menu</button>
       </div>
     </div>
     <div id="menuPanel" class="menu-panel container" role="dialog" aria-modal="false" aria-label="Mobile navigation">
-      <a href="https://proofx.org">ProofX</a>
-      <a href="https://architectofsilence.com">Essays</a>
+      <a href="https://proofx.org" target="_blank" rel="noopener">ProofX</a>
+      <a href="https://architectofsilence.com" target="_blank" rel="noopener">Essays</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
@@ -146,12 +178,12 @@
   <main id="main">
     <!-- Hero -->
     <section class="container hero" id="top">
-      <span class="pill">Symbolic AI × Quantum Reasoning × Mathematics</span>
+      <span class="pill" aria-label="Tagline">Symbolic AI × Quantum Reasoning × Mathematics</span>
       <h1>Building Cognition Infrastructure.</h1>
       <p class="lead">AlkindiX is the personal HQ of <strong>Alkindi</strong> — founder of <strong>ProofX</strong> and <strong>ProjectX</strong>. Research‑grade systems spanning symbolic logic, theorem synthesis, and high‑impact computation.</p>
-      <div class="hero-cta">
-        <a class="btn accent" href="https://proofx.org">Explore ProofX</a>
-        <a class="btn secondary" href="https://architectofsilence.com">Read Essays</a>
+      <div class="hero-cta" role="group" aria-label="Primary calls to action">
+        <a class="btn accent" href="https://proofx.org" target="_blank" rel="noopener">Explore ProofX</a>
+        <a class="btn secondary" href="https://architectofsilence.com" target="_blank" rel="noopener">Read Essays</a>
       </div>
       <div class="badge-row" aria-label="Highlights">
         <span class="pill">Deeptech Founder</span>
@@ -161,62 +193,62 @@
     </section>
 
     <!-- Projects -->
-    <section class="section" id="projects">
+    <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="container">
-        <h2>Flagship Projects</h2>
+        <h2 id="projects-title">Flagship Projects</h2>
         <p class="lead">A compact portfolio engineered for intellectual depth and real‑world impact.</p>
         <div class="grid cols-3" style="margin-top:16px;">
-          <article class="card project">
+          <article class="card project" aria-labelledby="pfx-title">
             <div class="kicker">ProofX</div>
-            <h3>Symbolic AI & Proof Orchestration</h3>
+            <h3 id="pfx-title">Symbolic AI &amp; Proof Orchestration</h3>
             <p>Multi‑prover engine with theorem synthesis, SMT + finite model testing, entropy analytics, and real‑time dashboards.</p>
             <div class="actions">
-              <a class="btn secondary" href="https://proofx.org">Visit Project</a>
+              <a class="btn secondary" href="https://proofx.org" target="_blank" rel="noopener">Visit Project</a>
             </div>
           </article>
 
-          <article class="card project">
+          <article class="card project" aria-labelledby="prjx-title">
             <div class="kicker">ProjectX</div>
-            <h3>Quantum‑Assisted Reasoning</h3>
+            <h3 id="prjx-title">Quantum‑Assisted Reasoning</h3>
             <p>Cross‑domain cognitive engines blending quantum methods, combinatorics, and symbolic logic into production‑grade tooling.</p>
             <div class="actions">
-              <a class="btn secondary" href="#">Overview (soon)</a>
+              <a class="btn secondary" href="#" aria-disabled="true" aria-label="Overview coming soon">Overview (soon)</a>
             </div>
           </article>
 
-          <article class="card project">
+          <article class="card project" aria-labelledby="gdl-title">
             <div class="kicker">GödelLab</div>
-            <h3>Finite‑Model FOL & Counterexamples</h3>
+            <h3 id="gdl-title">Finite‑Model FOL &amp; Counterexamples</h3>
             <p>Monolithic symbolic engine for first‑order logic evaluation with full traces, quantifiers, and counterexample discovery.</p>
             <div class="actions">
-              <a class="btn secondary" href="#">Docs (soon)</a>
+              <a class="btn secondary" href="#" aria-disabled="true" aria-label="Docs coming soon">Docs (soon)</a>
             </div>
           </article>
 
-          <article class="card project">
+          <article class="card project" aria-labelledby="clx-title">
             <div class="kicker">CollatzX</div>
-            <h3>Trajectory Analytics & Entropy Maps</h3>
+            <h3 id="clx-title">Trajectory Analytics &amp; Entropy Maps</h3>
             <p>High‑performance exploration of Collatz dynamics with visualization, anomaly detection, and distributed runs.</p>
             <div class="actions">
-              <a class="btn secondary" href="#">See Findings (soon)</a>
+              <a class="btn secondary" href="#" aria-disabled="true" aria-label="Findings coming soon">See Findings (soon)</a>
             </div>
           </article>
 
-          <article class="card project">
+          <article class="card project" aria-labelledby="rx-title">
             <div class="kicker">RiemannX</div>
-            <h3>ζ(s) Diagnostics & GUE Tests</h3>
+            <h3 id="rx-title">ζ(s) Diagnostics &amp; GUE Tests</h3>
             <p>Zero distribution, spacing statistics, and spectral conformity checks with real‑time dashboards.</p>
             <div class="actions">
-              <a class="btn secondary" href="#">Live Dashboard (soon)</a>
+              <a class="btn secondary" href="#" aria-disabled="true" aria-label="Live dashboard coming soon">Live Dashboard (soon)</a>
             </div>
           </article>
 
-          <article class="card project">
+          <article class="card project" aria-labelledby="aos-title">
             <div class="kicker">Architect of Silence</div>
-            <h3>Essays & Strategic Memos</h3>
+            <h3 id="aos-title">Essays &amp; Strategic Memos</h3>
             <p>Long‑form writing on systems‑level thinking, math, and building things that actually matter.</p>
             <div class="actions">
-              <a class="btn secondary" href="https://architectofsilence.com">Read Essays</a>
+              <a class="btn secondary" href="https://architectofsilence.com" target="_blank" rel="noopener">Read Essays</a>
             </div>
           </article>
         </div>
@@ -224,9 +256,9 @@
     </section>
 
     <!-- Publications / Media -->
-    <section class="section-tight">
+    <section class="section-tight" aria-labelledby="pub-title">
       <div class="container">
-        <h2>Publications & Media</h2>
+        <h2 id="pub-title">Publications &amp; Media</h2>
         <div class="list" aria-live="polite">
           <div class="list-item">Preprint: <strong>Entropy Scoring for Theorem Synthesis</strong> — methods draft in progress.</div>
           <div class="list-item">Essay: <strong>On Building Cognition Infrastructure</strong> — Architect of Silence.</div>
@@ -236,14 +268,14 @@
     </section>
 
     <!-- About -->
-    <section class="section">
+    <section class="section" aria-labelledby="about-title">
       <div class="container grid cols-2">
         <div>
-          <h2>About Alkindi</h2>
+          <h2 id="about-title">About Alkindi</h2>
           <p class="lead">Engineering student at UCL focused on AI, mathematics, and high‑impact innovation. I build research‑lab‑grade systems that merge symbolic reasoning, quantum methods, and rigorous engineering.</p>
-          <div style="display:flex; gap:12px; margin-top:12px;">
-            <a class="btn secondary" href="https://www.linkedin.com/in/alkindi-net" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn secondary" href="https://github.com/alkindi-network" target="_blank" rel="noopener">GitHub</a>
+          <div style="display:flex; gap:12px; margin-top:12px; flex-wrap: wrap;">
+            <a class="btn secondary" href="https://www.linkedin.com/in/alkindi-net" target="_blank" rel="me noopener">LinkedIn</a>
+            <a class="btn secondary" href="https://github.com/alkindi-network" target="_blank" rel="me noopener">GitHub</a>
             <a class="btn secondary" href="https://proofx.org" target="_blank" rel="noopener">ProofX.org</a>
           </div>
         </div>
@@ -252,16 +284,16 @@
           <ul style="margin:10px 0 0 18px; color: var(--muted);">
             <li>Intellectual depth over hype.</li>
             <li>Systems‑level clarity and execution.</li>
-            <li>Impact > vanity metrics.</li>
+            <li>Impact &gt; vanity metrics.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- Contact -->
-    <section class="section" id="contact">
+    <section class="section" id="contact" aria-labelledby="contact-title">
       <div class="container card shadow" style="padding: 28px; display:grid; gap:10px;">
-        <h2 style="margin:0;">Let’s Build Together</h2>
+        <h2 id="contact-title" style="margin:0;">Let’s Build Together</h2>
         <p class="lead">For research briefings, collaborations, or speaking inquiries.</p>
         <div style="display:flex; gap:12px; flex-wrap: wrap;">
           <a class="btn accent" href="mailto:alkindi.network@gmail.com?subject=Research%20Briefing%20Request">Request Research Briefing</a>
@@ -271,37 +303,81 @@
     </section>
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <div class="container" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center;">
       <div>© <span id="y"></span> AlkindiX. All rights reserved.</div>
-      <div style="display:flex; gap:14px;">
-        <a href="https://proofx.org">ProofX</a>
-        <a href="https://architectofsilence.com">Essays</a>
-        <a href="#projects">Projects</a>
-      </div>
+      <nav aria-label="Footer">
+        <div style="display:flex; gap:14px;">
+          <a href="https://proofx.org" target="_blank" rel="noopener">ProofX</a>
+          <a href="https://architectofsilence.com" target="_blank" rel="noopener">Essays</a>
+          <a href="#projects">Projects</a>
+        </div>
+      </nav>
     </div>
   </footer>
 
-  <script>
-    // Mobile menu toggle
-    const btn = document.getElementById('menuToggle');
-    const panel = document.getElementById('menuPanel');
+  <script type="module">
+    // Utilities
+    const $ = (sel, ctx=document) => ctx.querySelector(sel);
+    const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
+
+    // Footer year
+    $('#y').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle with a11y
+    const btn = $('#menuToggle');
+    const panel = $('#menuPanel');
+    let lastFocus = null;
     if (btn && panel) {
+      const openMenu = () => {
+        panel.style.display = 'block';
+        btn.setAttribute('aria-expanded', 'true');
+        panel.setAttribute('aria-modal', 'true');
+        lastFocus = document.activeElement;
+        const firstLink = panel.querySelector('a');
+        firstLink && firstLink.focus();
+        document.addEventListener('keydown', onKeyDown);
+      };
+      const closeMenu = () => {
+        panel.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+        panel.setAttribute('aria-modal', 'false');
+        lastFocus && btn.focus();
+        document.removeEventListener('keydown', onKeyDown);
+      };
+      const onKeyDown = (e) => {
+        if (e.key === 'Escape') closeMenu();
+      };
       btn.addEventListener('click', () => {
         const open = panel.style.display === 'block';
-        panel.style.display = open ? 'none' : 'block';
-        btn.setAttribute('aria-expanded', String(!open));
+        open ? closeMenu() : openMenu();
       });
       document.addEventListener('click', (e) => {
         if (!panel.contains(e.target) && !btn.contains(e.target)) panel.style.display = 'none';
       });
     }
 
-    // Year in footer
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Set aria-current on nav links when sections enter viewport
+    const sectionLinks = $$('a[href^="#"]').filter(a => a.getAttribute('href').length > 1);
+    const sections = sectionLinks
+      .map(a => [a, $(a.getAttribute('href'))])
+      .filter(([, node]) => !!node);
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const link = sections.find(([, node]) => node === entry.target)?.[0];
+        if (!link) return;
+        if (entry.isIntersecting) {
+          sectionLinks.forEach(l => l.removeAttribute('aria-current'));
+          link.setAttribute('aria-current', 'page');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 });
+
+    sections.forEach(([, node]) => obs.observe(node));
   </script>
 
-  <!-- Structured Data: Person / Organization -->
+  <!-- Structured Data: Person + WebSite -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -315,6 +391,14 @@
       "https://architectofsilence.com",
       "https://www.linkedin.com/in/alkindi-net"
     ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "AlkindiX",
+    "url": "https://alkindix.com/"
   }
   </script>
 </body>
