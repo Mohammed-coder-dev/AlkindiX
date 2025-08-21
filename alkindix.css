@@ -1,21 +1,3 @@
-/*
-  AlkindiX.com — OpenAI‑tier External Stylesheet (v3)
-  Author: Alkindi  |  Mode: production
-  Philosophy: minimal, investor‑credible, research‑grade aesthetics
-  Usage: <link rel="stylesheet" href="/alkindix.css" />  |  MIT
-
-  Design Tenets
-  - Crisp typography, fluid scale, dark‑first with light parity
-  - Motion used sparingly; zero-layout shift; accessible defaults
-  - Container queries + modern selectors with safe fallbacks
-  - Component primitives: header, hero, cards, lists, buttons, inputs
-  - Prose, code blocks, tables, utilities, skeletons, tooltips
-*/
-
-/* --------------------------------------------
-   Fonts (variable, production‑grade)
-   Use font‑display: swap via Google Fonts; Inter as system-friendly default
---------------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap");
 
 /* --------------------------------------------
