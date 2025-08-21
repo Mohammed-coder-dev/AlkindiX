@@ -1,235 +1,174 @@
 <!doctype html>
-<html lang="en" class="no-js" dir="ltr">
+<html lang="en" dir="ltr" class="no-js">
 <head>
+  <!-- ============================================================
+       AlkindiX — Building Cognition Infrastructure
+       Static, CSP-friendly, Vercel-ready
+       ============================================================ -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>AlkindiX — Building Cognition Infrastructure</title>
   <meta name="description" content="AlkindiX — the personal HQ of Alkindi. Symbolic AI × Quantum Reasoning × Mathematics. Gateway to ProofX, ProjectX, and long-form essays." />
+  <meta name="color-scheme" content="dark light" />
   <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
-  <meta name="color-scheme" content="dark light" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="canonical" href="https://alkindix.com/" />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
-  <!-- Icons / Manifest (replace paths when assets exist) -->
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <!-- Icons / Manifest (all live under /public) -->
+  <link rel="icon" href="/public/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" href="/public/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="/public/favicon-16x16.png" sizes="16x16" />
+  <!-- Add when available: <link rel="apple-touch-icon" href="/public/apple-touch-icon.png" /> -->
   <link rel="manifest" href="/site.webmanifest" />
 
-  <link rel="stylesheet" href="/alkindix.css">
+  <!-- Performance: fonts + CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="preload" href="/styles/styles.css" as="style" />
+  <link rel="stylesheet" href="/styles/styles.css" media="all" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:title" content="AlkindiX — Building Cognition Infrastructure" />
   <meta property="og:description" content="Symbolic AI × Quantum Reasoning × Mathematics. Gateway to ProofX, ProjectX, and essays." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alkindix.com/" />
-  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:image" content="https://alkindix.com/public/og-image.png" />
   <meta property="og:image:alt" content="AlkindiX brand — Symbolic AI × Quantum Reasoning × Mathematics" />
   <meta property="og:site_name" content="AlkindiX" />
   <meta property="og:locale" content="en_GB" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@alkindi_network" />
 
+  <!-- Above-the-fold micro styles (safe + tiny) -->
   <style>
-    /* ----- Base & Theme ----- */
-    :root {
-      /* Core Surfaces */
-      --bg: #0b0b0c;
-      --panel: #111114;
-      --elevated: #1a1a1e;
-
-      /* Text & Content */
-      --text: #f5f7fb;
-      --muted: #b5b9c9;
-      --heading: #ffffff;
-
-      /* Accents */
-      --accent: #5b8cff;   /* deep electric blue */
-      --accent-2: #8aa6ff; /* softer companion */
-      --ok: #22c55e;       /* green for success */
-      --warn: #f59e0b;     /* amber for warnings */
-      --danger: #ef4444;   /* red for errors */
-
-      /* Effects */
-      --ring: color-mix(in oklab, var(--accent) 35%, transparent);
-      --shadow: 0 24px 60px rgba(0,0,0,.35);
-      --radius: 18px;
-      --blur: 8px;
-
-      /* Layout */
-      --maxw: 1120px;
-      --space-xs: clamp(4px, 0.6vw, 8px);
-      --space-sm: clamp(8px, 1vw, 12px);
-      --space: clamp(16px, 2.5vw, 24px);
-      --space-lg: clamp(32px, 5vw, 48px);
-
-      /* Typography */
-      --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      --font-size-base: 16px;
-      --line-height: 1.6;
-
-      /* Motion */
-      --ts-fast: 150ms;
-      --ts: 220ms;
-      --ts-slow: 350ms;
-    }
-
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #fafafa;
-        --panel: #ffffff;
-        --elevated: #f4f4f6;
-
-        --text: #0b0b0c;
-        --muted: #3b4252;
-        --heading: #111111;
-
-        --shadow: 0 14px 40px rgba(0,0,0,.08);
-        --ring: color-mix(in srgb, var(--accent) 40%, transparent);
-      }
-    }
-    /* ----- Utilities ----- */
-    .btn { display:inline-flex; align-items:center; gap:.6rem; padding:.8rem 1.1rem; border-radius:999px; background: var(--text); color: var(--bg); font-weight: 700; border: 1px solid transparent; transition: transform var(--ts) ease, box-shadow var(--ts) ease, background var(--ts) ease, color var(--ts) ease; }
-    .btn:hover { transform: translateY(-1px); box-shadow: 0 8px 30px rgba(0,0,0,.18); }
-    .btn:active { transform: translateY(0); }
-    .btn.secondary { background: transparent; color: var(--text); border-color: rgba(255,255,255,.18); }
-    .btn.secondary:hover { border-color: rgba(255,255,255,.35); }
-    .btn.accent { background: var(--accent); color: #fff; }
-
-    .pill { display:inline-flex; align-items:center; padding:.3rem .6rem; border-radius:999px; background: rgba(91,140,255,.12); color: var(--accent-2); font-weight:600; border:1px solid rgba(91,140,255,.25); }
-
-    .shadow { box-shadow: var(--shadow); }
-    .card { background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00)); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); }
-    @media (prefers-color-scheme: light) { .card { border-color: rgba(20,20,20,.06); } }
-    .grid { display:grid; gap:20px; }
-    @media (min-width: 720px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
-
-    .section { padding: clamp(56px, 10vw, 96px) 0; }
-    .section-tight { padding: clamp(36px, 6vw, 56px) 0; }
-
-    h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.08; margin: 0 0 10px; letter-spacing:-0.02em; }
-    h2 { font-size: clamp(1.4rem, 3.2vw, 2rem); margin: 0 0 10px; letter-spacing:-0.01em; }
-    h3 { font-size: 1.1rem; margin: 0 0 8px; letter-spacing: 0; }
-    p.lead { font-size: 1.1rem; color: var(--muted); max-width: 780px; }
-
-    /* Focus & A11y */
-    .focus-ring { outline: none; box-shadow: 0 0 0 0 transparent; }
-    .focus-ring:focus-visible { box-shadow: 0 0 0 4px var(--ring); border-radius: 12px; }
-    .skip-link { position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden; }
-    .skip-link:focus { left: var(--space); top: var(--space); width:auto; height:auto; z-index:999; }
-
-    /* ----- Header ----- */
-    .header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px); background: color-mix(in oklab, var(--bg) 84%, transparent); border-bottom: 1px solid rgba(255,255,255,.07); }
-    @media (prefers-color-scheme: light) { .header { border-bottom-color: rgba(0,0,0,.06); } }
-    .nav { display:flex; align-items:center; justify-content:space-between; gap: 16px; padding: 14px 0; }
-    .nav a { color: var(--muted); font-weight:600; }
-    .nav a:hover { color: var(--text); }
-    .brand { display:flex; align-items:center; gap:.7rem; font-weight:900; letter-spacing:.02em; }
-    .dot { width:10px; height:10px; border-radius:999px; background: var(--accent); box-shadow: 0 0 0 4px var(--ring); }
-    .menu { display:none; gap: 18px; align-items:center; }
-    @media (min-width: 840px) { .menu { display:flex; } .menu-btn { display:none; } }
-    .menu-panel { display:none; position:absolute; left: 20px; right:20px; top:64px; background: var(--panel); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 12px; }
-    .menu-panel a { display:block; padding: 12px; border-radius: 12px; }
-    .menu-panel a:hover { background: rgba(255,255,255,.04); }
-
-    /* ----- Hero ----- */
-    .hero { padding: 90px 0 40px; display:grid; gap: 18px; align-items:center; }
-    .hero-cta { display:flex; gap:12px; flex-wrap: wrap; margin-top: 8px; }
-    .badge-row { display:flex; gap:10px; align-items:center; color: var(--muted); font-weight:600; flex-wrap: wrap; }
-
-    /* ----- Cards / Sections ----- */
-    .project { padding: 22px; transition: transform var(--ts) ease, border-color var(--ts) ease, background var(--ts) ease; }
-    .project:hover { transform: translateY(-4px); border-color: rgba(91,140,255,.35); background: linear-gradient(180deg, rgba(91,140,255,.08), rgba(255,255,255,0)); }
-    .project .kicker { color: var(--accent-2); font-weight:700; font-size:.85rem; letter-spacing:.04em; text-transform: uppercase; }
-    .project p { color: var(--muted); }
-    .project .actions { display:flex; gap:10px; margin-top: 12px; }
-
-    .list { display:grid; gap: 12px; }
-    .list-item { padding:14px 16px; border:1px dashed rgba(255,255,255,.12); border-radius: 14px; background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00)); }
-    @media (prefers-color-scheme: light) { .list-item { border-color: rgba(0,0,0,.08); } }
-
-    /* ----- Footer ----- */
-    footer { border-top: 1px solid rgba(255,255,255,.08); padding: 32px 0 48px; color: var(--muted); }
-    footer a { color: var(--text); }
-
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .btn, .project { transition: none; }
-    }
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";background:#0b0b0c;color:#f5f7fb}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1120px;margin:0 auto;padding:0 clamp(16px,3.5vw,28px)}
   </style>
-  <script>
-    // Replace no-js class for progressive enhancement hooks
-    document.documentElement.classList.remove('no-js');
-  </script>
+  <noscript><style>.no-js .menu-btn{display:none}</style></noscript>
 </head>
 <body>
-  <a href="#main" class="pill skip-link">Skip to content</a>
+  <!-- Skip link -->
+  <a href="#main" class="pill sr-only focus-ring" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
 
-  <!-- Header -->
+  <!-- ============================================================
+       Header / Global Nav
+       ============================================================ -->
   <header class="header" role="banner">
     <div class="container nav">
       <a href="#top" class="brand focus-ring" aria-label="AlkindiX home">
         <span class="dot" aria-hidden="true"></span>
         <span>AlkindiX</span>
       </a>
+
       <nav class="menu" aria-label="Primary">
-        <a href="https://proofx.org" class="focus-ring" target="_blank" rel="noopener">ProofX</a>
-        <a href="https://architectofsilence.com" class="focus-ring" target="_blank" rel="noopener">Essays</a>
+        <a href="https://proofx.org" class="focus-ring" target="_blank" rel="noopener noreferrer">ProofX</a>
+        <a href="https://architectofsilence.com" class="focus-ring" target="_blank" rel="noopener noreferrer">Essays</a>
         <a href="#projects" class="focus-ring">Projects</a>
+        <a href="#research" class="focus-ring">Research</a>
+        <a href="#deck" class="focus-ring">Deck</a>
         <a href="#contact" class="focus-ring">Contact</a>
       </nav>
-      <div class="menu-btn">
-        <button id="menuToggle" class="btn secondary" aria-expanded="false" aria-controls="menuPanel" aria-haspopup="dialog" aria-label="Open menu">Menu</button>
+
+      <div class="row" style="gap:10px;align-items:center">
+        <button class="btn secondary theme-toggle" aria-pressed="false" aria-label="Toggle theme">Theme</button>
+        <div class="menu-btn">
+          <button class="btn secondary" aria-expanded="false" aria-controls="menuPanel" aria-haspopup="dialog" aria-label="Open menu">Menu</button>
+        </div>
       </div>
     </div>
-    <div id="menuPanel" class="menu-panel container" role="dialog" aria-modal="false" aria-label="Mobile navigation">
-      <a href="https://proofx.org" target="_blank" rel="noopener">ProofX</a>
-      <a href="https://architectofsilence.com" target="_blank" rel="noopener">Essays</a>
+
+    <!-- Mobile panel -->
+    <div id="menuPanel" class="menu-panel container" role="dialog" aria-modal="false" aria-label="Mobile navigation" hidden>
+      <a href="https://proofx.org" target="_blank" rel="noopener noreferrer">ProofX</a>
+      <a href="https://architectofsilence.com" target="_blank" rel="noopener noreferrer">Essays</a>
       <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#deck">Deck</a>
       <a href="#contact">Contact</a>
     </div>
   </header>
 
+  <!-- ============================================================
+       Hero
+       ============================================================ -->
   <main id="main">
-    <!-- Hero -->
     <section class="container hero" id="top">
       <span class="pill" aria-label="Tagline">Symbolic AI × Quantum Reasoning × Mathematics</span>
       <h1>Building Cognition Infrastructure.</h1>
-      <p class="lead">AlkindiX is the personal HQ of <strong>Alkindi</strong> — founder of <strong>ProofX</strong> and <strong>ProjectX</strong>. Research‑grade systems spanning symbolic logic, theorem synthesis, and high‑impact computation.</p>
+      <p class="lead">AlkindiX is the personal HQ of <strong>Alkindi</strong> — founder of <strong>ProofX</strong> and <strong>ProjectX</strong>. Research-grade systems spanning symbolic logic, theorem synthesis, and high-impact computation.</p>
       <div class="hero-cta" role="group" aria-label="Primary calls to action">
-        <a class="btn accent" href="https://proofx.org" target="_blank" rel="noopener">Explore ProofX</a>
-        <a class="btn secondary" href="https://architectofsilence.com" target="_blank" rel="noopener">Read Essays</a>
+        <a class="btn accent" href="https://proofx.org" target="_blank" rel="noopener noreferrer">Explore ProofX</a>
+        <a class="btn secondary" href="https://architectofsilence.com" target="_blank" rel="noopener noreferrer">Read Essays</a>
+        <a class="btn secondary" href="#deck">Investor Deck</a>
       </div>
       <div class="badge-row" aria-label="Highlights">
         <span class="pill">Deeptech Founder</span>
         <span class="pill">UCL Engineering</span>
-        <span class="pill">Research‑Lab‑Grade Builds</span>
+        <span class="pill">Research-Lab-Grade Builds</span>
       </div>
     </section>
 
-    <!-- Projects -->
+    <!-- ============================================================
+         Social Proof / KPI Snapshot
+         ============================================================ -->
+    <section class="section" aria-labelledby="kpi-title" id="kpi">
+      <div class="container">
+        <h2 id="kpi-title">Signal Over Noise</h2>
+        <p class="lead">Concrete traction and research signal — not vanity metrics.</p>
+        <div class="grid cols-3" style="margin-top:16px;">
+          <article class="card" aria-label="Theorem Synthesis">
+            <div class="card-body">
+              <div class="pill">ProofX</div>
+              <h3 style="margin:10px 0 6px">Theorem Synthesis</h3>
+              <p class="text-muted">Live multi-prover orchestration; entropy-scored search; counterexample audits.</p>
+            </div>
+          </article>
+          <article class="card" aria-label="Quantum-Assisted Reasoning">
+            <div class="card-body">
+              <div class="pill">ProjectX</div>
+              <h3 style="margin:10px 0 6px">Quantum-Assisted Reasoning</h3>
+              <p class="text-muted">Variational tooling to prune search spaces; combinatorics × symbolic logic.</p>
+            </div>
+          </article>
+          <article class="card" aria-label="Research-grade Engineering">
+            <div class="card-body">
+              <div class="pill">GödelLab</div>
+              <h3 style="margin:10px 0 6px">Finite-Model FOL</h3>
+              <p class="text-muted">Traceable quantifiers, model finding, and falsification harnesses.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Projects Grid
+         ============================================================ -->
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="container">
         <h2 id="projects-title">Flagship Projects</h2>
-        <p class="lead">A compact portfolio engineered for intellectual depth and real‑world impact.</p>
+        <p class="lead">A compact portfolio engineered for intellectual depth and real-world impact.</p>
         <div class="grid cols-3" style="margin-top:16px;">
           <article class="card project" aria-labelledby="pfx-title">
             <div class="kicker">ProofX</div>
             <h3 id="pfx-title">Symbolic AI &amp; Proof Orchestration</h3>
-            <p>Multi‑prover engine with theorem synthesis, SMT + finite model testing, entropy analytics, and real‑time dashboards.</p>
+            <p>Multi-prover engine with theorem synthesis, SMT + finite model testing, entropy analytics, and real-time dashboards.</p>
             <div class="actions">
-              <a class="btn secondary" href="https://proofx.org" target="_blank" rel="noopener">Visit Project</a>
+              <a class="btn secondary" href="https://proofx.org" target="_blank" rel="noopener noreferrer">Visit Project</a>
             </div>
           </article>
 
           <article class="card project" aria-labelledby="prjx-title">
             <div class="kicker">ProjectX</div>
-            <h3 id="prjx-title">Quantum‑Assisted Reasoning</h3>
-            <p>Cross‑domain cognitive engines blending quantum methods, combinatorics, and symbolic logic into production‑grade tooling.</p>
+            <h3 id="prjx-title">Quantum-Assisted Reasoning</h3>
+            <p>Cross-domain cognitive engines blending quantum methods, combinatorics, and symbolic logic into production-grade tooling.</p>
             <div class="actions">
               <a class="btn secondary" href="#" aria-disabled="true" aria-label="Overview coming soon">Overview (soon)</a>
             </div>
@@ -237,8 +176,8 @@
 
           <article class="card project" aria-labelledby="gdl-title">
             <div class="kicker">GödelLab</div>
-            <h3 id="gdl-title">Finite‑Model FOL &amp; Counterexamples</h3>
-            <p>Monolithic symbolic engine for first‑order logic evaluation with full traces, quantifiers, and counterexample discovery.</p>
+            <h3 id="gdl-title">Finite-Model FOL &amp; Counterexamples</h3>
+            <p>Monolithic symbolic engine for first-order logic evaluation with full traces, quantifiers, and counterexample discovery.</p>
             <div class="actions">
               <a class="btn secondary" href="#" aria-disabled="true" aria-label="Docs coming soon">Docs (soon)</a>
             </div>
@@ -247,7 +186,7 @@
           <article class="card project" aria-labelledby="clx-title">
             <div class="kicker">CollatzX</div>
             <h3 id="clx-title">Trajectory Analytics &amp; Entropy Maps</h3>
-            <p>High‑performance exploration of Collatz dynamics with visualization, anomaly detection, and distributed runs.</p>
+            <p>High-performance exploration of Collatz dynamics with visualization, anomaly detection, and distributed runs.</p>
             <div class="actions">
               <a class="btn secondary" href="#" aria-disabled="true" aria-label="Findings coming soon">See Findings (soon)</a>
             </div>
@@ -256,7 +195,7 @@
           <article class="card project" aria-labelledby="rx-title">
             <div class="kicker">RiemannX</div>
             <h3 id="rx-title">ζ(s) Diagnostics &amp; GUE Tests</h3>
-            <p>Zero distribution, spacing statistics, and spectral conformity checks with real‑time dashboards.</p>
+            <p>Zero distribution, spacing statistics, and spectral conformity checks with real-time dashboards.</p>
             <div class="actions">
               <a class="btn secondary" href="#" aria-disabled="true" aria-label="Live dashboard coming soon">Live Dashboard (soon)</a>
             </div>
@@ -265,17 +204,103 @@
           <article class="card project" aria-labelledby="aos-title">
             <div class="kicker">Architect of Silence</div>
             <h3 id="aos-title">Essays &amp; Strategic Memos</h3>
-            <p>Long‑form writing on systems‑level thinking, math, and building things that actually matter.</p>
+            <p>Long-form writing on systems-level thinking, math, and building things that actually matter.</p>
             <div class="actions">
-              <a class="btn secondary" href="https://architectofsilence.com" target="_blank" rel="noopener">Read Essays</a>
+              <a class="btn secondary" href="https://architectofsilence.com" target="_blank" rel="noopener noreferrer">Read Essays</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Publications / Media -->
-    <section class="section-tight" aria-labelledby="pub-title">
+    <!-- ============================================================
+         Research Highlights
+         ============================================================ -->
+    <section class="section" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <h2 id="research-title">Research Highlights</h2>
+        <p class="lead">Focused programs with crisp interfaces, legible metrics, and falsifiability baked in.</p>
+
+        <div class="grid cols-3" style="margin-top:16px;">
+          <article class="card" aria-labelledby="r1-title">
+            <div class="card-body">
+              <div class="pill">Program</div>
+              <h3 id="r1-title">Entropy Scoring for Search</h3>
+              <p class="text-muted">An information-theoretic policy to prioritize theorem candidates; penalizes redundancy; rewards novelty without drift.</p>
+              <details class="mt-sm">
+                <summary class="btn secondary sm focus-ring" role="button" aria-expanded="false">What’s inside</summary>
+                <ul class="mt-sm" style="color:var(--muted);margin-left:18px">
+                  <li>Entropy-weighted candidate pools.</li>
+                  <li>Dynamic cooling schedule with proofs-as-programs heuristics.</li>
+                  <li>Adversarial counterexample mining.</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+          <article class="card" aria-labelledby="r2-title">
+            <div class="card-body">
+              <div class="pill">Program</div>
+              <h3 id="r2-title">Counterexample-First Orchestration</h3>
+              <p class="text-muted">Treat falsification as a first-class citizen: symmetry breakers, random model hops, and structure-aware SMT calls.</p>
+              <details class="mt-sm">
+                <summary class="btn secondary sm focus-ring" role="button" aria-expanded="false">What’s inside</summary>
+                <ul class="mt-sm" style="color:var(--muted);margin-left:18px">
+                  <li>FOL trace visualizer with quantifier heatmaps.</li>
+                  <li>Rapid model flops to escape local truth basins.</li>
+                  <li>Proof replay with degradations to stress invariants.</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+
+          <article class="card" aria-labelledby="r3-title">
+            <div class="card-body">
+              <div class="pill">Program</div>
+              <h3 id="r3-title">Quantum-Assisted Pruners</h3>
+              <p class="text-muted">Variational knobs to reduce combinatorial blow-ups in symbolic search without breaking determinism of the final proof.</p>
+              <details class="mt-sm">
+                <summary class="btn secondary sm focus-ring" role="button" aria-expanded="false">What’s inside</summary>
+                <ul class="mt-sm" style="color:var(--muted);margin-left:18px">
+                  <li>Hybrid objective: symbolic loss × spectral hint.</li>
+                  <li>Proof-safe decoders that output legal moves only.</li>
+                  <li>Bench harness with ablations and seeds.</li>
+                </ul>
+              </details>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Showcase / Gallery
+         ============================================================ -->
+    <section class="section-tight" aria-labelledby="show-title" id="show">
+      <div class="container">
+        <h2 id="show-title">Interfaces &amp; Dashboards</h2>
+        <p class="lead">Snapshots of the systems as they evolve — minimal, legible, and measurable.</p>
+        <div class="grid cols-3" style="margin-top:16px;">
+          <figure class="card" style="overflow:hidden">
+            <img src="/public/img/proofx-dashboard.webp" alt="ProofX dashboard mock showing theorem queue and entropy scores" loading="lazy" width="560" height="340" />
+            <figcaption class="small" style="padding:12px;color:var(--muted)">ProofX: entropy-scored theorem queue.</figcaption>
+          </figure>
+          <figure class="card" style="overflow:hidden">
+            <img src="/public/img/godel-trace.webp" alt="GödelLab trace view with quantifier heatmap" loading="lazy" width="560" height="340" />
+            <figcaption class="small" style="padding:12px;color:var(--muted)">GödelLab: quantifier trace heatmap.</figcaption>
+          </figure>
+          <figure class="card" style="overflow:hidden">
+            <img src="/public/img/riemannx-gue.webp" alt="RiemannX GUE diagnostic chart" loading="lazy" width="560" height="340" />
+            <figcaption class="small" style="padding:12px;color:var(--muted)">RiemannX: GUE diagnostics.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Publications / Media
+         ============================================================ -->
+    <section class="section-tight" aria-labelledby="pub-title" id="pubs">
       <div class="container">
         <h2 id="pub-title">Publications &amp; Media</h2>
         <div class="list" aria-live="polite">
@@ -286,117 +311,171 @@
       </div>
     </section>
 
-    <!-- About -->
-    <section class="section" aria-labelledby="about-title">
+    <!-- ============================================================
+         Deck Teaser / Investor CTA
+         ============================================================ -->
+    <section class="section" id="deck" aria-labelledby="deck-title">
+      <div class="container card shadow" style="padding: 28px; display:grid; gap:14px;">
+        <h2 id="deck-title" class="mt-0">Investor / Partner Overview</h2>
+        <p class="lead">We’re building cognition infrastructure: symbolic engines, proof orchestration, and research-grade interfaces. Brief, dense, and falsifiable.</p>
+        <div class="row" style="gap:12px;flex-wrap:wrap">
+          <a class="btn accent" href="/public/deck/AlkindiX_Overview.pdf" target="_blank" rel="noopener noreferrer">Open Deck (PDF)</a>
+          <a class="btn secondary" href="mailto:alkindi.network@gmail.com?subject=AlkindiX%20—%20Partner%20Intro">Request Intro</a>
+          <span class="pill"><span aria-hidden="true">⏱</span>&nbsp;10-slide brief</span>
+          <span class="pill"><span aria-hidden="true">🔒</span>&nbsp;NDA on request</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         About
+         ============================================================ -->
+    <section class="section" aria-labelledby="about-title" id="about">
       <div class="container grid cols-2">
         <div>
           <h2 id="about-title">About Alkindi</h2>
-          <p class="lead">Engineering student at UCL focused on AI, mathematics, and high‑impact innovation. I build research‑lab‑grade systems that merge symbolic reasoning, quantum methods, and rigorous engineering.</p>
-          <div style="display:flex; gap:12px; margin-top:12px; flex-wrap: wrap;">
-            <a class="btn secondary" href="https://www.linkedin.com/in/alkindi-net" target="_blank" rel="me noopener">LinkedIn</a>
-            <a class="btn secondary" href="https://github.com/alkindi-network" target="_blank" rel="me noopener">GitHub</a>
-            <a class="btn secondary" href="https://proofx.org" target="_blank" rel="noopener">ProofX.org</a>
+          <p class="lead">Engineering student at UCL focused on AI, mathematics, and high-impact innovation. I build research-lab-grade systems that merge symbolic reasoning, quantum methods, and rigorous engineering.</p>
+          <div class="row" style="gap:12px; margin-top:12px; flex-wrap: wrap;">
+            <a class="btn secondary" href="https://www.linkedin.com/in/alkindi-network" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
+            <a class="btn secondary" href="https://github.com/mohammed-coder-dev" target="_blank" rel="me noopener noreferrer">GitHub</a>
+            <a class="btn secondary" href="https://proofx.org" target="_blank" rel="noopener noreferrer">ProofX.org</a>
           </div>
         </div>
         <div class="card shadow" style="padding: 20px;">
           <h3 style="margin-top:0;">Operating Principles</h3>
           <ul style="margin:10px 0 0 18px; color: var(--muted);">
             <li>Intellectual depth over hype.</li>
-            <li>Systems‑level clarity and execution.</li>
+            <li>Systems-level clarity and execution.</li>
             <li>Impact &gt; vanity metrics.</li>
+          </ul>
+          <div class="hr"></div>
+          <h3 class="mt-sm">Working Models</h3>
+          <ul style="margin:10px 0 0 18px; color: var(--muted);">
+            <li>Compact surface area; maximal leverage.</li>
+            <li>Metrics that matter: falsifiability, legibility, reproducibility.</li>
+            <li>Interfaces first: if it isn’t legible, it isn’t real.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- ============================================================
+         Roadmap / Timeline
+         ============================================================ -->
+    <section class="section" id="roadmap" aria-labelledby="roadmap-title">
+      <div class="container">
+        <h2 id="roadmap-title">Roadmap</h2>
+        <p class="lead">Short horizons, honest targets, visible compounding.</p>
+        <div class="grid cols-3" style="margin-top:16px;">
+          <article class="card" aria-label="Q3 Milestones"><div class="card-body">
+            <div class="pill">Q3</div>
+            <h3>ProofX v0.3</h3>
+            <ul style="color:var(--muted);margin-left:18px">
+              <li>Entropy policy ablations</li>
+              <li>Counterexample miner v1</li>
+              <li>Dashboard refresh</li>
+            </ul>
+          </div></article>
+          <article class="card" aria-label="Q4 Milestones"><div class="card-body">
+            <div class="pill">Q4</div>
+            <h3>GödelLab α</h3>
+            <ul style="color:var(--muted);margin-left:18px">
+              <li>Trace visualizer</li>
+              <li>Quantifier heatmap</li>
+              <li>Model-hop strategy</li>
+            </ul>
+          </div></article>
+          <article class="card" aria-label="Q1 Milestones"><div class="card-body">
+            <div class="pill">Q1</div>
+            <h3>ProjectX α</h3>
+            <ul style="color:var(--muted);margin-left:18px">
+              <li>Variational pruner POC</li>
+              <li>Proof-safe decoder</li>
+              <li>Harness + seeds</li>
+            </ul>
+          </div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ
+         ============================================================ -->
+    <section class="section-tight" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <h2 id="faq-title">FAQ</h2>
+        <div class="list" style="margin-top:10px">
+          <details class="list-item"><summary><strong>Is this academic research or product?</strong></summary><p class="mt-sm text-muted">Both. Research-grade engines with production-grade interfaces. If it ships, it counts.</p></details>
+          <details class="list-item"><summary><strong>How do you measure progress?</strong></summary><p class="mt-sm text-muted">Falsifiability, legibility, reproducibility. If a result cannot be falsified or reproduced, it’s a sketch, not progress.</p></details>
+          <details class="list-item"><summary><strong>How to collaborate?</strong></summary><p class="mt-sm text-muted">Reach out for a research briefing or a compact POC. Quality bar is high, scope is tight.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Newsletter (no external JS; privacy-first)
+         ============================================================ -->
+    <section class="section" id="newsletter" aria-labelledby="nl-title">
+      <div class="container card" style="padding:24px">
+        <h2 id="nl-title" class="mt-0">Briefings (Occasional)</h2>
+        <p class="lead">Sparse, high-signal notes on symbolic systems and proof orchestration. No noise.</p>
+        <form class="grid cols-2" method="post" action="/api/subscribe" novalidate>
+          <div>
+            <label for="nl-email">Email</label>
+            <input id="nl-email" name="email" class="input" type="email" placeholder="you@domain" autocomplete="email" required />
+          </div>
+          <div class="row" style="align-items:flex-end">
+            <button class="btn accent" type="submit">Subscribe</button>
+          </div>
+          <!-- Honeypot -->
+          <input type="text" name="website" aria-hidden="true" tabindex="-1" style="position:absolute;left:-9999px" />
+        </form>
+        <small class="small">By subscribing you agree to the privacy policy. Zero tracking. Unsubscribe anytime.</small>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         Contact
+         ============================================================ -->
     <section class="section" id="contact" aria-labelledby="contact-title">
       <div class="container card shadow" style="padding: 28px; display:grid; gap:10px;">
         <h2 id="contact-title" style="margin:0;">Let’s Build Together</h2>
         <p class="lead">For research briefings, collaborations, or speaking inquiries.</p>
-        <div style="display:flex; gap:12px; flex-wrap: wrap;">
+        <div class="row" style="gap:12px; flex-wrap: wrap;">
           <a class="btn accent" href="mailto:alkindi.network@gmail.com?subject=Research%20Briefing%20Request">Request Research Briefing</a>
           <a class="btn secondary" href="mailto:alkindi.network@gmail.com">Email</a>
+          <a class="btn secondary" href="/public/press/AlkindiX_PressKit.zip" rel="noopener">Press Kit</a>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- ============================================================
+       Footer
+       ============================================================ -->
   <footer role="contentinfo">
     <div class="container" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center;">
       <div>© <span id="y"></span> AlkindiX. All rights reserved.</div>
       <nav aria-label="Footer">
         <div style="display:flex; gap:14px;">
-          <a href="https://proofx.org" target="_blank" rel="noopener">ProofX</a>
-          <a href="https://architectofsilence.com" target="_blank" rel="noopener">Essays</a>
+          <a href="/privacy" class="focus-ring">Privacy</a>
+          <a href="/terms" class="focus-ring">Terms</a>
+          <a href="https://proofx.org" target="_blank" rel="noopener noreferrer">ProofX</a>
+          <a href="https://architectofsilence.com" target="_blank" rel="noopener noreferrer">Essays</a>
           <a href="#projects">Projects</a>
         </div>
       </nav>
     </div>
   </footer>
 
-  <script type="module">
-    // Utilities
-    const $ = (sel, ctx=document) => ctx.querySelector(sel);
-    const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
+  <!-- ============================================================
+       Runtime (CSP-clean): external module only
+       ============================================================ -->
+  <script type="module" src="/main.js" defer></script>
 
-    // Footer year
-    $('#y').textContent = new Date().getFullYear();
-
-    // Mobile menu toggle with a11y
-    const btn = $('#menuToggle');
-    const panel = $('#menuPanel');
-    let lastFocus = null;
-    if (btn && panel) {
-      const openMenu = () => {
-        panel.style.display = 'block';
-        btn.setAttribute('aria-expanded', 'true');
-        panel.setAttribute('aria-modal', 'true');
-        lastFocus = document.activeElement;
-        const firstLink = panel.querySelector('a');
-        firstLink && firstLink.focus();
-        document.addEventListener('keydown', onKeyDown);
-      };
-      const closeMenu = () => {
-        panel.style.display = 'none';
-        btn.setAttribute('aria-expanded', 'false');
-        panel.setAttribute('aria-modal', 'false');
-        lastFocus && btn.focus();
-        document.removeEventListener('keydown', onKeyDown);
-      };
-      const onKeyDown = (e) => {
-        if (e.key === 'Escape') closeMenu();
-      };
-      btn.addEventListener('click', () => {
-        const open = panel.style.display === 'block';
-        open ? closeMenu() : openMenu();
-      });
-      document.addEventListener('click', (e) => {
-        if (!panel.contains(e.target) && !btn.contains(e.target)) panel.style.display = 'none';
-      });
-    }
-
-    // Set aria-current on nav links when sections enter viewport
-    const sectionLinks = $$('a[href^="#"]').filter(a => a.getAttribute('href').length > 1);
-    const sections = sectionLinks
-      .map(a => [a, $(a.getAttribute('href'))])
-      .filter(([, node]) => !!node);
-
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        const link = sections.find(([, node]) => node === entry.target)?.[0];
-        if (!link) return;
-        if (entry.isIntersecting) {
-          sectionLinks.forEach(l => l.removeAttribute('aria-current'));
-          link.setAttribute('aria-current', 'page');
-        }
-      });
-    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 });
-
-    sections.forEach(([, node]) => obs.observe(node));
-  </script>
-
-  <!-- Structured Data: Person + WebSite -->
+  <!-- ============================================================
+       Structured Data
+       ============================================================ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -408,16 +487,34 @@
     "sameAs": [
       "https://proofx.org",
       "https://architectofsilence.com",
-      "https://www.linkedin.com/in/alkindi-net"
+      "https://www.linkedin.com/in/alkindi-network"
     ]
   }
   </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "AlkindiX",
-    "url": "https://alkindix.com/"
+    "url": "https://alkindix.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://alkindix.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ProofX",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "description": "Symbolic AI proof orchestration with entropy-scored search and counterexample mining.",
+    "url": "https://proofx.org"
   }
   </script>
 </body>
