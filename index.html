@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AlkindiX — Building Cognition Infrastructure</title>
+  <meta name="description" content="AlkindiX — the personal HQ of Alkindi. Symbolic AI × Quantum Reasoning × Mathematics. Gateway to ProofX, ProjectX, and long-form essays." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="AlkindiX — Building Cognition Infrastructure" />
+  <meta property="og:description" content="Symbolic AI × Quantum Reasoning × Mathematics. Gateway to ProofX, ProjectX, and essays." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alkindix.com/" />
+  <meta property="og:image" content="/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    /* ----- Base & Theme ----- */
+    :root {
+      --bg: #0b0b0c;
+      --panel: #121214;
+      --text: #f5f7fb;
+      --muted: #b5b9c9;
+      --accent: #5b8cff; /* deep electric blue */
+      --accent-2: #8aa6ff;
+      --ok: #1db954;
+      --danger: #ff5b5b;
+      --ring: rgba(91,140,255,.35);
+      --shadow: 0 20px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --maxw: 1120px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #fafafa; --panel: #ffffff; --text: #0b0b0c; --muted: #3b4252; --shadow: 0 10px 40px rgba(0,0,0,.08); }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 75% -10%, rgba(91,140,255,.10), transparent 60%),
+                  radial-gradient(900px 500px at -10% 10%, rgba(138,166,255,.10), transparent 55%),
+                  var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+    /* ----- Utilities ----- */
+    .btn { display:inline-flex; align-items:center; gap:.6rem; padding:.8rem 1.1rem; border-radius:999px; background: var(--text); color: var(--bg); font-weight: 700; border: 1px solid transparent; transition: all .22s ease; }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 8px 30px rgba(0,0,0,.18); }
+    .btn.secondary { background: transparent; color: var(--text); border-color: rgba(255,255,255,.18); }
+    .btn.secondary:hover { border-color: rgba(255,255,255,.35); }
+    .btn.accent { background: var(--accent); color: #fff; }
+
+    .pill { display:inline-flex; align-items:center; padding:.3rem .6rem; border-radius:999px; background: rgba(91,140,255,.12); color: var(--accent-2); font-weight:600; border:1px solid rgba(91,140,255,.25); }
+
+    .shadow { box-shadow: var(--shadow); }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00)); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); }
+    @media (prefers-color-scheme: light) { .card { border-color: rgba(20,20,20,.06); } }
+    .grid { display:grid; gap:20px; }
+    @media (min-width: 720px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
+
+    .section { padding: 64px 0; }
+    .section-tight { padding: 44px 0; }
+
+    h1 { font-size: clamp(2rem, 2.8rem, 3.4rem); line-height: 1.08; margin: 0 0 10px; letter-spacing:-0.02em; }
+    h2 { font-size: clamp(1.4rem, 1.6rem, 2rem); margin: 0 0 10px; letter-spacing:-0.01em; }
+    h3 { font-size: 1.1rem; margin: 0 0 8px; letter-spacing: 0; }
+    p.lead { font-size: 1.1rem; color: var(--muted); max-width: 780px; }
+
+    /* ----- Header ----- */
+    .header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px); background: color-mix(in oklab, var(--bg) 84%, transparent); border-bottom: 1px solid rgba(255,255,255,.07); }
+    @media (prefers-color-scheme: light) { .header { border-bottom-color: rgba(0,0,0,.06); } }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap: 16px; padding: 14px 0; }
+    .nav a { color: var(--muted); font-weight:600; }
+    .nav a:hover { color: var(--text); }
+    .brand { display:flex; align-items:center; gap:.7rem; font-weight:900; letter-spacing:.02em; }
+    .dot { width:10px; height:10px; border-radius:999px; background: var(--accent); box-shadow: 0 0 0 4px var(--ring); }
+    .menu { display:none; gap: 18px; align-items:center; }
+    @media (min-width: 840px) { .menu { display:flex; } .menu-btn { display:none; } }
+    .menu-panel { display:none; position:absolute; left: 20px; right:20px; top:64px; background: var(--panel); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 12px; }
+    .menu-panel a { display:block; padding: 12px; border-radius: 12px; }
+    .menu-panel a:hover { background: rgba(255,255,255,.04); }
+
+    /* ----- Hero ----- */
+    .hero { padding: 90px 0 40px; display:grid; gap: 18px; align-items:center; }
+    .hero-cta { display:flex; gap:12px; flex-wrap: wrap; margin-top: 8px; }
+    .badge-row { display:flex; gap:10px; align-items:center; color: var(--muted); font-weight:600; }
+
+    /* ----- Cards / Sections ----- */
+    .project { padding: 22px; transition: transform .2s ease, border-color .2s ease; }
+    .project:hover { transform: translateY(-4px); border-color: rgba(91,140,255,.35); }
+    .project .kicker { color: var(--accent-2); font-weight:700; font-size:.85rem; letter-spacing:.04em; text-transform: uppercase; }
+    .project p { color: var(--muted); }
+    .project .actions { display:flex; gap:10px; margin-top: 12px; }
+
+    .list { display:grid; gap: 12px; }
+    .list-item { padding:14px 16px; border:1px dashed rgba(255,255,255,.12); border-radius: 14px; background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00)); }
+    @media (prefers-color-scheme: light) { .list-item { border-color: rgba(0,0,0,.08); } }
+
+    /* ----- Footer ----- */
+    footer { border-top: 1px solid rgba(255,255,255,.08); padding: 32px 0 48px; color: var(--muted); }
+    footer a { color: var(--text); }
+
+    /* ----- Focus / A11y ----- */
+    .focus-ring { outline: none; box-shadow: 0 0 0 0 transparent; }
+    .focus-ring:focus-visible { box-shadow: 0 0 0 4px var(--ring); border-radius: 12px; }
+
+  </style>
+</head>
+<body>
+  <a href="#main" class="pill" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <a href="#top" class="brand focus-ring" aria-label="AlkindiX home">
+        <span class="dot" aria-hidden="true"></span>
+        <span>AlkindiX</span>
+      </a>
+      <nav class="menu" aria-label="Primary">
+        <a href="https://proofx.org" class="focus-ring">ProofX</a>
+        <a href="https://architectofsilence.com" class="focus-ring">Essays</a>
+        <a href="#projects" class="focus-ring">Projects</a>
+        <a href="#contact" class="focus-ring">Contact</a>
+      </nav>
+      <div class="menu-btn">
+        <button id="menuToggle" class="btn secondary" aria-expanded="false" aria-controls="menuPanel">Menu</button>
+      </div>
+    </div>
+    <div id="menuPanel" class="menu-panel container" role="dialog" aria-modal="false" aria-label="Mobile navigation">
+      <a href="https://proofx.org">ProofX</a>
+      <a href="https://architectofsilence.com">Essays</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="container hero" id="top">
+      <span class="pill">Symbolic AI × Quantum Reasoning × Mathematics</span>
+      <h1>Building Cognition Infrastructure.</h1>
+      <p class="lead">AlkindiX is the personal HQ of <strong>Alkindi</strong> — founder of <strong>ProofX</strong> and <strong>ProjectX</strong>. Research‑grade systems spanning symbolic logic, theorem synthesis, and high‑impact computation.</p>
+      <div class="hero-cta">
+        <a class="btn accent" href="https://proofx.org">Explore ProofX</a>
+        <a class="btn secondary" href="https://architectofsilence.com">Read Essays</a>
+      </div>
+      <div class="badge-row" aria-label="Highlights">
+        <span class="pill">Deeptech Founder</span>
+        <span class="pill">UCL Engineering</span>
+        <span class="pill">Research‑Lab‑Grade Builds</span>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2>Flagship Projects</h2>
+        <p class="lead">A compact portfolio engineered for intellectual depth and real‑world impact.</p>
+        <div class="grid cols-3" style="margin-top:16px;">
+          <article class="card project">
+            <div class="kicker">ProofX</div>
+            <h3>Symbolic AI & Proof Orchestration</h3>
+            <p>Multi‑prover engine with theorem synthesis, SMT + finite model testing, entropy analytics, and real‑time dashboards.</p>
+            <div class="actions">
+              <a class="btn secondary" href="https://proofx.org">Visit Project</a>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="kicker">ProjectX</div>
+            <h3>Quantum‑Assisted Reasoning</h3>
+            <p>Cross‑domain cognitive engines blending quantum methods, combinatorics, and symbolic logic into production‑grade tooling.</p>
+            <div class="actions">
+              <a class="btn secondary" href="#">Overview (soon)</a>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="kicker">GödelLab</div>
+            <h3>Finite‑Model FOL & Counterexamples</h3>
+            <p>Monolithic symbolic engine for first‑order logic evaluation with full traces, quantifiers, and counterexample discovery.</p>
+            <div class="actions">
+              <a class="btn secondary" href="#">Docs (soon)</a>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="kicker">CollatzX</div>
+            <h3>Trajectory Analytics & Entropy Maps</h3>
+            <p>High‑performance exploration of Collatz dynamics with visualization, anomaly detection, and distributed runs.</p>
+            <div class="actions">
+              <a class="btn secondary" href="#">See Findings (soon)</a>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="kicker">RiemannX</div>
+            <h3>ζ(s) Diagnostics & GUE Tests</h3>
+            <p>Zero distribution, spacing statistics, and spectral conformity checks with real‑time dashboards.</p>
+            <div class="actions">
+              <a class="btn secondary" href="#">Live Dashboard (soon)</a>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div class="kicker">Architect of Silence</div>
+            <h3>Essays & Strategic Memos</h3>
+            <p>Long‑form writing on systems‑level thinking, math, and building things that actually matter.</p>
+            <div class="actions">
+              <a class="btn secondary" href="https://architectofsilence.com">Read Essays</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications / Media -->
+    <section class="section-tight">
+      <div class="container">
+        <h2>Publications & Media</h2>
+        <div class="list" aria-live="polite">
+          <div class="list-item">Preprint: <strong>Entropy Scoring for Theorem Synthesis</strong> — methods draft in progress.</div>
+          <div class="list-item">Essay: <strong>On Building Cognition Infrastructure</strong> — Architect of Silence.</div>
+          <div class="list-item">Talk (planned): <strong>Proof Orchestration at Scale</strong> — deck in preparation.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section">
+      <div class="container grid cols-2">
+        <div>
+          <h2>About Alkindi</h2>
+          <p class="lead">Engineering student at UCL focused on AI, mathematics, and high‑impact innovation. I build research‑lab‑grade systems that merge symbolic reasoning, quantum methods, and rigorous engineering.</p>
+          <div style="display:flex; gap:12px; margin-top:12px;">
+            <a class="btn secondary" href="https://www.linkedin.com/in/alkindi-net" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn secondary" href="https://github.com/alkindi-network" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn secondary" href="https://proofx.org" target="_blank" rel="noopener">ProofX.org</a>
+          </div>
+        </div>
+        <div class="card shadow" style="padding: 20px;">
+          <h3 style="margin-top:0;">Operating Principles</h3>
+          <ul style="margin:10px 0 0 18px; color: var(--muted);">
+            <li>Intellectual depth over hype.</li>
+            <li>Systems‑level clarity and execution.</li>
+            <li>Impact > vanity metrics.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container card shadow" style="padding: 28px; display:grid; gap:10px;">
+        <h2 style="margin:0;">Let’s Build Together</h2>
+        <p class="lead">For research briefings, collaborations, or speaking inquiries.</p>
+        <div style="display:flex; gap:12px; flex-wrap: wrap;">
+          <a class="btn accent" href="mailto:alkindi.network@gmail.com?subject=Research%20Briefing%20Request">Request Research Briefing</a>
+          <a class="btn secondary" href="mailto:alkindi.network@gmail.com">Email</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center;">
+      <div>© <span id="y"></span> AlkindiX. All rights reserved.</div>
+      <div style="display:flex; gap:14px;">
+        <a href="https://proofx.org">ProofX</a>
+        <a href="https://architectofsilence.com">Essays</a>
+        <a href="#projects">Projects</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById('menuToggle');
+    const panel = document.getElementById('menuPanel');
+    if (btn && panel) {
+      btn.addEventListener('click', () => {
+        const open = panel.style.display === 'block';
+        panel.style.display = open ? 'none' : 'block';
+        btn.setAttribute('aria-expanded', String(!open));
+      });
+      document.addEventListener('click', (e) => {
+        if (!panel.contains(e.target) && !btn.contains(e.target)) panel.style.display = 'none';
+      });
+    }
+
+    // Year in footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Structured Data: Person / Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alkindi",
+    "url": "https://alkindix.com",
+    "jobTitle": "Founder, ProofX; Engineering Student, UCL",
+    "affiliation": { "@type": "CollegeOrUniversity", "name": "University College London" },
+    "sameAs": [
+      "https://proofx.org",
+      "https://architectofsilence.com",
+      "https://www.linkedin.com/in/alkindi-net"
+    ]
+  }
+  </script>
+</body>
+</html>
