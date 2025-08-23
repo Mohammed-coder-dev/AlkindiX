@@ -4,11 +4,11 @@
   <!-- ============================================================
        AlkindiX — Building Cognition Infrastructure
        Static, CSP-friendly, Vercel-ready
-       Enhancements: a11y, SEO, perf, correctness, privacy-first
        ============================================================ -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
   <title>AlkindiX — Building Cognition Infrastructure</title>
   <meta name="description" content="AlkindiX — the personal HQ of Alkindi. Symbolic AI × Quantum Reasoning × Mathematics. Gateway to ProofX, ProjectX, and long-form essays." />
   <meta name="color-scheme" content="dark light" />
@@ -16,26 +16,14 @@
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="format-detection" content="telephone=no, address=no, email=no" />
-  <link rel="canonical" href="https://alkindix.com/" />
-  <!-- Optional canonical alias: uncomment if you serve alkindiX.com as primary
-  <link rel="canonical" href="https://alkindx.com/" /> -->
   <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://alkindix.com/" />
 
-  <!-- Icons / Manifest
-       NOTE: On Vercel/static hosting, everything under /public is served at the URL root. -->
+  <!-- Icons / Manifest (only favicons exist in /public now) -->
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <!-- Optional when available: <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-  <link rel="alternate" type="application/rss+xml" title="AlkindiX Feed" href="/feed.xml" />
-
-  <!-- Performance: fonts + CSS (keep Google Fonts preconnects only if you actually load webfonts) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="//fonts.googleapis.com">
-  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <!-- If/when you add it: <link rel="manifest" href="/site.webmanifest" /> -->
 
   <!-- CSS -->
   <link rel="preload" href="/styles.css" as="style" />
@@ -44,40 +32,31 @@
   <!-- JS -->
   <link rel="preload" href="/main.js" as="script" />
 
-  <!-- Open Graph / Twitter -->
+  <!-- Open Graph / Twitter (omit og:image to avoid 404 for now) -->
   <meta property="og:title" content="AlkindiX — Building Cognition Infrastructure" />
   <meta property="og:description" content="Symbolic AI × Quantum Reasoning × Mathematics. Gateway to ProofX, ProjectX, and essays." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://alkindix.com/" />
-  <meta property="og:image" content="https://alkindix.com/og-image.png" />
-  <meta property="og:image:alt" content="AlkindiX brand — Symbolic AI × Quantum Reasoning × Mathematics" />
   <meta property="og:site_name" content="AlkindiX" />
   <meta property="og:locale" content="en_GB" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@alkindi_network" />
 
-  <!-- Priority hints for above-the-fold imagery (optional; keep minimal) -->
-  <link rel="preload" as="image" href="/img/proofx-dashboard.webp" imagesrcset="/img/proofx-dashboard.webp 1x" fetchpriority="high" />
-
-  <!-- Above-the-fold micro styles (kept tiny for CSP-friendliness) -->
+  <!-- Above-the-fold micro styles -->
   <style>
     html{scroll-behavior:smooth}
     body{margin:0;font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";background:#0b0b0c;color:#f5f7fb}
     a{text-decoration:none;color:inherit}
     .container{max-width:1120px;margin:0 auto;padding:0 clamp(16px,3.5vw,28px)}
-    /* visibly focusable skip link */
     .skip{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
     .skip:focus{left:12px;top:12px;width:auto;height:auto;padding:.5rem .75rem;background:#111;border:1px solid #444;border-radius:999px;color:#fff;z-index:1000}
   </style>
   <noscript><style>.no-js .menu-btn{display:none}</style></noscript>
 </head>
 <body>
-  <!-- Skip link -->
   <a href="#main" class="skip" aria-label="Skip to main content">Skip to content</a>
 
-  <!-- ============================================================
-       Header / Global Nav
-       ============================================================ -->
+  <!-- Header / Global Nav -->
   <header class="header" role="banner">
     <div class="container nav">
       <a href="#top" class="brand focus-ring" aria-label="AlkindiX home">
@@ -90,7 +69,6 @@
         <a href="https://architectofsilence.com" class="focus-ring" target="_blank" rel="noopener noreferrer">Essays</a>
         <a href="#projects" class="focus-ring">Projects</a>
         <a href="#research" class="focus-ring">Research</a>
-        <a href="#deck" class="focus-ring">Deck</a>
         <a href="#contact" class="focus-ring">Contact</a>
       </nav>
 
@@ -102,21 +80,17 @@
       </div>
     </div>
 
-    <!-- Mobile panel -->
     <div id="menuPanel" class="menu-panel container" role="dialog" aria-modal="false" aria-label="Mobile navigation" hidden>
       <a href="https://proofx.org" target="_blank" rel="noopener noreferrer">ProofX</a>
       <a href="https://architectofsilence.com" target="_blank" rel="noopener noreferrer">Essays</a>
       <a href="#projects">Projects</a>
       <a href="#research">Research</a>
-      <a href="#deck">Deck</a>
       <a href="#contact">Contact</a>
     </div>
   </header>
 
-  <!-- ============================================================
-       Hero
-       ============================================================ -->
   <main id="main">
+    <!-- Hero -->
     <section class="container hero" id="top" aria-label="Hero">
       <span class="pill" aria-label="Tagline">Symbolic AI × Quantum Reasoning × Mathematics</span>
       <h1>Building Cognition Infrastructure.</h1>
@@ -124,7 +98,7 @@
       <div class="hero-cta" role="group" aria-label="Primary calls to action">
         <a class="btn accent" href="https://proofx.org" target="_blank" rel="noopener noreferrer">Explore ProofX</a>
         <a class="btn secondary" href="https://architectofsilence.com" target="_blank" rel="noopener noreferrer">Read Essays</a>
-        <a class="btn secondary" href="#deck">Investor Deck</a>
+        <a class="btn secondary" href="#contact">Get in Touch</a>
       </div>
       <div class="badge-row" aria-label="Highlights">
         <span class="pill">Deeptech Founder</span>
@@ -133,9 +107,7 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         Social Proof / KPI Snapshot
-         ============================================================ -->
+    <!-- KPI Snapshot -->
     <section class="section" aria-labelledby="kpi-title" id="kpi">
       <div class="container">
         <h2 id="kpi-title">Signal Over Noise</h2>
@@ -166,9 +138,7 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         Projects Grid
-         ============================================================ -->
+    <!-- Projects -->
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="container">
         <h2 id="projects-title">Flagship Projects</h2>
@@ -200,40 +170,11 @@
               <a class="btn secondary" href="#" aria-disabled="true" aria-label="Docs coming soon">Docs (soon)</a>
             </div>
           </article>
-
-          <article class="card project" aria-labelledby="clx-title">
-            <div class="kicker">CollatzX</div>
-            <h3 id="clx-title">Trajectory Analytics &amp; Entropy Maps</h3>
-            <p>High-performance exploration of Collatz dynamics with visualization, anomaly detection, and distributed runs.</p>
-            <div class="actions">
-              <a class="btn secondary" href="#" aria-disabled="true" aria-label="Findings coming soon">See Findings (soon)</a>
-            </div>
-          </article>
-
-          <article class="card project" aria-labelledby="rx-title">
-            <div class="kicker">RiemannX</div>
-            <h3 id="rx-title">ζ(s) Diagnostics &amp; GUE Tests</h3>
-            <p>Zero distribution, spacing statistics, and spectral conformity checks with real-time dashboards.</p>
-            <div class="actions">
-              <a class="btn secondary" href="#" aria-disabled="true" aria-label="Live dashboard coming soon">Live Dashboard (soon)</a>
-            </div>
-          </article>
-
-          <article class="card project" aria-labelledby="aos-title">
-            <div class="kicker">Architect of Silence</div>
-            <h3 id="aos-title">Essays &amp; Strategic Memos</h3>
-            <p>Long-form writing on systems-level thinking, math, and building things that actually matter.</p>
-            <div class="actions">
-              <a class="btn secondary" href="https://architectofsilence.com" target="_blank" rel="noopener noreferrer">Read Essays</a>
-            </div>
-          </article>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         Research Highlights
-         ============================================================ -->
+    <!-- Research Highlights -->
     <section class="section" id="research" aria-labelledby="research-title">
       <div class="container">
         <h2 id="research-title">Research Highlights</h2>
@@ -244,15 +185,7 @@
             <div class="card-body">
               <div class="pill">Program</div>
               <h3 id="r1-title">Entropy Scoring for Search</h3>
-              <p class="text-muted">An information-theoretic policy to prioritize theorem candidates; penalizes redundancy; rewards novelty without drift.</p>
-              <details class="mt-sm">
-                <summary class="btn secondary sm focus-ring" role="button" aria-expanded="false">What’s inside</summary>
-                <ul class="mt-sm" style="color:var(--muted);margin-left:18px">
-                  <li>Entropy-weighted candidate pools.</li>
-                  <li>Dynamic cooling schedule with proofs-as-programs heuristics.</li>
-                  <li>Adversarial counterexample mining.</li>
-                </ul>
-              </details>
+              <p class="text-muted">Information-theoretic prioritization of theorem candidates; novelty without drift.</p>
             </div>
           </article>
 
@@ -260,15 +193,7 @@
             <div class="card-body">
               <div class="pill">Program</div>
               <h3 id="r2-title">Counterexample-First Orchestration</h3>
-              <p class="text-muted">Treat falsification as a first-class citizen: symmetry breakers, random model hops, and structure-aware SMT calls.</p>
-              <details class="mt-sm">
-                <summary class="btn secondary sm focus-ring" role="button" aria-expanded="false">What’s inside</summary>
-                <ul class="mt-sm" style="color:var(--muted);margin-left:18px">
-                  <li>FOL trace visualizer with quantifier heatmaps.</li>
-                  <li>Rapid model flops to escape local truth basins.</li>
-                  <li>Proof replay with degradations to stress invariants.</li>
-                </ul>
-              </details>
+              <p class="text-muted">Falsification as first-class: symmetry breakers, random model hops, structure-aware SMT.</p>
             </div>
           </article>
 
@@ -276,185 +201,26 @@
             <div class="card-body">
               <div class="pill">Program</div>
               <h3 id="r3-title">Quantum-Assisted Pruners</h3>
-              <p class="text-muted">Variational knobs to reduce combinatorial blow-ups in symbolic search without breaking determinism of the final proof.</p>
-              <details class="mt-sm">
-                <summary class="btn secondary sm focus-ring" role="button" aria-expanded="false">What’s inside</summary>
-                <ul class="mt-sm" style="color:var(--muted);margin-left:18px">
-                  <li>Hybrid objective: symbolic loss × spectral hint.</li>
-                  <li>Proof-safe decoders that output legal moves only.</li>
-                  <li>Bench harness with ablations and seeds.</li>
-                </ul>
-              </details>
+              <p class="text-muted">Variational knobs to reduce combinatorial blow-ups without breaking determinism.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         Showcase / Gallery
-         ============================================================ -->
-    <section class="section-tight" aria-labelledby="show-title" id="show">
-      <div class="container">
-        <h2 id="show-title">Interfaces &amp; Dashboards</h2>
-        <p class="lead">Snapshots of the systems as they evolve — minimal, legible, and measurable.</p>
-        <div class="grid cols-3" style="margin-top:16px;">
-          <figure class="card" style="overflow:hidden">
-            <img src="/img/proofx-dashboard.webp" alt="ProofX dashboard mock showing theorem queue and entropy scores" loading="lazy" decoding="async" width="560" height="340" />
-            <figcaption class="small" style="padding:12px;color:var(--muted)">ProofX: entropy-scored theorem queue.</figcaption>
-          </figure>
-          <figure class="card" style="overflow:hidden">
-            <img src="/img/godel-trace.webp" alt="GödelLab trace view with quantifier heatmap" loading="lazy" decoding="async" width="560" height="340" />
-            <figcaption class="small" style="padding:12px;color:var(--muted)">GödelLab: quantifier trace heatmap.</figcaption>
-          </figure>
-          <figure class="card" style="overflow:hidden">
-            <img src="/img/riemannx-gue.webp" alt="RiemannX GUE diagnostic chart" loading="lazy" decoding="async" width="560" height="340" />
-            <figcaption class="small" style="padding:12px;color:var(--muted)">RiemannX: GUE diagnostics.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         Publications / Media
-         ============================================================ -->
+    <!-- Publications / Media -->
     <section class="section-tight" aria-labelledby="pub-title" id="pubs">
       <div class="container">
         <h2 id="pub-title">Publications &amp; Media</h2>
         <div class="list" aria-live="polite">
           <div class="list-item">Preprint: <strong>Entropy Scoring for Theorem Synthesis</strong> — methods draft in progress.</div>
           <div class="list-item">Essay: <strong>On Building Cognition Infrastructure</strong> — Architect of Silence.</div>
-          <div class="list-item">Talk (planned): <strong>Proof Orchestration at Scale</strong> — deck in preparation.</div>
+          <div class="list-item">Talk (planned): <strong>Proof Orchestration at Scale</strong>.</div>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================
-         Deck Teaser / Investor CTA
-         ============================================================ -->
-    <section class="section" id="deck" aria-labelledby="deck-title">
-      <div class="container card shadow" style="padding: 28px; display:grid; gap:14px;">
-        <h2 id="deck-title" class="mt-0">Investor / Partner Overview</h2>
-        <p class="lead">We’re building cognition infrastructure: symbolic engines, proof orchestration, and research-grade interfaces. Brief, dense, and falsifiable.</p>
-        <div class="row" style="gap:12px;flex-wrap:wrap">
-          <a class="btn accent" href="/deck/AlkindiX_Overview.pdf" target="_blank" rel="noopener noreferrer">Open Deck (PDF)</a>
-          <a class="btn secondary" href="mailto:alkindi.network@gmail.com?subject=AlkindiX%20—%20Partner%20Intro">Request Intro</a>
-          <span class="pill" aria-label="Ten slide brief"><span aria-hidden="true">⏱</span>&nbsp;10-slide brief</span>
-          <span class="pill" aria-label="NDA available on request"><span aria-hidden="true">🔒</span>&nbsp;NDA on request</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         About
-         ============================================================ -->
-    <section class="section" aria-labelledby="about-title" id="about">
-      <div class="container grid cols-2">
-        <div>
-          <h2 id="about-title">About Alkindi</h2>
-          <p class="lead">Engineering student at UCL focused on AI, mathematics, and high-impact innovation. I build research-lab-grade systems that merge symbolic reasoning, quantum methods, and rigorous engineering.</p>
-          <div class="row" style="gap:12px; margin-top:12px; flex-wrap: wrap;">
-            <a class="btn secondary" href="https://www.linkedin.com/in/alkindi-network" target="_blank" rel="me noopener noreferrer">LinkedIn</a>
-            <a class="btn secondary" href="https://github.com/mohammed-coder-dev" target="_blank" rel="me noopener noreferrer">GitHub</a>
-            <a class="btn secondary" href="https://proofx.org" target="_blank" rel="noopener noreferrer">ProofX.org</a>
-          </div>
-        </div>
-        <div class="card shadow" style="padding: 20px;">
-          <h3 style="margin-top:0;">Operating Principles</h3>
-          <ul style="margin:10px 0 0 18px; color: var(--muted);">
-            <li>Intellectual depth over hype.</li>
-            <li>Systems-level clarity and execution.</li>
-            <li>Impact &gt; vanity metrics.</li>
-          </ul>
-          <div class="hr" role="presentation"></div>
-          <h3 class="mt-sm">Working Models</h3>
-          <ul style="margin:10px 0 0 18px; color: var(--muted);">
-            <li>Compact surface area; maximal leverage.</li>
-            <li>Metrics that matter: falsifiability, legibility, reproducibility.</li>
-            <li>Interfaces first: if it isn’t legible, it isn’t real.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         Roadmap / Timeline
-         ============================================================ -->
-    <section class="section" id="roadmap" aria-labelledby="roadmap-title">
-      <div class="container">
-        <h2 id="roadmap-title">Roadmap</h2>
-        <p class="lead">Short horizons, honest targets, visible compounding.</p>
-        <div class="grid cols-3" style="margin-top:16px;">
-          <article class="card" aria-label="Q3 Milestones"><div class="card-body">
-            <div class="pill">Q3</div>
-            <h3>ProofX v0.3</h3>
-            <ul style="color:var(--muted);margin-left:18px">
-              <li>Entropy policy ablations</li>
-              <li>Counterexample miner v1</li>
-              <li>Dashboard refresh</li>
-            </ul>
-          </div></article>
-          <article class="card" aria-label="Q4 Milestones"><div class="card-body">
-            <div class="pill">Q4</div>
-            <h3>GödelLab α</h3>
-            <ul style="color:var(--muted);margin-left:18px">
-              <li>Trace visualizer</li>
-              <li>Quantifier heatmap</li>
-              <li>Model-hop strategy</li>
-            </ul>
-          </div></article>
-          <article class="card" aria-label="Q1 Milestones"><div class="card-body">
-            <div class="pill">Q1</div>
-            <h3>ProjectX α</h3>
-            <ul style="color:var(--muted);margin-left:18px">
-              <li>Variational pruner POC</li>
-              <li>Proof-safe decoder</li>
-              <li>Harness + seeds</li>
-            </ul>
-          </div></article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         FAQ
-         ============================================================ -->
-    <section class="section-tight" id="faq" aria-labelledby="faq-title">
-      <div class="container">
-        <h2 id="faq-title">FAQ</h2>
-        <div class="list" style="margin-top:10px">
-          <details class="list-item"><summary><strong>Is this academic research or product?</strong></summary><p class="mt-sm text-muted">Both. Research-grade engines with production-grade interfaces. If it ships, it counts.</p></details>
-          <details class="list-item"><summary><strong>How do you measure progress?</strong></summary><p class="mt-sm text-muted">Falsifiability, legibility, reproducibility. If a result cannot be falsified or reproduced, it’s a sketch, not progress.</p></details>
-          <details class="list-item"><summary><strong>How to collaborate?</strong></summary><p class="mt-sm text-muted">Reach out for a research briefing or a compact POC. Quality bar is high, scope is tight.</p></details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         Newsletter (no external JS; privacy-first)
-         ============================================================ -->
-    <section class="section" id="newsletter" aria-labelledby="nl-title">
-      <div class="container card" style="padding:24px">
-        <h2 id="nl-title" class="mt-0">Briefings (Occasional)</h2>
-        <p class="lead">Sparse, high-signal notes on symbolic systems and proof orchestration. No noise.</p>
-        <form class="grid cols-2" method="post" action="/api/subscribe" novalidate>
-          <div>
-            <label for="nl-email">Email</label>
-            <input id="nl-email" name="email" class="input" type="email" placeholder="you@domain" autocomplete="email" required inputmode="email" />
-          </div>
-          <div class="row" style="align-items:flex-end">
-            <button class="btn accent" type="submit">Subscribe</button>
-          </div>
-          <!-- Honeypot -->
-          <input type="text" name="website" aria-hidden="true" tabindex="-1" style="position:absolute;left:-9999px" />
-        </form>
-        <small class="small">By subscribing you agree to the privacy policy. Zero tracking. Unsubscribe anytime.</small>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         Contact
-         ============================================================ -->
+    <!-- Contact -->
     <section class="section" id="contact" aria-labelledby="contact-title">
       <div class="container card shadow" style="padding: 28px; display:grid; gap:10px;">
         <h2 id="contact-title" style="margin:0;">Let’s Build Together</h2>
@@ -462,22 +228,18 @@
         <div class="row" style="gap:12px; flex-wrap: wrap;">
           <a class="btn accent" href="mailto:alkindi.network@gmail.com?subject=Research%20Briefing%20Request">Request Research Briefing</a>
           <a class="btn secondary" href="mailto:alkindi.network@gmail.com">Email</a>
-          <a class="btn secondary" href="/press/AlkindiX_PressKit.zip" rel="noopener">Press Kit</a>
+          <!-- Add downloads later when files exist -->
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ============================================================
-       Footer
-       ============================================================ -->
+  <!-- Footer -->
   <footer role="contentinfo">
     <div class="container" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center;">
       <div>© <span id="y"></span> AlkindiX. All rights reserved.</div>
       <nav aria-label="Footer">
         <div style="display:flex; gap:14px;">
-          <a href="/privacy" class="focus-ring">Privacy</a>
-          <a href="/terms" class="focus-ring">Terms</a>
           <a href="https://proofx.org" target="_blank" rel="noopener noreferrer">ProofX</a>
           <a href="https://architectofsilence.com" target="_blank" rel="noopener noreferrer">Essays</a>
           <a href="#projects">Projects</a>
@@ -486,14 +248,10 @@
     </div>
   </footer>
 
-  <!-- ============================================================
-       Runtime (CSP-clean): external module only
-       ============================================================ -->
+  <!-- Runtime -->
   <script type="module" src="/main.js" defer></script>
 
-  <!-- ============================================================
-       Structured Data
-       ============================================================ -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -509,7 +267,6 @@
     ]
   }
   </script>
-
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -521,18 +278,6 @@
       "target": "https://alkindix.com/?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "ProofX",
-    "applicationCategory": "DeveloperApplication",
-    "operatingSystem": "Any",
-    "description": "Symbolic AI proof orchestration with entropy-scored search and counterexample mining.",
-    "url": "https://proofx.org"
   }
   </script>
 </body>
