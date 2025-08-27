@@ -3,9 +3,9 @@
 // Basic offline caching and navigation fallback.
 // ------------------------------------------------------------
 
-const CACHE = 'ax-v1';
+const CACHE = 'ax-v2';
 const OFFLINE_URL = '/offline.html';
-const ASSETS = ['/', OFFLINE_URL, '/styles.css', '/main.js'];
+const ASSETS = ['/', OFFLINE_URL, '/styles.css', '/main.js', '/about', '/terms', '/privacy'];
 
 self.addEventListener('install', event => {
   event.waitUntil(
