@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-GB" dir="ltr" data-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <title>Offline — AlkindiX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body {
+      display:flex; align-items:center; justify-content:center;
+      min-height:100vh; text-align:center; padding: var(--space-lg);
+      background: var(--bg);
+      animation: fadeIn .6s var(--ease) both;
+    }
+    .offline {
+      max-width: 520px; display:grid; gap: var(--space-md);
+      animation: floatUp .8s var(--ease) both;
+    }
+    .offline h1 {
+      font-size: clamp(2.4rem, 8vw, 3rem);
+      margin: 0;
+      font-weight: 800;
+      background: var(--grad-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .offline p {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+    .pill { justify-content:center; margin-top: var(--space-sm); }
+    @keyframes floatUp { from { opacity:0; transform:translateY(12px);} to { opacity:1; transform:translateY(0);} }
+  </style>
+</head>
+<body>
+  <main class="offline" role="main" aria-labelledby="title">
+    <h1 id="title">You’re Offline</h1>
+    <p>It looks like you’ve lost your connection.<br>
+       Don’t worry — AlkindiX will be here when you’re back online.</p>
+    <a class="btn accent" href="/" role="button">Try Again</a>
+    <div class="pill">AlkindiX — Building Cognition Infrastructure</div>
+  </main>
+</body>
+</html>
