@@ -1,18 +1,51 @@
 // sw.js — AlkindiX Service Worker
 // ------------------------------------------------------------
-// Safe starter: no caching/interception, just lifecycle handlers.
-// Prevents 404s and gives you a hook to extend later.
+// Basic offline caching and navigation fallback.
 // ------------------------------------------------------------
 
-self.addEventListener("install", (event) => {
-  // Activate immediately on install
+const CACHE = 'ax-v1';
+const OFFLINE_URL = '/offline.html';
+const ASSETS = ['/', OFFLINE_URL, '/styles.css', '/main.js'];
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE).then(cache =>
+      cache.addAll(ASSETS.map(u => new Request(u, { cache: 'reload' })))
+    )
+  );
   self.skipWaiting();
 });
 
-self.addEventListener("activate", (event) => {
-  // Take control of open pages right away
-  event.waitUntil(self.clients.claim());
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    Promise.all([
+      caches.keys().then(keys =>
+        Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
+      ),
+      self.clients.claim()
+    ])
+  );
 });
 
-// No fetch handler: network requests pass straight through.
-// Add one here later if you want caching/offline support.
+self.addEventListener('fetch', event => {
+  const { request } = event;
+  if (request.method !== 'GET' || new URL(request.url).origin !== location.origin) return;
+
+  if (request.mode === 'navigate') {
+    event.respondWith(
+      fetch(request).catch(() => caches.match(OFFLINE_URL))
+    );
+    return;
+  }
+
+  event.respondWith(
+    caches.match(request).then(cached => {
+      if (cached) return cached;
+      return fetch(request).then(response => {
+        const copy = response.clone();
+        caches.open(CACHE).then(cache => cache.put(request, copy));
+        return response;
+      });
+    })
+  );
+});

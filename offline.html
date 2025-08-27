@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-GB" dir="ltr" data-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <title>Offline — AlkindiX</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    body {
+      display:flex; align-items:center; justify-content:center;
+      min-height:100vh; text-align:center; padding: var(--space-lg);
+      background: var(--bg);
+      animation: fadeIn .6s var(--ease) both;
+    }
+    .offline {
+      max-width: 640px; display:grid; gap: var(--space-md);
+      animation: floatUp .8s var(--ease) both;
+    }
+    .offline h1 {
+      font-size: clamp(4rem, 14vw, 7rem);
+      margin: 0;
+      font-weight: 900;
+      line-height: 1;
+      background: var(--grad-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .offline p {
+      margin: 0;
+      font-size: 1.2rem;
+      color: var(--muted);
+    }
+    .actions {
+      display:flex; justify-content:center; gap: var(--space-sm); flex-wrap:wrap;
+      margin-top: var(--space-sm);
+    }
+    .pill {
+      margin-top: var(--space-md);
+      justify-content:center;
+    }
+    @keyframes floatUp { from { opacity:0; transform:translateY(12px);} to { opacity:1; transform:translateY(0);} }
+  </style>
+</head>
+<body>
+  <main class="offline" role="main" aria-labelledby="title">
+    <h1 id="title">Offline</h1>
+    <p>You're offline. Check your connection and try again.</p>
+    <div class="actions" role="group" aria-label="Actions">
+      <a class="btn accent" href="/">Reload</a>
+    </div>
+    <div class="pill">AlkindiX — Building Cognition Infrastructure</div>
+  </main>
+</body>
+</html>
