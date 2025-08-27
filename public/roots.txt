@@ -1,0 +1,11 @@
+# robots.txt for AlkindiX
+User-agent: *
+Allow: /
+
+# Respect crawl budgets; don’t hammer APIs or drafts
+Disallow: /api/
+Disallow: /drafts/
+Disallow: /private/
+
+# Point crawlers to your sitemap (replace with production domain)
+Sitemap: https://alkinidx.com/sitemap.xml
