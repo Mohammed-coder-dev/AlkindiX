@@ -7,6 +7,15 @@
     { "source": "/", "destination": "/index.html" }
   ],
 
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.alkindix.com" }],
+      "destination": "https://alkindix.com/$1",
+      "permanent": true
+    }
+  ],
+
   "headers": [
     {
       "source": "/(.*)",

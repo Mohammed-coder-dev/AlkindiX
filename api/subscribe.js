@@ -7,7 +7,6 @@ const hits = new Map();              // ip -> { count, resetAt }
 
 const allowedOrigins = new Set([
   'https://alkindix.com',
-  'https://www.alkindix.com',
   // Add your Vercel preview/prod URLs if you use them directly:
   // 'https://<your-project>.vercel.app'
 ]);
