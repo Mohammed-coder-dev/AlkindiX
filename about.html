@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-GB" dir="ltr" class="no-js" data-theme="auto">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>About — AlkindiX</title>
+  <meta name="description" content="Learn about AlkindiX and its mission to build cognition infrastructure." />
+  <link rel="preload" href="/styles.css" as="style" />
+  <link rel="stylesheet" href="/styles.css" media="all" />
+  <link rel="preload" href="/main.js" as="script" />
+</head>
+<body>
+  <div id="offlineBanner" class="offline-banner" hidden role="status" aria-live="polite">You're offline.</div>
+  <a href="#main" class="skip" aria-label="Skip to main content">Skip to content</a>
+  <header class="header" role="banner">
+    <div class="container nav">
+      <a href="/" class="brand focus-ring" aria-label="AlkindiX home">
+        <span class="dot" aria-hidden="true"></span>
+        <span>AlkindiX</span>
+      </a>
+      <nav class="menu" aria-label="Primary">
+        <a href="/about" class="focus-ring">About</a>
+        <a href="https://proofx.org" class="focus-ring" target="_blank" rel="noopener noreferrer">ProofX</a>
+        <a href="https://architectofsilence.com" class="focus-ring" target="_blank" rel="noopener noreferrer">Essays</a>
+        <a href="/index.html#projects" class="focus-ring">Projects</a>
+        <a href="/index.html#research" class="focus-ring">Research</a>
+        <a href="/index.html#contact" class="focus-ring">Contact</a>
+      </nav>
+      <div class="row" style="gap:10px;align-items:center">
+        <button class="btn secondary theme-toggle" aria-pressed="false" aria-label="Toggle theme">Theme</button>
+        <div class="menu-btn">
+          <button class="btn secondary" aria-expanded="false" aria-controls="menuPanel" aria-haspopup="dialog" aria-label="Open menu">Menu</button>
+        </div>
+      </div>
+    </div>
+    <div id="menuPanel" class="menu-panel container" role="dialog" aria-modal="false" aria-label="Mobile navigation" hidden>
+      <a href="/about">About</a>
+      <a href="https://proofx.org" target="_blank" rel="noopener noreferrer">ProofX</a>
+      <a href="https://architectofsilence.com" target="_blank" rel="noopener noreferrer">Essays</a>
+      <a href="/index.html#projects">Projects</a>
+      <a href="/index.html#research">Research</a>
+      <a href="/index.html#contact">Contact</a>
+    </div>
+  </header>
+  <main id="main" class="container" style="padding-top:40px;padding-bottom:40px;">
+    <h1>About AlkindiX</h1>
+    <p>AlkindiX is the personal headquarters of <strong>Alkindi</strong> — founder of <a href="https://proofx.org" target="_blank" rel="noopener noreferrer">ProofX</a> and ProjectX. The site showcases research, projects, and long-form writing spanning symbolic logic, theorem synthesis, and high-impact computation.</p>
+    <p>Our mission is to build <em>cognition infrastructure</em>: tooling and programs that help researchers reason about complex systems with clarity and rigor.</p>
+  </main>
+  <footer role="contentinfo">
+    <div class="container" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; align-items:center;">
+      <div>© <span id="y"></span> AlkindiX. All rights reserved.</div>
+      <nav aria-label="Footer">
+        <div style="display:flex; gap:14px;">
+          <a href="/about">About</a>
+          <a href="/terms">Terms</a>
+          <a href="/privacy">Privacy</a>
+        </div>
+      </nav>
+    </div>
+  </footer>
+  <script type="module" src="/main.js" defer></script>
+</body>
+</html>
