@@ -28,7 +28,6 @@ jobs:
             --exclude "^mailto:"
             --exclude "fonts.googleapis.com"
             --exclude "fonts.gstatic.com"
-            --exclude "photographyx.org"
             --exclude "linkedin.com"
             --exclude "instagram.com"
             --exclude "snapchat.com"

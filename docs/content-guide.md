@@ -2,43 +2,11 @@
 
 How to update each part of the site without touching the layout or styles.
 
-## Photography gallery
-
-### Adding images
-
-1. Name the file using the series prefix and next available number:
-   - `h32.jpg` — horizontal / landscape (continue from current highest `h*`)
-   - `v5.jpg` — vertical / portrait (continue from current highest `v*`)
-2. Place the file in `public/images/`.
-3. Open `public/photography.html` and find the `IMAGES` array near the bottom of the file:
-   ```js
-   const IMAGES = [
-     'h1','h2', … ,'h31'
-   ];
-   ```
-4. Append the new filename (without extension): `'h32'`.
-
-The gallery probes each name at runtime — if a file is missing it is silently skipped, so the order in the array sets the display order.
-
-### Removing images
-
-Remove the name from the `IMAGES` array and delete the file from `public/images/`. No other changes needed.
-
-### Supported formats
-
-`jpg`, `jpeg`, `png`, `webp` (any case). The probe uses `.jpg` by default; if you use a different extension update the `src` line in `tryLoad()`:
-
-```js
-const src = '/images/' + name + '.jpg';  // change extension here
-```
-
----
-
 ## About page (`public/about.html`)
 
 ### Bio text
 
-Edit the paragraphs inside `<div class="about-body">`. Each `<p>` is a paragraph of body copy. The `<h3>` tags are subsection headings ("Research interests", "Photography", etc.).
+Edit the paragraphs inside `<div class="about-body">`. Each `<p>` is a paragraph of body copy. The `<h3>` tags are subsection headings ("Research interests", etc.).
 
 ### Sidebar meta
 
@@ -89,7 +57,7 @@ The fixed bottom bar lists social links as `<a class="social-bar__link">` elemen
 
 ## Shared navigation (`public/*.html`)
 
-The nav is duplicated across all four HTML files — update each one when adding or renaming a link. The `app.js` active-link logic compares `window.location.pathname` to each `href`, so no additional changes are needed when updating links.
+The nav is duplicated across all HTML files — update each one when adding or renaming a link. The `app.js` active-link logic compares `window.location.pathname` to each `href`, so no additional changes are needed when updating links.
 
 ---
 

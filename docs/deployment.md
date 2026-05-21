@@ -25,16 +25,15 @@ Every push to `main` triggers a new production deployment. Pull requests get pre
    - `CNAME` for `www`: `cname.vercel-dns.com`
 3. Vercel provisions TLS automatically.
 
-## Domain aliases
+## Domain alias
 
-`vercel.json` contains permanent (301) redirects for two alias domains:
+`vercel.json` contains a permanent (301) redirect for one alias domain:
 
 | Domain | Redirects to |
 |--------|-------------|
-| `photographyx.org` | `alkindix.com/photography` |
 | `architectofsilence.com` | `alkindix.com/memoir` |
 
-Add each alias domain in Vercel → Settings → Domains, then point their DNS to Vercel the same way.
+Add the alias domain in Vercel → Settings → Domains, then point its DNS to Vercel the same way.
 
 ## Environment variables
 
@@ -70,13 +69,7 @@ No server required for basic work:
 open public/index.html
 ```
 
-For accurate URL routing (clean URLs, `/photography` instead of `photography.html`):
-
-```bash
-npx serve public
-```
-
-`serve` will not apply the Vercel rewrites, but all pages are reachable by their `.html` filename. To test routing exactly as production behaves, use the [Vercel CLI](https://vercel.com/docs/cli):
+To test routing exactly as production behaves, use the [Vercel CLI](https://vercel.com/docs/cli):
 
 ```bash
 npm i -g vercel
