@@ -1,48 +1,79 @@
 # Alkindi — alkindix.com
 
-Personal HQ for systems, computation, photography, and thoughtful work.
+[![CI](https://github.com/MohammedAlkindi/AlkindiX/actions/workflows/ci.yml/badge.svg)](https://github.com/MohammedAlkindi/AlkindiX/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Live](https://img.shields.io/badge/live-alkindix.com-brightgreen)](https://alkindix.com)
+
+Personal HQ — systems, computation, photography, and thoughtful work.
+
+## Pages
+
+| URL | Description |
+|-----|-------------|
+| [`/`](https://alkindix.com/) | Home |
+| [`/about`](https://alkindix.com/about) | About |
+| [`/photography`](https://alkindix.com/photography) | Photography gallery |
+| [`/memoir`](https://alkindix.com/memoir) | Memoir |
+| [`/linkedin`](https://alkindix.com/linkedin) | → LinkedIn |
+| [`/github`](https://alkindix.com/github) | → GitHub |
 
 ## Structure
 
 ```
-/
-├── vercel.json          # Routing, redirects, headers
-├── README.md
-│
-├── images/              # Photography assets (h1.jpg, v1.jpg, ...)
-│   ├── h1.jpg           # Horizontal series (h1–h50)
-│   ├── v1.jpg           # Vertical series (v1–v50)
-│   └── ...
-│
-└── public/              # All HTML, CSS, JS
-    ├── index.html       # Home         → alkindix.com/
-    ├── about.html       # About        → alkindix.com/about
-    ├── photography.html # Photography  → alkindix.com/photography
-    ├── memoir.html      # Memoir       → alkindix.com/memoir
-    ├── styles.css       # Shared design system
-    └── app.js           # Shared behavior (nav, scroll, reveal)
+AlkindiX/
+├── public/
+│   ├── index.html       # Home
+│   ├── about.html       # About
+│   ├── photography.html # Photography gallery
+│   ├── memoir.html      # Memoir
+│   ├── styles.css       # Shared design system
+│   ├── app.js           # Shared behaviour (nav, scroll, reveal)
+│   ├── robots.txt       # Crawler rules
+│   ├── sitemap.xml      # Sitemap
+│   ├── favicon.svg
+│   └── images/          # Photography assets (h1–h50.jpg, v1–v50.jpg)
+├── .github/
+│   └── workflows/
+│       └── ci.yml       # HTML lint + link checker
+├── vercel.json          # Routing, redirects, caching headers
+├── .htmlhintrc          # HTML linting rules
+├── .editorconfig        # Editor formatting
+└── LICENSE
 ```
 
-## Routes
+## Local development
 
-| URL | File |
-|-----|------|
-| `alkindix.com/` | `public/index.html` |
-| `alkindix.com/about` | `public/about.html` |
-| `alkindix.com/photography` | `public/photography.html` |
-| `alkindix.com/memoir` | `public/memoir.html` |
-| `alkindix.com/linkedin` | → linkedin.com/in/alkindi-network/ |
-| `alkindix.com/github` | → github.com/MohammedAlkindi/ |
-| `alkindix.com/read` | → architectofsilence.com |
+No build step. Open any page directly in a browser:
+
+```bash
+open public/index.html
+# or serve locally:
+npx serve public
+```
 
 ## Photography images
 
-Place images in `/images/` named:
-- `h1.jpg`, `h2.jpg`, ... `h50.jpg` — horizontal/landscape
-- `v1.jpg`, `v2.jpg`, ... `v50.jpg` — vertical/portrait
+Place images in `public/images/` named:
+
+- `h1.jpg` … `h50.jpg` — horizontal / landscape
+- `v1.jpg` … `v50.jpg` — vertical / portrait
 
 Supported formats: `jpg`, `jpeg`, `png`, `webp` (any case).
 
 ## Deploy
 
-Push to GitHub, connect to Vercel. No build step required — pure static HTML.
+Push to `main` → Vercel deploys automatically. No build step required.
+
+Domain aliases configured in `vercel.json`:
+
+- `photographyx.org` → `/photography`
+- `architectofsilence.com` → `/memoir`
+
+## Docs
+
+| Document | Description |
+|----------|-------------|
+| [docs/architecture.md](docs/architecture.md) | File roles, routing, JS behaviour, caching |
+| [docs/design-system.md](docs/design-system.md) | CSS tokens, typography, components |
+| [docs/content-guide.md](docs/content-guide.md) | How to update pages, add photos, edit copy |
+| [docs/deployment.md](docs/deployment.md) | Vercel setup, domains, headers, local dev |

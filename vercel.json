@@ -2,17 +2,16 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/",            "destination": "/public/index.html" },
-    { "source": "/about",       "destination": "/public/about.html" },
-    { "source": "/photography", "destination": "/public/photography.html" },
-    { "source": "/memoir",      "destination": "/public/memoir.html" }
+    { "source": "/",           "destination": "/public/index.html" },
+    { "source": "/about",      "destination": "/public/about.html" },
+    { "source": "/memoir",     "destination": "/public/memoir.html" },
+    { "source": "/robots.txt", "destination": "/public/robots.txt" },
+    { "source": "/sitemap.xml","destination": "/public/sitemap.xml" }
   ],
   "redirects": [
-    { "source": "/linkedin", "destination": "https://www.linkedin.com/in/alkindi-network/", "permanent": false },
-    { "source": "/github",   "destination": "https://github.com/MohammedAlkindi/",          "permanent": false },
-
-    { "source": "/(.*)", "has": [{ "type": "host", "value": "photographyx.org" }],     "destination": "https://alkindix.com/photography", "permanent": true },
-    { "source": "/(.*)", "has": [{ "type": "host", "value": "www.photographyx.org" }], "destination": "https://alkindix.com/photography", "permanent": true },
+    { "source": "/linkedin",    "destination": "https://www.linkedin.com/in/alkindi-network/", "permanent": false },
+    { "source": "/github",      "destination": "https://github.com/MohammedAlkindi/",          "permanent": false },
+    { "source": "/photography", "destination": "https://photographyx.org",                      "permanent": true  },
 
     { "source": "/(.*)", "has": [{ "type": "host", "value": "architectofsilence.com" }],     "destination": "https://alkindix.com/memoir", "permanent": true },
     { "source": "/(.*)", "has": [{ "type": "host", "value": "www.architectofsilence.com" }], "destination": "https://alkindix.com/memoir", "permanent": true }
@@ -35,7 +34,7 @@
       ]
     },
     {
-      "source": "/public/(.*\\.(css|js))",
+      "source": "/(.*\\.(css|js))",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
