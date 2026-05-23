@@ -126,3 +126,46 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 document.addEventListener('DOMContentLoaded', () => {
   document.body.classList.add('loaded');
 });
+
+// Hero typewriter (index page only)
+(function () {
+  const h1 = document.querySelector('.hero__h1');
+  const sub = document.querySelector('.hero__sub');
+  const actions = document.querySelector('.hero__actions');
+  if (!h1 || !sub || !actions) return;
+
+  const H1_TEXT = 'Hi, I am Alkindi.';
+  const SUB_TEXT = 'I build and study systems where ideas become structure and structure becomes clarity. This space documents research tools, computational projects, and long-form thinking.';
+
+  h1.textContent = '';
+  sub.textContent = '';
+  actions.style.opacity = '0';
+  actions.style.transition = 'opacity 0.4s ease';
+
+  function type(el, text, speed, done) {
+    const cursor = document.createElement('span');
+    cursor.className = 'typing-cursor';
+    cursor.textContent = '|';
+    el.appendChild(cursor);
+    let i = 0;
+    (function tick() {
+      if (i < text.length) {
+        cursor.insertAdjacentText('beforebegin', text[i++]);
+        setTimeout(tick, speed);
+      } else {
+        cursor.remove();
+        done && done();
+      }
+    })();
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    type(h1, H1_TEXT, 60, () => {
+      setTimeout(() => {
+        type(sub, SUB_TEXT, 30, () => {
+          setTimeout(() => { actions.style.opacity = '1'; }, 400);
+        });
+      }, 300);
+    });
+  });
+})();

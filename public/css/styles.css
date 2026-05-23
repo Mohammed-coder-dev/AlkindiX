@@ -188,6 +188,20 @@ a:hover { opacity: 0.75; }
   border-color: rgba(255,255,255,0.25);
 }
 
+.nav__links a.nav-photo {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  opacity: 0.65;
+}
+
+.nav__links a.nav-photo:hover {
+  border-color: rgba(255,255,255,0.25);
+  opacity: 1;
+}
+
 .nav__links a.nav-social-btn {
   background: var(--accent);
   color: #000;
@@ -482,6 +496,18 @@ a:hover { opacity: 0.75; }
   color: rgba(255, 255, 255, 0.95);
   transform: translateY(-2px);
   opacity: 1;
+}
+
+/* =========================================================
+   TYPEWRITER CURSOR
+========================================================= */
+.typing-cursor {
+  animation: cursor-blink 0.8s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

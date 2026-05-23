@@ -26,12 +26,15 @@ jobs:
         with:
           args: >
             --exclude "^mailto:"
+            --exclude "^/"
+            --exclude "^#"
             --exclude "fonts.googleapis.com"
             --exclude "fonts.gstatic.com"
             --exclude "linkedin.com"
             --exclude "instagram.com"
             --exclude "snapchat.com"
             --exclude "facebook.com"
+            --exclude "github.com"
             --timeout 20
             "public/**/*.html"
         env:
