@@ -44,105 +44,78 @@
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1.8fr;
-      gap: 4rem;
-      padding: 5rem 0;
-      border-bottom: 1px solid var(--line-subtle);
+      gap: 5rem;
+      padding: 5rem 0 6rem;
     }
-
-    .about-sidebar {}
 
     .about-sidebar__meta {
-      margin-top: 2rem;
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 0;
     }
 
-    .meta-item {}
+    .meta-item {
+      padding: 1.1rem 0 1.1rem 1rem;
+      border-left: 1px solid var(--line-subtle);
+      transition: border-color 0.2s;
+    }
+
+    .meta-item + .meta-item {
+      margin-top: 0.5rem;
+    }
+
+    .meta-item:hover {
+      border-left-color: var(--accent);
+    }
 
     .meta-item__label {
       font-family: "Space Mono", monospace;
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: rgba(255,255,255,0.35);
-      margin-bottom: 0.35rem;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 0.3rem;
       display: block;
     }
 
     .meta-item__value {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: var(--text);
+      line-height: 1.55;
     }
-
-    .about-body {}
 
     .about-body p {
       max-width: 100%;
       font-size: 1.05rem;
-      line-height: 1.8;
+      line-height: 1.85;
+    }
+
+    .about-body p + p {
+      margin-top: 1.4rem;
     }
 
     .about-body h3 {
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.65);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-family: "Space Mono", monospace;
-    }
-
-    /* Principles */
-    .principles {
-      padding: 5rem 0;
-      border-bottom: 1px solid var(--line-subtle);
-    }
-
-    .principles__grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      margin-top: 2.5rem;
-    }
-
-    .principle-card {
-      background: var(--bg-elevated);
-      padding: 2rem;
-    }
-
-    .principle-card__num {
-      font-family: "Space Mono", monospace;
+      margin-top: 3rem;
+      margin-bottom: 0.85rem;
       font-size: 0.68rem;
-      color: rgba(255,255,255,0.25);
-      margin-bottom: 1rem;
-      display: block;
-    }
-
-    .principle-card h3 {
-      font-size: 1rem;
       font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 0.6rem;
-      letter-spacing: -0.01em;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-family: "Space Mono", monospace;
     }
 
-    .principle-card p {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.65;
-      margin-bottom: 0;
-      max-width: 100%;
-      opacity: 1;
+    .about-body__actions {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line-subtle);
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
     }
 
     @media (max-width: 768px) {
-      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .principles__grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
     }
   </style>
 </head>
@@ -175,7 +148,7 @@
     </div>
 
     <!-- BIO -->
-    <section class="section">
+    <section>
       <div class="container">
         <div class="about-grid">
           <div class="about-sidebar" data-reveal>
@@ -202,7 +175,7 @@
               </div>
               <div class="meta-item">
                 <span class="meta-item__label">Contact</span>
-                <span class="meta-item__value"><a href="mailto:alkindi.ceo@gmail.com" style="opacity:0.65; font-size:0.95rem;">alkindi.ceo@gmail.com</a></span>
+                <span class="meta-item__value"><a href="mailto:alkindi.ceo@gmail.com" style="color:inherit;">alkindi.ceo@gmail.com</a></span>
               </div>
             </div>
           </div>
@@ -227,52 +200,12 @@
               and reproducible. ProofX is the primary vehicle for this work.
             </p>
 
-            <div style="margin-top: 2rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <div class="about-body__actions">
               <a href="mailto:alkindi.ceo@gmail.com" class="btn btn--primary">Get in touch</a>
               <a href="/projects" class="btn">Projects</a>
               <a href="/memoir" class="btn">Memoir</a>
               <a href="https://github.com/MohammedAlkindi/" target="_blank" rel="noopener" class="btn">GitHub ↗</a>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRINCIPLES -->
-    <section class="principles">
-      <div class="container">
-        <span class="eyebrow">How I work</span>
-        <h2>Operating principles</h2>
-        <div class="principles__grid">
-          <div class="principle-card" data-reveal>
-            <span class="principle-card__num">01</span>
-            <h3>Silence as architecture</h3>
-            <p>Absence is load-bearing. Stillness carries weight. What is left out defines what remains.</p>
-          </div>
-          <div class="principle-card" data-reveal>
-            <span class="principle-card__num">02</span>
-            <h3>Emotion as protocol</h3>
-            <p>Regulate, serialize, transmit intact. Feeling is not opposed to rigor — it is the signal.</p>
-          </div>
-          <div class="principle-card" data-reveal>
-            <span class="principle-card__num">03</span>
-            <h3>Graceful degradation</h3>
-            <p>When the storm arrives, fall back without failing. Design for failure, not just success.</p>
-          </div>
-          <div class="principle-card" data-reveal>
-            <span class="principle-card__num">04</span>
-            <h3>Graph theory as method</h3>
-            <p>If a path exists, find it. If no path exists, rewire the graph and try again.</p>
-          </div>
-          <div class="principle-card" data-reveal>
-            <span class="principle-card__num">05</span>
-            <h3>Lossless compression</h3>
-            <p>Every observation preserved with perfect fidelity. No data lost in translation.</p>
-          </div>
-          <div class="principle-card" data-reveal>
-            <span class="principle-card__num">06</span>
-            <h3>Pressure as forge</h3>
-            <p>Constraint breeds innovation. Limitation shapes sound. The best work is built under pressure.</p>
           </div>
         </div>
       </div>
