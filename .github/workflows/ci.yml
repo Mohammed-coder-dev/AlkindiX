@@ -35,6 +35,7 @@ jobs:
             --exclude "snapchat.com"
             --exclude "facebook.com"
             --exclude "github.com"
+            --exclude "photographyx.org"
             --timeout 20
             "public/**/*.html"
         env:

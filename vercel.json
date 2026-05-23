@@ -1,13 +1,7 @@
 {
+  "outputDirectory": "public",
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    { "source": "/",           "destination": "/public/index.html" },
-    { "source": "/about",      "destination": "/public/about.html" },
-    { "source": "/memoir",     "destination": "/public/memoir.html" },
-    { "source": "/robots.txt", "destination": "/public/robots.txt" },
-    { "source": "/sitemap.xml","destination": "/public/sitemap.xml" }
-  ],
   "redirects": [
     { "source": "/linkedin",    "destination": "https://www.linkedin.com/in/alkindi-network/", "permanent": false },
     { "source": "/github",      "destination": "https://github.com/MohammedAlkindi/",          "permanent": false },
