@@ -18,3 +18,5 @@ desktop.ini
 
 # Node (if tooling is ever added)
 node_modules/
+
+.vercel
