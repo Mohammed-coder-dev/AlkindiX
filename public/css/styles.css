@@ -448,8 +448,6 @@ a:hover { opacity: 0.75; }
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
-  flex-wrap: wrap;
-  max-width: 500px;
 }
 
 .footer__social-link {
