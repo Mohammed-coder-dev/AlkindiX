@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Projects â€” Alkindi</title>
-  <meta name="description" content="Projects by Alkindi â€” computational tools, ML systems, and research infrastructure."/>
+  <title>Research â€” Alkindi</title>
+  <meta name="description" content="Research by Alkindi â€” machine learning, quantitative modeling, and data-driven analysis."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="canonical" href="https://alkindix.com/projects"/>
+  <link rel="canonical" href="https://alkindix.com/research"/>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
   <link rel="stylesheet" href="/css/styles.css"/>
   <style>
@@ -40,21 +40,16 @@
       margin-bottom: 0;
     }
 
-    /* Projects grid */
     .projects-section { padding: 5rem 0; }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
       gap: 1px;
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
       overflow: hidden;
       margin-top: 2.5rem;
-    }
-
-    @media (max-width: 1024px) {
-      .projects-grid { grid-template-columns: 1fr; }
     }
 
     .project-card {
@@ -137,58 +132,39 @@
       border-color: rgba(255,255,255,0.2);
     }
 
-    /* Recognition strip */
-    .recognition-section {
-      padding: 5rem 0;
+    /* Metrics strip */
+    .project-card__metrics {
+      display: flex;
+      gap: 1.5rem;
+      padding-top: 0.75rem;
       border-top: 1px solid var(--line-subtle);
+      margin-top: auto;
     }
 
-    .recognition-list {
-      margin-top: 2rem;
+    .metric {
       display: flex;
       flex-direction: column;
-      gap: 0;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
+      gap: 0.2rem;
     }
 
-    .recognition-item {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      padding: 1.5rem 2rem;
-      background: var(--bg-elevated);
-      border-bottom: 1px solid var(--line-subtle);
-    }
-
-    .recognition-item:last-child { border-bottom: none; }
-
-    .recognition-item__year {
+    .metric__value {
       font-family: "Space Mono", monospace;
-      font-size: 0.68rem;
-      color: rgba(255,255,255,0.28);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+
+    .metric__label {
+      font-family: "Space Mono", monospace;
+      font-size: 0.6rem;
+      text-transform: uppercase;
       letter-spacing: 0.1em;
-      min-width: 3rem;
-    }
-
-    .recognition-item__body { flex: 1; }
-
-    .recognition-item__body strong {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text);
-      display: block;
-      margin-bottom: 0.2rem;
-    }
-
-    .recognition-item__body span {
-      font-size: 0.85rem;
-      color: var(--muted);
+      color: rgba(255,255,255,0.3);
     }
 
     @media (max-width: 768px) {
-      .recognition-item { gap: 1rem; padding: 1.25rem 1.25rem; }
+      .projects-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -202,8 +178,10 @@
       </button>
       <nav class="nav__links" role="navigation" aria-label="Primary">
         <a href="/about">About</a>
-        <a href="/projects">Projects</a>
+        <a href="/systems">Systems</a>
         <a href="/research">Research</a>
+        <a href="/integers">Integers</a>
+        <a href="/awards">Awards</a>
         <a href="/creative">Creative</a>
       </nav>
     </div>
@@ -212,101 +190,65 @@
   <main>
     <div class="page-hero">
       <div class="container">
-        <span class="page-hero__label">Work</span>
-        <h1>Projects</h1>
+        <span class="page-hero__label">Inquiry</span>
+        <h1>Research</h1>
         <p class="page-hero__lead">
-          Computational tools, ML systems, and research infrastructure built to make
-          complex inquiry more traceable, reproducible, and rigorous.
+          Formal investigations in machine learning, quantitative modeling, and
+          data-driven analysis, oriented toward reproducibility and tractable results.
         </p>
       </div>
     </div>
 
-    <!-- PROJECTS -->
     <section class="projects-section">
       <div class="container">
-        <span class="eyebrow">Selected work</span>
-        <h2>Built systems</h2>
+        <span class="eyebrow">Selected research</span>
+        <h2>Studies &amp; analyses</h2>
         <div class="projects-grid">
 
           <div class="project-card" data-reveal>
             <div class="project-card__meta">
-              <span class="project-card__year">2024 â€“ present</span>
-              <span class="project-card__tag">Research Â· Math</span>
-            </div>
-            <h3>ProofX</h3>
-            <p>
-              Computational infrastructure for large-scale experimentation in discrete
-              mathematics and integer dynamics. Built to make mathematical inquiry reproducible
-              and traceable at scale. MIT E14 engagement informed the research infrastructure.
-            </p>
-            <div class="project-card__links">
-              <a href="https://github.com/MohammedAlkindi/ProofX" target="_blank" rel="noopener">GitHub â†—</a>
-            </div>
-          </div>
-
-          <div class="project-card" data-reveal>
-            <div class="project-card__meta">
               <span class="project-card__year">2025 â€“ 2026</span>
-              <span class="project-card__tag">Automation Â· Analytics</span>
+              <span class="project-card__tag">ML Â· Finance</span>
             </div>
-            <h3>Shell</h3>
+            <h3>DistressX</h3>
             <p>
-              Production reporting automation agent for industrial operations. Handles
-              end-to-end KPI extraction, dashboard generation, and AI-assisted reporting
-              workflows for real-world operational environments.
+              Financial distress prediction modeled across approximately 105,000 firm-year
+              observations. The pipeline combines structured financial signals with temporal
+              sequence models. Gradient-boosted ensembles and LSTM variants used for
+              multi-horizon forecasting on holdout evaluation sets.
             </p>
+            <div class="project-card__metrics">
+              <div class="metric">
+                <span class="metric__value">~0.84</span>
+                <span class="metric__label">ROC-AUC</span>
+              </div>
+              <div class="metric">
+                <span class="metric__value">105k</span>
+                <span class="metric__label">Firm-year obs.</span>
+              </div>
+            </div>
             <div class="project-card__links">
-              <a href="https://github.com/MohammedAlkindi/Shell" target="_blank" rel="noopener">GitHub â†—</a>
+              <a href="https://github.com/MohammedAlkindi/" target="_blank" rel="noopener">GitHub â†—</a>
             </div>
           </div>
 
           <div class="project-card" data-reveal>
             <div class="project-card__meta">
-              <span class="project-card__year">2025</span>
-              <span class="project-card__tag">AI Â· Formal Methods</span>
+              <span class="project-card__year">2024 â€“ 2025</span>
+              <span class="project-card__tag">Clustering Â· Education</span>
             </div>
-            <h3>Germinal</h3>
+            <h3>Student Engagement Analysis</h3>
             <p>
-              AI-powered conjecture exploration engine. Generates candidate mathematical
-              hypotheses via LLM, auto-formalizes them in Lean 4, and logs every
-              experiment in a reproducible, snapshot-based research system.
+              Clustering and PCA applied to longitudinal student engagement records from
+              ProofX infrastructure. Identifies behavioral cohorts and participation
+              trajectory signals from institutional data. Conducted in collaboration with
+              MIT E14 Lab partners; documented as a technical report.
             </p>
             <div class="project-card__links">
-              <a href="https://github.com/MohammedAlkindi/Germinal" target="_blank" rel="noopener">GitHub â†—</a>
+              <a href="https://github.com/MohammedAlkindi/" target="_blank" rel="noopener">GitHub â†—</a>
             </div>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-    <!-- RECOGNITION -->
-    <section class="recognition-section">
-      <div class="container">
-        <span class="eyebrow">Recognition</span>
-        <h2>Awards &amp; milestones</h2>
-        <div class="recognition-list" data-reveal>
-          <div class="recognition-item">
-            <span class="recognition-item__year">2026</span>
-            <div class="recognition-item__body">
-              <strong>MIT Bitcoin Hackathon â€” BridgX</strong>
-              <span>Recognized among 22 of 47 competing projects</span>
-            </div>
-          </div>
-          <div class="recognition-item">
-            <span class="recognition-item__year">2025</span>
-            <div class="recognition-item__body">
-              <strong>Thiel Fellowship Semifinalist</strong>
-              <span>Top ~3% of 3,000+ applicants â€” DistressX research</span>
-            </div>
-          </div>
-          <div class="recognition-item">
-            <span class="recognition-item__year">2025</span>
-            <div class="recognition-item__body">
-              <strong>MIT E14 Lab engagement</strong>
-              <span>ProofX research infrastructure collaboration</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>

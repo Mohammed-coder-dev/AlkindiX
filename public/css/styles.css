@@ -59,7 +59,7 @@ body::before {
    TYPOGRAPHY
 ========================================================= */
 h1, h2, h3 { font-weight: 600; letter-spacing: -0.02em; color: var(--accent); }
-h1 { font-size: clamp(2.4rem, 6vw, 3.6rem); margin-bottom: 1rem; }
+h1 { font-size: clamp(2.1rem, 5.5vw, 3.2rem); margin-bottom: 1rem; }
 h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 1rem; }
 h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
 p { font-size: 1rem; opacity: 0.85; max-width: 720px; margin-bottom: 1.3rem; }
@@ -351,26 +351,16 @@ a:hover { opacity: 0.75; }
   border-top: 1px solid var(--line);
 }
 
-.footer__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.footer__links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.footer__links a {
+.footer__copy {
   font-size: 0.85rem;
-  opacity: 0.55;
-  transition: opacity 0.2s ease;
+  color: var(--muted);
 }
 
-.footer__links a:hover { opacity: 1; }
+.footer__icons {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
 
 .to-top {
   width: 36px;
@@ -441,8 +431,8 @@ a:hover { opacity: 0.75; }
   .section { padding: 4rem 0; }
   .card { padding: 1.75rem; }
 
-  .footer__inner { flex-direction: column; text-align: center; }
-  .footer__links { justify-content: center; }
+  .footer__social { flex-direction: column; align-items: center; }
+  .footer__icons { justify-content: center; }
 }
 
 @media (max-width: 480px) {
@@ -451,37 +441,28 @@ a:hover { opacity: 0.75; }
 }
 
 /* =========================================================
-   SOCIAL BAR
+   FOOTER SOCIAL
 ========================================================= */
-.social-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9998;
-  background: rgba(11, 11, 11, 0.92);
-  backdrop-filter: blur(14px);
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+.footer__social {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 1.75rem;
-  padding: 0.65rem 0;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  max-width: 500px;
 }
 
-.social-bar__link {
+.footer__social-link {
   display: flex;
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.5);
-  opacity: 1;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.social-bar__link:hover {
+.footer__social-link:hover {
   color: rgba(255, 255, 255, 0.95);
   transform: translateY(-2px);
-  opacity: 1;
 }
 
 /* =========================================================
