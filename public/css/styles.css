@@ -351,6 +351,14 @@ a:hover { opacity: 0.75; }
   border-top: 1px solid var(--line);
 }
 
+.footer__social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .footer__copy {
   font-size: 0.85rem;
   color: var(--muted);
@@ -359,7 +367,7 @@ a:hover { opacity: 0.75; }
 .footer__icons {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  gap: 1.25rem;
 }
 
 .to-top {
@@ -443,13 +451,6 @@ a:hover { opacity: 0.75; }
 /* =========================================================
    FOOTER SOCIAL
 ========================================================= */
-.footer__social {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.5rem;
-}
-
 .footer__social-link {
   display: flex;
   align-items: center;
