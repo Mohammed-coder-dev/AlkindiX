@@ -2,31 +2,33 @@
 // AlkindiX — Shared App Logic
 // =========================================================
 
-// Nav toggle
+// Nav overlay
 const navToggle = document.querySelector('.nav__toggle');
-const navLinks = document.querySelector('.nav__links');
+const navOverlay = document.getElementById('navOverlay');
 
-if (navToggle && navLinks) {
+function closeOverlay() {
+  navOverlay?.classList.remove('active');
+  navToggle?.classList.remove('active');
+  navToggle?.setAttribute('aria-expanded', 'false');
+  navOverlay?.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+if (navToggle && navOverlay) {
   navToggle.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('active');
+    const open = navOverlay.classList.toggle('active');
     navToggle.classList.toggle('active');
     navToggle.setAttribute('aria-expanded', open);
+    navOverlay.setAttribute('aria-hidden', !open);
+    document.body.style.overflow = open ? 'hidden' : '';
   });
 
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      navToggle.classList.remove('active');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
+  navOverlay.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeOverlay);
   });
 
-  document.addEventListener('click', e => {
-    if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
-      navLinks.classList.remove('active');
-      navToggle.classList.remove('active');
-      navToggle.setAttribute('aria-expanded', 'false');
-    }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeOverlay();
   });
 }
 
@@ -70,7 +72,7 @@ window.addEventListener('scroll', () => {
 
 // Active nav link based on current path
 const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
-document.querySelectorAll('.nav__links a, .nav__dropdown-menu a').forEach(a => {
+document.querySelectorAll('.nav__menu a, .nav__links a, .nav__dropdown-menu a').forEach(a => {
   const href = a.getAttribute('href');
   const hrefPath = href ? new URL(href, window.location.href).pathname.replace(/\/$/, '') : '';
   if (hrefPath === currentPath) {

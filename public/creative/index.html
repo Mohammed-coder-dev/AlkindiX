@@ -125,6 +125,15 @@
     </div>
   </header>
 
+  <div class="nav__overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true">
+    <nav class="nav__menu" aria-label="Overlay navigation">
+      <a href="/about">About</a>
+      <a href="/projects">Projects</a>
+      <a href="/research">Research</a>
+      <a href="/creative">Creative</a>
+    </nav>
+  </div>
+
   <main>
     <div class="page-hero">
       <div class="container">
@@ -166,8 +175,13 @@
   </main>
 
   <footer class="footer" role="contentinfo">
-    <div class="container footer__social" aria-label="Footer">
-      <span class="footer__copy">© 2026 Alkindi</span>
+    <div class="container footer__inner">
+      <span class="muted" style="font-size:0.85rem;">© 2026 Alkindi</span>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="/memoir">Memoir</a>
+        <a href="https://github.com/MohammedAlkindi/" target="_blank" rel="noopener">GitHub</a>
+      </nav>
       <a class="to-top" href="#" aria-label="Back to top">↑</a>
     </div>
   </footer>
