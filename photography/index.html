@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PhotographyX — Visual Systems Studio</title>
+  <meta name="description" content="Observing structure hidden in plain sight. Photography exploring geometry, light, and natural order."/>
+  
+  <!-- SEO & Social -->
+  <meta property="og:title" content="PhotographyX — Visual Systems Studio">
+  <meta property="og:description" content="Documentary photography exploring geometry, light, and the structural language of our world.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PhotographyX — Visual Systems Studio">
+  <meta name="twitter:description" content="Documentary photography exploring geometry, light, and the structural language of our world.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="favicon.ico"/>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- HEADER -->
+  <header class="nav" role="banner">
+    <div class="container nav__inner">
+      <a class="brand" href="./" aria-label="PhotographyX Home">
+        <span class="brand__mark">◆</span>
+        <span class="brand__text">PhotographyX</span>
+      </a>
+
+      <button class="nav__toggle" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav__links" role="navigation" aria-label="Main navigation">
+        <a href="#featured">Featured</a>
+        <a href="#horizontal">Collections</a>
+        <a href="#vertical">Portraits</a>
+        <a href="#journal">Journal</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero__ambient-orb"></div>
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <p class="eyebrow" data-fade-in>Visual systems studio</p>
+        <h1 class="hero__title" data-fade-in>
+          <span class="title-line">Visual</span>
+          <span class="title-line">Systems</span>
+        </h1>
+        <p class="hero__subtitle" data-fade-in>
+          Observing structure hidden in plain sight. From remote villages to terraced hillsides —
+          exploring natural order, computational beauty, and human geometry.
+        </p>
+        <div class="hero__actions" data-fade-in>
+          <a class="btn btn--primary" href="#horizontal">
+            View collections
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10m0 0L8 3m5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </a>
+          <a class="btn btn--ghost" href="#contact">Commission a project</a>
+        </div>
+        <div class="hero__stats" data-fade-in>
+          <div>
+            <span class="stat__value" data-count="12">0</span><span class="stat__plus">+</span>
+            <span class="stat__label">Global studies</span>
+          </div>
+          <div>
+            <span class="stat__value" data-count="38">0</span>
+            <span class="stat__label">Editorial features</span>
+          </div>
+          <div>
+            <span class="stat__value" data-count="5">0</span>
+            <span class="stat__label">Museum commissions</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__panel" data-fade-in>
+        <div class="hero__panel-card">
+          <p class="panel__eyebrow">Featured series</p>
+          <h3>Terraced Order</h3>
+          <p class="muted">
+            A study of altitude, agriculture, and human geometry across three continents.
+          </p>
+          <div class="panel__meta">
+            <span>2025</span>
+            <span>48 frames</span>
+            <span>Medium format</span>
+          </div>
+        </div>
+        <div class="hero__panel-grid">
+          <div class="panel__tile panel__tile--one"></div>
+          <div class="panel__tile panel__tile--two"></div>
+          <div class="panel__tile panel__tile--three"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <!-- FEATURED PROJECTS -->
+    <section id="featured" class="section featured-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2>Featured Projects</h2>
+          </div>
+          <p class="section-lead">
+            World-class storytelling for cultural institutions, design studios, and research labs.
+          </p>
+        </div>
+        <div class="featured-grid">
+          <article class="featured-card" data-scroll-reveal>
+            <div class="featured-media featured-media--a"></div>
+            <div class="featured-body">
+              <h3>Atlas of Light</h3>
+              <p class="muted">A visual survey of solar architecture from Morocco to Japan.</p>
+              <span class="tag">Exhibition</span>
+            </div>
+          </article>
+          <article class="featured-card" data-scroll-reveal>
+            <div class="featured-media featured-media--b"></div>
+            <div class="featured-body">
+              <h3>Human Lattice</h3>
+              <p class="muted">Portraits that trace symmetry in urban design and ritual.</p>
+              <span class="tag">Editorial</span>
+            </div>
+          </article>
+          <article class="featured-card" data-scroll-reveal>
+            <div class="featured-media featured-media--c"></div>
+            <div class="featured-body">
+              <h3>Quiet Geometries</h3>
+              <p class="muted">Architectural studies in negative space, light, and silence.</p>
+              <span class="tag">Commission</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HORIZONTAL GALLERY -->
+    <section id="horizontal" class="gallery-section">
+      <div class="container">
+        <h2 class="section-title">Horizontal Studies</h2>
+        <p class="section-subtitle">Landscape narratives built from fieldwork, aerial geometry, and light.</p>
+        <div class="gallery horizontal-gallery" role="region" aria-label="Horizontal photography gallery">
+          <!-- JS injects horizontal images -->
+        </div>
+      </div>
+    </section>
+
+    <!-- VERTICAL GALLERY -->
+    <section id="vertical" class="gallery-section">
+      <div class="container">
+        <h2 class="section-title">Vertical Studies</h2>
+        <p class="section-subtitle">Portrait sequences exploring the rhythm of human form and space.</p>
+        <div class="gallery vertical-gallery" role="region" aria-label="Vertical photography gallery">
+          <!-- JS injects vertical images -->
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNAL -->
+    <section id="journal" class="section journal-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Notes from the field</p>
+            <h2>Journal</h2>
+          </div>
+          <p class="section-lead">Insights on process, location scouting, and the geometry of light.</p>
+        </div>
+        <div class="journal-grid">
+          <article class="journal-card" data-scroll-reveal>
+            <p class="journal-date">May 2025</p>
+            <h3>Mapping Silence in High Altitudes</h3>
+            <p class="muted">Creating a visual system for remote villages through drone studies.</p>
+          </article>
+          <article class="journal-card" data-scroll-reveal>
+            <p class="journal-date">April 2025</p>
+            <h3>Human Scale, Monumental Light</h3>
+            <p class="muted">Why north-facing studios become the most faithful collaborators.</p>
+          </article>
+          <article class="journal-card" data-scroll-reveal>
+            <p class="journal-date">March 2025</p>
+            <h3>Designing a 42-Frame Narrative</h3>
+            <p class="muted">Balancing composition with story across editorial commissions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section section--about">
+      <div class="container">
+        <div class="about-card" data-scroll-reveal>
+          <p class="eyebrow">Studio profile</p>
+          <h2>About PhotographyX</h2>
+          <p>
+            An exploration into the structural language of our world — light, geometry,
+            and the quiet logic behind what we overlook. Each frame captures the intersection
+            of human design and natural order.
+          </p>
+          <p class="muted">
+            Part of the Alkindi network of projects exploring systems, computation, and visual thinking.
+          </p>
+          <div class="about-grid">
+            <div>
+              <h3>Practice</h3>
+              <p class="muted">Documentary, editorial, and institutional commissions.</p>
+            </div>
+            <div>
+              <h3>Recognition</h3>
+              <p class="muted">ICP, D&AD, and Aperture shortlist selections.</p>
+            </div>
+            <div>
+              <h3>Availability</h3>
+              <p class="muted">Now booking for 2025 residencies and exhibitions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section">
+      <div class="container contact-card" data-scroll-reveal>
+        <div>
+          <p class="eyebrow">Collaborate</p>
+          <h2>Commission a world-class visual story</h2>
+          <p class="section-lead">
+            Share your brief, location, and timing. We respond within 48 hours with a tailored proposal.
+          </p>
+        </div>
+        <div class="contact-details">
+          <div>
+            <p class="muted">Email</p>
+            <a href="mailto:studio@photographyx.com">studio@photographyx.com</a>
+          </div>
+          <div>
+            <p class="muted">Based in</p>
+            <p>New York · Lisbon · Kyoto</p>
+          </div>
+          <div>
+            <p class="muted">Representation</p>
+            <p>Available worldwide</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox__close" id="closeBtn" aria-label="Close image viewer">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M18 6L6 18M6 6l12 12" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <button class="lightbox__prev" id="prevBtn" aria-label="Previous image">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M15 18l-6-6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="lightbox__next" id="nextBtn" aria-label="Next image">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="lightbox__content">
+      <img id="lightbox-img" src="" alt="" />
+      <p id="lightbox-caption"></p>
+      <div class="lightbox__counter" id="lightbox-counter"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <span class="muted">© 2025 PhotographyX</span>
+      <nav class="footer__links" aria-label="Related projects">
+        <a href="https://alkindix.com" target="_blank" rel="noopener noreferrer">
+          Alkindi
+          <svg class="external-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M10.5 1.5h-9m9 0v9m0-9L1.5 10.5" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </a>
+        <a href="https://proofx.org" target="_blank" rel="noopener noreferrer">
+          ProofX
+          <svg class="external-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M10.5 1.5h-9m9 0v9m0-9L1.5 10.5" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </a>
+        <a href="https://architectofsilence.com" target="_blank" rel="noopener noreferrer">
+          MemoirX
+          <svg class="external-icon" width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M10.5 1.5h-9m9 0v9m0-9L1.5 10.5" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+        </a>
+      </nav>
+      <a class="to-top" href="#hero" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 16V4m0 0L4 10m6-6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
