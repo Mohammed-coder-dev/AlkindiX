@@ -133,45 +133,6 @@
       line-height: 1.5;
     }
 
-    /* Stats strip */
-    .stats-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin: 3.5rem 0 0;
-    }
-
-    .stat-item {
-      padding: 1.75rem 2rem;
-      border-right: 1px solid var(--line);
-      background: var(--bg-elevated);
-      transition: background 0.2s;
-    }
-
-    .stat-item:last-child { border-right: none; }
-    .stat-item:hover { background: #161616; }
-
-    .stat-item__value {
-      font-size: 1.85rem;
-      font-weight: 600;
-      color: var(--accent);
-      letter-spacing: -0.04em;
-      display: block;
-      margin-bottom: 0.4rem;
-      line-height: 1;
-    }
-
-    .stat-item__label {
-      font-family: "Space Mono", monospace;
-      font-size: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.28);
-      line-height: 1.5;
-    }
-
     /* Bio grid */
     .about-grid {
       display: grid;
@@ -400,14 +361,7 @@
       .page-hero__grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .profile-card { position: static; }
-      .stats-strip { grid-template-columns: repeat(2, 1fr); }
       .resume-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 480px) {
-      .stats-strip { grid-template-columns: 1fr; }
-      .stat-item { border-right: none; border-bottom: 1px solid var(--line); }
-      .stat-item:last-child { border-bottom: none; }
     }
   </style>
 </head>
@@ -481,28 +435,6 @@
       </div>
     </div>
 
-    <!-- STATS STRIP -->
-    <div class="container">
-      <div class="stats-strip" data-reveal>
-        <div class="stat-item">
-          <span class="stat-item__value">25</span>
-          <span class="stat-item__label">Public GitHub repositories</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-item__value">3</span>
-          <span class="stat-item__label">Current roles and initiatives</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-item__value">2026</span>
-          <span class="stat-item__label">MIT Bitcoin Hackathon recognition</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-item__value">UCSD</span>
-          <span class="stat-item__label">Computer science</span>
-        </div>
-      </div>
-    </div>
-
     <!-- BIO -->
     <section>
       <div class="container">
@@ -515,7 +447,7 @@
                 <div class="profile-card__avatar">MA</div>
                 <div>
                   <div class="profile-card__name">Mohammed Alkindi</div>
-                  <div class="profile-card__role">CS @ UC San Diego</div>
+                  <div class="profile-card__role">Systems &amp; research tools</div>
                 </div>
               </div>
               <div>
@@ -524,20 +456,8 @@
                   <span class="profile-field__value">United States</span>
                 </div>
                 <div class="profile-field">
-                  <span class="profile-field__label">Focus</span>
-                  <span class="profile-field__value">Systems - Computation - Mathematics - ML</span>
-                </div>
-                <div class="profile-field">
-                  <span class="profile-field__label">Currently</span>
-                  <span class="profile-field__value">Data Analytics Intern @ Shell<br/>Computer Science @ UC San Diego</span>
-                </div>
-                <div class="profile-field">
-                  <span class="profile-field__label">Recognition</span>
-                  <span class="profile-field__value">MIT Bitcoin Hackathon 2026<br/>Thiel Fellowship Semifinalist</span>
-                </div>
-                <div class="profile-field">
-                  <span class="profile-field__label">Availability</span>
-                  <span class="profile-field__value">Open to research &amp; collaboration</span>
+                  <span class="profile-field__label">Work</span>
+                  <span class="profile-field__value">Systems, computation, mathematics, and machine learning</span>
                 </div>
                 <div class="profile-field">
                   <span class="profile-field__label">Contact</span>
@@ -553,25 +473,20 @@
           <div class="about-body" data-reveal>
             <h3>Background</h3>
             <p>
-              I build computational systems for research, analytics, and structured reasoning.
-              My work sits at the intersection of mathematics, machine learning, and reproducible
-              infrastructure, with a focus on tools that make complex work easier to inspect,
-              test, and improve.
+              I build computational systems for research, analytics, and structured reasoning:
+              tools that make complex work easier to inspect, test, and improve.
             </p>
             <p>
-              I am currently a Data Analytics Intern at Shell and a computer science student at
-              UC San Diego. I also co-founded the Oman Space Initiative, an early-stage effort
-              connecting Omani students with practical paths into the space and aerospace sector.
+              My current work spans industrial reporting, reproducible mathematical
+              experimentation, and student-facing infrastructure for clearer academic pathways.
             </p>
 
-            <h3>Research focus</h3>
+            <h3>Working areas</h3>
             <div class="research-tags">
-              <span class="research-tag">Mathematical structure</span>
-              <span class="research-tag">Interpretable ML</span>
-              <span class="research-tag">Computational number theory</span>
+              <span class="research-tag">Research infrastructure</span>
+              <span class="research-tag">Computational mathematics</span>
+              <span class="research-tag">Interpretable machine learning</span>
               <span class="research-tag">Financial risk modeling</span>
-              <span class="research-tag">Discrete mathematics</span>
-              <span class="research-tag">Reproducible infrastructure</span>
             </div>
 
             <div class="about-body__actions">
@@ -586,7 +501,7 @@
 
     <section class="resume-section">
       <div class="container">
-        <span class="eyebrow">Resume</span>
+        <span class="eyebrow">Credentials</span>
         <h2>Experience &amp; education</h2>
         <div class="resume-grid" data-reveal>
           <div class="resume-card">
