@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="canonical" href="https://alkindix.com/about"/>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
-  <link rel="stylesheet" href="/css/styles.css?v=20260703-visuals"/>
+  <link rel="stylesheet" href="/css/styles.css?v=20260703-contextual"/>
   <style>
     /* Hero */
     .page-hero {
@@ -48,8 +48,9 @@
       display: grid;
       grid-template-columns: 1.2fr 1fr;
       gap: 5rem;
-      align-items: end;
+      align-items: center;
       padding-top: 0.5rem;
+      min-height: 360px;
     }
 
     /* Status badge */
@@ -100,37 +101,6 @@
     @keyframes status-pulse {
       0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74,222,128,0.45); }
       60%       { opacity: 0.7; box-shadow: 0 0 0 5px rgba(74,222,128,0); }
-    }
-
-    /* Hero timeline */
-    .page-hero__timeline {
-      display: flex;
-      flex-direction: column;
-      padding-bottom: 0.1rem;
-    }
-
-    .timeline-entry {
-      display: grid;
-      grid-template-columns: 3.2rem 1fr;
-      gap: 1rem;
-      padding: 0.85rem 0;
-      border-top: 1px solid var(--line-subtle);
-    }
-
-    .timeline-entry:last-child { border-bottom: 1px solid var(--line-subtle); }
-
-    .timeline-entry__year {
-      font-family: "Space Mono", monospace;
-      font-size: 0.62rem;
-      color: rgba(255,255,255,0.22);
-      letter-spacing: 0.06em;
-      padding-top: 0.1rem;
-    }
-
-    .timeline-entry__text {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.5;
     }
 
     /* Bio grid */
@@ -358,7 +328,7 @@
 
     /* Responsive */
     @media (max-width: 900px) {
-      .page-hero__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .page-hero__grid { grid-template-columns: 1fr; gap: 2.5rem; min-height: auto; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .profile-card { position: static; }
       .resume-grid { grid-template-columns: 1fr; }
@@ -411,24 +381,6 @@
                 Open to research &amp; collaboration
               </span>
               <a class="resume-link" href="/resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
-            </div>
-          </div>
-          <div class="page-hero__timeline" aria-label="Current status">
-            <div class="timeline-entry">
-              <span class="timeline-entry__year">Now</span>
-              <span class="timeline-entry__text">Data Analytics Intern @ Shell</span>
-            </div>
-            <div class="timeline-entry">
-              <span class="timeline-entry__year">Fall</span>
-              <span class="timeline-entry__text">Computer Science @ UC San Diego</span>
-            </div>
-            <div class="timeline-entry">
-              <span class="timeline-entry__year">2026</span>
-              <span class="timeline-entry__text">Co-Founder @ Oman Space Initiative</span>
-            </div>
-            <div class="timeline-entry">
-              <span class="timeline-entry__year">2026</span>
-              <span class="timeline-entry__text">Thiel Fellowship Semifinalist</span>
             </div>
           </div>
         </div>
@@ -585,7 +537,7 @@
     </div>
   </footer>
 
-<script src="/js/app.js?v=20260703-visuals"></script>
+<script src="/js/app.js?v=20260703-contextual"></script>
   <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
