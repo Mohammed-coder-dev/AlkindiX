@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>About — Alkindi</title>
-  <meta name="description" content="About Alkindi — systems, computation, and thoughtful work."/>
+  <meta name="description" content="About Mohammed Alkindi - UC San Diego computer science, Shell data analytics, and research tooling."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
@@ -300,12 +300,85 @@
       flex-wrap: wrap;
     }
 
+    .resume-section {
+      padding: 0 0 6rem;
+    }
+
+    .resume-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-top: 2.5rem;
+    }
+
+    .resume-card {
+      background: var(--bg-elevated);
+      padding: 2rem;
+    }
+
+    .resume-card h3 {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.34);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-family: "Space Mono", monospace;
+      margin-bottom: 1.5rem;
+    }
+
+    .resume-item {
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--line-subtle);
+    }
+
+    .resume-item:first-of-type { padding-top: 0; border-top: none; }
+    .resume-item:last-child { padding-bottom: 0; }
+
+    .resume-item__header {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: baseline;
+      margin-bottom: 0.45rem;
+    }
+
+    .resume-item__title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .resume-item__date {
+      font-family: "Space Mono", monospace;
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.3);
+      white-space: nowrap;
+    }
+
+    .resume-item__org {
+      font-size: 0.86rem;
+      color: var(--text);
+      margin-bottom: 0.45rem;
+    }
+
+    .resume-item p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+      max-width: 100%;
+    }
+
     /* Responsive */
     @media (max-width: 900px) {
       .page-hero__grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .profile-card { position: static; }
       .stats-strip { grid-template-columns: repeat(2, 1fr); }
+      .resume-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 480px) {
@@ -348,13 +421,13 @@
     <!-- HERO -->
     <div class="page-hero">
       <div class="container">
-        <span class="page-hero__label">Studio profile</span>
+        <span class="page-hero__label">Profile</span>
         <div class="page-hero__grid">
           <div>
             <h1>About</h1>
             <p class="page-hero__lead">
-              Systems engineer and researcher working at the intersection of mathematics,
-              machine learning, and computational infrastructure.
+              Computer science student at UC San Diego, data analytics intern at Shell,
+              and builder of research tools, data systems, and computational infrastructure.
             </p>
             <span class="status-badge">
               <span class="status-dot"></span>
@@ -368,11 +441,11 @@
             </div>
             <div class="timeline-entry">
               <span class="timeline-entry__year">Fall</span>
-              <span class="timeline-entry__text">Incoming CS @ Purdue</span>
+              <span class="timeline-entry__text">Computer Science @ UC San Diego</span>
             </div>
             <div class="timeline-entry">
               <span class="timeline-entry__year">2026</span>
-              <span class="timeline-entry__text">MIT Bitcoin Hackathon</span>
+              <span class="timeline-entry__text">Co-Founder @ Oman Space Initiative</span>
             </div>
             <div class="timeline-entry">
               <span class="timeline-entry__year">2026</span>
@@ -387,20 +460,20 @@
     <div class="container">
       <div class="stats-strip" data-reveal>
         <div class="stat-item">
-          <span class="stat-item__value">105K+</span>
-          <span class="stat-item__label">Firm-year observations analyzed</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-item__value">60+</span>
-          <span class="stat-item__label">Financial ratios modeled</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-item__value">0.90</span>
-          <span class="stat-item__label">Peak ROC-AUC achieved</span>
+          <span class="stat-item__value">25</span>
+          <span class="stat-item__label">Public GitHub repositories</span>
         </div>
         <div class="stat-item">
           <span class="stat-item__value">3</span>
-          <span class="stat-item__label">Research projects completed</span>
+          <span class="stat-item__label">Current roles and initiatives</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__value">2026</span>
+          <span class="stat-item__label">MIT Bitcoin Hackathon recognition</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-item__value">UCSD</span>
+          <span class="stat-item__label">Computer science</span>
         </div>
       </div>
     </div>
@@ -417,7 +490,7 @@
                 <div class="profile-card__avatar">MA</div>
                 <div>
                   <div class="profile-card__name">Mohammed Alkindi</div>
-                  <div class="profile-card__role">Researcher &amp; Engineer</div>
+                  <div class="profile-card__role">CS @ UC San Diego</div>
                 </div>
               </div>
               <div>
@@ -431,7 +504,7 @@
                 </div>
                 <div class="profile-field">
                   <span class="profile-field__label">Currently</span>
-                  <span class="profile-field__value">Data Analytics Intern @ Shell<br/>Incoming CS @ Purdue</span>
+                  <span class="profile-field__value">Data Analytics Intern @ Shell<br/>Computer Science @ UC San Diego</span>
                 </div>
                 <div class="profile-field">
                   <span class="profile-field__label">Recognition</span>
@@ -455,15 +528,15 @@
           <div class="about-body" data-reveal>
             <h3>Background</h3>
             <p>
-              I build and study systems where ideas become structure and structure becomes clarity.
+              I build computational systems for research, analytics, and structured reasoning.
               My work sits at the intersection of mathematics, machine learning, and reproducible
-              research infrastructure approached consistently as a systems question: inputs,
-              constraints, feedback loops.
+              infrastructure, with a focus on tools that make complex work easier to inspect,
+              test, and improve.
             </p>
             <p>
-              Whether designing interpretable ML pipelines for financial risk stratification or
-              building computational tooling for open mathematical problems, the underlying method
-              is the same: observe carefully, model rigorously, iterate.
+              I am currently a Data Analytics Intern at Shell and a computer science student at
+              UC San Diego. I also co-founded the Oman Space Initiative, an early-stage effort
+              connecting Omani students with practical paths into the space and aerospace sector.
             </p>
 
             <h3>Research focus</h3>
@@ -482,6 +555,61 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <section class="resume-section">
+      <div class="container">
+        <span class="eyebrow">Resume</span>
+        <h2>Experience &amp; education</h2>
+        <div class="resume-grid" data-reveal>
+          <div class="resume-card">
+            <h3>Experience</h3>
+            <div class="resume-item">
+              <div class="resume-item__header">
+                <span class="resume-item__title">Data Analytics Intern</span>
+                <span class="resume-item__date">May 2026 - Present</span>
+              </div>
+              <div class="resume-item__org">Shell</div>
+              <p>Developing automated data pipelines for production reporting, KPI extraction, dashboard generation, and structured operational analysis.</p>
+            </div>
+            <div class="resume-item">
+              <div class="resume-item__header">
+                <span class="resume-item__title">Co-Founder</span>
+                <span class="resume-item__date">Jun 2026 - Present</span>
+              </div>
+              <div class="resume-item__org">Oman Space Initiative</div>
+              <p>Building a practical student initiative that connects Omani students with organizations, founders, and opportunities in space and aerospace.</p>
+            </div>
+            <div class="resume-item">
+              <div class="resume-item__header">
+                <span class="resume-item__title">Founder</span>
+                <span class="resume-item__date">May 2025 - Apr 2026</span>
+              </div>
+              <div class="resume-item__org">ProofX</div>
+              <p>Built open-source tooling for reproducible mathematical experimentation, sequence analysis, and research workflows in discrete mathematics.</p>
+            </div>
+          </div>
+          <div class="resume-card">
+            <h3>Education</h3>
+            <div class="resume-item">
+              <div class="resume-item__header">
+                <span class="resume-item__title">Bachelor of Science, Computer Science</span>
+                <span class="resume-item__date">Incoming</span>
+              </div>
+              <div class="resume-item__org">UC San Diego</div>
+              <p>Undergraduate study focused on computer science, systems, mathematics, and research-oriented software engineering.</p>
+            </div>
+            <div class="resume-item">
+              <div class="resume-item__header">
+                <span class="resume-item__title">Non-Degree Program</span>
+                <span class="resume-item__date">Sep 2025 - Apr 2026</span>
+              </div>
+              <div class="resume-item__org">University of Pennsylvania</div>
+              <p>Participated in student organizations including Chess Club at Penn, Omani Students Association, Penn Undergraduate Economics Society, Claude Builder Club, and Penn Quantum Computing Club.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

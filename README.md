@@ -1,10 +1,10 @@
-# Alkindi — alkindix.com
+# Alkindi - alkindix.com
 
 [![CI](https://github.com/MohammedAlkindi/AlkindiX/actions/workflows/ci.yml/badge.svg)](https://github.com/MohammedAlkindi/AlkindiX/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Live](https://img.shields.io/badge/live-alkindix.com-brightgreen)](https://alkindix.com)
 
-Personal HQ — systems, computation, and thoughtful work.
+Personal portfolio for systems, computation, research tooling, and selected creative work.
 
 ## Pages
 
