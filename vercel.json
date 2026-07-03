@@ -6,6 +6,8 @@
     { "source": "/linkedin",    "destination": "https://www.linkedin.com/in/alkindi-network/", "permanent": false },
     { "source": "/github",      "destination": "https://github.com/MohammedAlkindi/",          "permanent": false },
     { "source": "/memoir",      "destination": "/creative/memoir",                              "permanent": true  },
+    { "source": "/systems",     "destination": "/projects",                                     "permanent": true  },
+    { "source": "/systems.html","destination": "/projects",                                     "permanent": true  },
 
     { "source": "/(.*)", "has": [{ "type": "host", "value": "architectofsilence.com" }],     "destination": "https://alkindix.com/creative/memoir", "permanent": true },
     { "source": "/(.*)", "has": [{ "type": "host", "value": "www.architectofsilence.com" }], "destination": "https://alkindix.com/creative/memoir", "permanent": true }
