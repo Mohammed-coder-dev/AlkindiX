@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
-  <link rel="stylesheet" href="/css/styles.css?v=20260703-nav-footer"/>
+  <link rel="stylesheet" href="/css/styles.css?v=20260703-mobile"/>
   <style>
     body {
       padding-top: 0;
@@ -70,8 +70,38 @@
     }
 
     @media (max-width: 640px) {
-      .hero__h1 { font-size: 2.6rem; }
-      .hero__sub { font-size: 1rem; }
+      .hero {
+        align-items: flex-start;
+        justify-content: center;
+        padding: calc(60px + 4.25rem) 1.25rem 3.5rem;
+        text-align: left;
+      }
+
+      .hero__wrap {
+        max-width: 340px;
+        margin: 0 auto;
+      }
+
+      .hero__h1 {
+        font-size: 2.45rem;
+        line-height: 1.05;
+        margin-bottom: 1.25rem;
+      }
+
+      .hero__sub {
+        font-size: 0.98rem;
+        line-height: 1.72;
+        max-width: 100%;
+        margin: 0 0 2rem;
+      }
+
+      .hero__actions {
+        justify-content: flex-start;
+      }
+
+      .hero__actions .btn {
+        padding: 0.72rem 1.3rem;
+      }
     }
   </style>
 </head>
@@ -148,7 +178,7 @@
     </div>
   </footer>
 
-<script src="/js/app.js"></script>
+<script src="/js/app.js?v=20260703-mobile"></script>
   <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
