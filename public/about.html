@@ -57,12 +57,35 @@
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
-      margin-top: 1.75rem;
       font-family: "Space Mono", monospace;
       font-size: 0.65rem;
       text-transform: uppercase;
       letter-spacing: 0.13em;
       color: rgba(255,255,255,0.45);
+    }
+
+    .page-hero__actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+
+    .resume-link {
+      font-family: "Space Mono", monospace;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.62);
+      border-bottom: 1px solid rgba(255,255,255,0.24);
+      padding-bottom: 0.1rem;
+    }
+
+    .resume-link:hover {
+      color: var(--accent);
+      border-bottom-color: rgba(255,255,255,0.55);
+      opacity: 1;
     }
 
     .status-dot {
@@ -428,10 +451,13 @@
               Computer science student at UC San Diego, data analytics intern at Shell,
               and builder of research tools, data systems, and computational infrastructure.
             </p>
-            <span class="status-badge">
-              <span class="status-dot"></span>
-              Open to research &amp; collaboration
-            </span>
+            <div class="page-hero__actions">
+              <span class="status-badge">
+                <span class="status-dot"></span>
+                Open to research &amp; collaboration
+              </span>
+              <a class="resume-link" href="/resume.pdf" target="_blank" rel="noopener">Resume PDF</a>
+            </div>
           </div>
           <div class="page-hero__timeline" aria-label="Current status">
             <div class="timeline-entry">
