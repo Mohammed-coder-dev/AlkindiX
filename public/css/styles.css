@@ -56,6 +56,157 @@ body::before {
 }
 
 /* =========================================================
+   PAGE HERO VISUALS
+========================================================= */
+.page-hero--visual {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.page-hero--visual .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-visual {
+  position: absolute;
+  top: 50%;
+  right: max(5vw, calc((100vw - 1100px) / 2));
+  width: min(38vw, 500px);
+  aspect-ratio: 1.25;
+  transform: translateY(-50%);
+  opacity: 0.58;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-visual::before,
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.hero-visual--research {
+  background:
+    radial-gradient(circle at 22% 34%, rgba(255,255,255,0.42) 0 2px, transparent 3px),
+    radial-gradient(circle at 47% 63%, rgba(255,255,255,0.36) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 27%, rgba(255,255,255,0.3) 0 2px, transparent 3px),
+    radial-gradient(circle at 84% 72%, rgba(255,255,255,0.24) 0 2px, transparent 3px);
+}
+
+.hero-visual--research::before {
+  background:
+    linear-gradient(32deg, transparent 20%, rgba(255,255,255,0.17) 20.3%, transparent 20.8% 42%, rgba(255,255,255,0.12) 42.4%, transparent 42.9%),
+    linear-gradient(146deg, transparent 24%, rgba(255,255,255,0.1) 24.3%, transparent 24.8% 64%, rgba(255,255,255,0.14) 64.4%, transparent 65%);
+}
+
+.hero-visual--research::after {
+  border: 1px solid rgba(255,255,255,0.1);
+  background:
+    linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(circle at 55% 50%, #000 0 48%, transparent 76%);
+}
+
+.hero-visual--projects {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.hero-visual--projects::before {
+  inset: 10%;
+  border: 1px solid rgba(255,255,255,0.11);
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.14), transparent 34%),
+    linear-gradient(rgba(255,255,255,0.05), transparent);
+  box-shadow:
+    78px 0 0 -1px rgba(255,255,255,0.08),
+    156px 42px 0 -1px rgba(255,255,255,0.12),
+    234px -18px 0 -1px rgba(255,255,255,0.07),
+    312px 30px 0 -1px rgba(255,255,255,0.1);
+}
+
+.hero-visual--projects::after {
+  inset: 23% 5% 18% 18%;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transform: skewY(-8deg);
+}
+
+.hero-visual--systems {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px;
+  background:
+    radial-gradient(circle at 18% 28%, rgba(255,255,255,0.34) 0 3px, transparent 4px),
+    radial-gradient(circle at 44% 55%, rgba(255,255,255,0.24) 0 3px, transparent 4px),
+    radial-gradient(circle at 75% 36%, rgba(255,255,255,0.28) 0 3px, transparent 4px),
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: auto, auto, auto, 48px 48px, 48px 48px;
+}
+
+.hero-visual--systems::before {
+  inset: 18% 14%;
+  border-left: 1px solid rgba(255,255,255,0.16);
+  border-right: 1px solid rgba(255,255,255,0.08);
+  transform: skewX(-18deg);
+}
+
+.hero-visual--systems::after {
+  inset: 23% 10% 22% 10%;
+  background:
+    linear-gradient(28deg, transparent 48%, rgba(255,255,255,0.16) 49%, transparent 50%),
+    linear-gradient(150deg, transparent 42%, rgba(255,255,255,0.1) 43%, transparent 44%);
+}
+
+.hero-visual--creative {
+  border: 1px solid rgba(255,255,255,0.1);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.12), transparent 36%),
+    linear-gradient(45deg, transparent 62%, rgba(255,255,255,0.08)),
+    repeating-linear-gradient(90deg, transparent 0 44px, rgba(255,255,255,0.04) 45px 46px);
+}
+
+.hero-visual--creative::before {
+  inset: 14% 18% 18% 12%;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.hero-visual--creative::after {
+  width: 28%;
+  height: 38%;
+  inset: auto 12% 12% auto;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.03);
+}
+
+.hero-visual--about {
+  border-left: 1px solid rgba(255,255,255,0.12);
+}
+
+.hero-visual--about::before {
+  inset: 8% 20% 8% 14%;
+  background:
+    linear-gradient(rgba(255,255,255,0.16), rgba(255,255,255,0.16)) 0 12% / 74% 1px no-repeat,
+    linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)) 0 38% / 58% 1px no-repeat,
+    linear-gradient(rgba(255,255,255,0.12), rgba(255,255,255,0.12)) 0 64% / 82% 1px no-repeat,
+    linear-gradient(rgba(255,255,255,0.08), rgba(255,255,255,0.08)) 0 88% / 46% 1px no-repeat;
+}
+
+.hero-visual--about::after {
+  inset: 18% 0 18% 42%;
+  border: 1px solid rgba(255,255,255,0.09);
+  background:
+    radial-gradient(circle at 24% 28%, rgba(255,255,255,0.22) 0 2px, transparent 3px),
+    radial-gradient(circle at 68% 56%, rgba(255,255,255,0.18) 0 2px, transparent 3px);
+}
+
+/* =========================================================
    TYPOGRAPHY
 ========================================================= */
 h1, h2, h3 { font-weight: 600; letter-spacing: -0.02em; color: var(--accent); }
@@ -508,6 +659,14 @@ a:hover { opacity: 0.75; }
   .section { padding: 4rem 0; }
   .card { padding: 1.75rem; }
 
+  .hero-visual {
+    top: 54%;
+    right: -18vw;
+    width: 82vw;
+    opacity: 0.2;
+    transform: translateY(-50%) scale(0.9);
+  }
+
   .footer {
     padding: 1.75rem 0 2.25rem;
   }
@@ -547,6 +706,12 @@ a:hover { opacity: 0.75; }
 @media (max-width: 480px) {
   .container { width: 90%; }
   h1 { font-size: 2rem; }
+
+  .hero-visual {
+    right: -38vw;
+    width: 105vw;
+    opacity: 0.14;
+  }
 
   .footer__social {
     width: min(100%, 350px);
