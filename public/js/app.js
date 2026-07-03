@@ -11,16 +11,25 @@ function closeOverlay() {
   navToggle?.classList.remove('active');
   navToggle?.setAttribute('aria-expanded', 'false');
   navOverlay?.setAttribute('aria-hidden', 'true');
+  navOverlay?.setAttribute('hidden', '');
   document.body.style.overflow = '';
 }
 
 if (navToggle && navOverlay) {
   navToggle.addEventListener('click', () => {
-    const open = navOverlay.classList.toggle('active');
-    navToggle.classList.toggle('active');
-    navToggle.setAttribute('aria-expanded', open);
-    navOverlay.setAttribute('aria-hidden', !open);
-    document.body.style.overflow = open ? 'hidden' : '';
+    const open = !navOverlay.classList.contains('active');
+
+    if (!open) {
+      closeOverlay();
+      return;
+    }
+
+    navOverlay.removeAttribute('hidden');
+    navOverlay.classList.add('active');
+    navToggle.classList.add('active');
+    navToggle.setAttribute('aria-expanded', 'true');
+    navOverlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
   });
 
   navOverlay.querySelectorAll('a').forEach(link => {
