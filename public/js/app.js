@@ -121,6 +121,101 @@ const counterObserver = new IntersectionObserver(entries => {
 
 document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
 
+// Quiet text rotator
+document.querySelectorAll('[data-rotator]').forEach(el => {
+  const items = (el.dataset.rotator || '').split('|').map(item => item.trim()).filter(Boolean);
+  if (items.length < 2) return;
+
+  let index = 0;
+  el.textContent = items[index];
+
+  window.setInterval(() => {
+    index = (index + 1) % items.length;
+    el.classList.add('is-changing');
+
+    window.setTimeout(() => {
+      el.textContent = items[index];
+      el.classList.remove('is-changing');
+    }, 180);
+  }, 2600);
+});
+
+// Project filters
+document.querySelectorAll('[data-project-filter]').forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.projectFilter;
+    const group = button.closest('[data-filter-group]');
+    const scope = button.closest('section') || document;
+
+    group?.querySelectorAll('[data-project-filter]').forEach(item => {
+      const active = item === button;
+      item.classList.toggle('active', active);
+      item.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+
+    scope.querySelectorAll('[data-project-category]').forEach(card => {
+      const match = filter === 'all' || card.dataset.projectCategory === filter;
+      card.toggleAttribute('hidden', !match);
+    });
+  });
+});
+
+// Photography filters
+document.querySelectorAll('[data-gallery-filter]').forEach(button => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.galleryFilter;
+    const group = button.closest('[data-filter-group]');
+    const gallery = document.querySelector('[data-gallery]');
+
+    group?.querySelectorAll('[data-gallery-filter]').forEach(item => {
+      const active = item === button;
+      item.classList.toggle('active', active);
+      item.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+
+    gallery?.querySelectorAll('[data-gallery-item]').forEach(item => {
+      const match = filter === 'all' || item.dataset.galleryItem === filter;
+      item.toggleAttribute('hidden', !match);
+    });
+  });
+});
+
+// Photo lightbox
+const lightbox = document.querySelector('[data-lightbox]');
+const lightboxImage = lightbox?.querySelector('[data-lightbox-image]');
+const lightboxCaption = lightbox?.querySelector('[data-lightbox-caption]');
+const lightboxClose = lightbox?.querySelector('[data-lightbox-close]');
+
+function closeLightbox() {
+  if (!lightbox) return;
+  lightbox.setAttribute('hidden', '');
+  lightboxImage?.removeAttribute('src');
+  lightboxImage?.setAttribute('alt', '');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('[data-lightbox-src]').forEach(button => {
+  button.addEventListener('click', () => {
+    if (!lightbox || !lightboxImage) return;
+    const image = button.querySelector('img');
+    lightboxImage.src = button.dataset.lightboxSrc;
+    lightboxImage.alt = image?.alt || 'Selected photograph';
+    if (lightboxCaption) lightboxCaption.textContent = button.dataset.lightboxCaption || '';
+    lightbox.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+    lightboxClose?.focus();
+  });
+});
+
+lightboxClose?.addEventListener('click', closeLightbox);
+lightbox?.addEventListener('click', event => {
+  if (event.target === lightbox) closeLightbox();
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeLightbox();
+});
+
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {

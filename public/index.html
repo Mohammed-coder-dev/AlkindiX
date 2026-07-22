@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
-  <link rel="stylesheet" href="/css/styles.css?v=20260703-mobile"/>
+  <link rel="stylesheet" href="/css/styles.css?v=20260722-modern"/>
   <style>
     body {
       padding-top: 0;
@@ -23,20 +23,15 @@
       min-height: 100vh;
     }
 
-    main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
+    main { flex: 1; }
 
     .hero {
-      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: calc(68px + 3rem) 1.5rem 5rem;
-      min-height: 0;
+      padding: calc(68px + 7rem) 1.5rem 5rem;
+      min-height: 74vh;
     }
 
     .hero__wrap {
@@ -67,6 +62,92 @@
       gap: 0.75rem;
       justify-content: center;
       flex-wrap: wrap;
+    }
+
+    .home-index {
+      padding: 0 0 5rem;
+    }
+
+    .index-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .index-card {
+      background: var(--bg-elevated);
+      padding: 2rem;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .index-card:hover {
+      background: #161616;
+      opacity: 1;
+    }
+
+    .index-card__meta {
+      font-family: "Space Mono", monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.32);
+      margin-bottom: 1.1rem;
+    }
+
+    .index-card h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .index-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      opacity: 1;
+      margin: 0;
+    }
+
+    .index-card__cta {
+      margin-top: auto;
+      padding-top: 2rem;
+      font-family: "Space Mono", monospace;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.58);
+    }
+
+    .current-strip {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      color: rgba(255,255,255,0.42);
+      font-family: "Space Mono", monospace;
+      font-size: 0.64rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .current-strip span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .current-strip span::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
     }
 
     @media (max-width: 640px) {
@@ -101,6 +182,17 @@
 
       .hero__actions .btn {
         padding: 0.72rem 1.3rem;
+      }
+
+      .current-strip {
+        justify-content: flex-start;
+        gap: 0.75rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .index-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -137,11 +229,45 @@
         <h1 id="hero-title" class="hero__h1">Hi, I am Alkindi.</h1>
         <p class="hero__sub">
           I am Mohammed Alkindi, a computer science student at UC San Diego and
-          data analytics intern at Shell. I build research tools, data systems,
-          and practical software with an emphasis on clarity and reproducibility.
+          data analytics intern at Shell. I build <span class="rotator" data-rotator="research tools|data systems|public-interest software|visual archives">research tools</span>
+          with an emphasis on clarity and reproducibility.
         </p>
         <div class="hero__actions">
           <a href="/about" class="btn btn--primary">About me</a>
+          <a href="/projects" class="btn">View work</a>
+        </div>
+        <div class="current-strip" aria-label="Current focus">
+          <span>ProofX</span>
+          <span>OmanX</span>
+          <span>Shell analytics</span>
+          <span>Photography</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-index" aria-labelledby="home-index-title">
+      <div class="container">
+        <span class="eyebrow">Index</span>
+        <h2 id="home-index-title" class="section-title">One site for the work</h2>
+        <div class="index-grid">
+          <a class="index-card" href="/projects" data-reveal>
+            <span class="index-card__meta">Systems</span>
+            <h2>Projects</h2>
+            <p>ProofX, OmanX, and private industrial reporting work, presented without internal operational detail.</p>
+            <span class="index-card__cta">Open projects</span>
+          </a>
+          <a class="index-card" href="/research" data-reveal>
+            <span class="index-card__meta">Inquiry</span>
+            <h2>Research</h2>
+            <p>Machine learning, financial distress modeling, integer dynamics, and reproducible computational experiments.</p>
+            <span class="index-card__cta">Open research</span>
+          </a>
+          <a class="index-card" href="/creative" data-reveal>
+            <span class="index-card__meta">Creative</span>
+            <h2>Photography &amp; memoir</h2>
+            <p>PhotographyX and Architect of Silence now live inside AlkindiX as one creative archive.</p>
+            <span class="index-card__cta">Open creative</span>
+          </a>
         </div>
       </div>
     </section>
@@ -168,7 +294,7 @@
     <a class="footer__social-link" href="https://www.facebook.com/profile.php?id=61589597771423" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
     </a>
-    <a class="footer__social-link" href="https://photographyx.org" target="_blank" rel="noopener noreferrer" aria-label="Photography">
+    <a class="footer__social-link" href="/creative/photography" aria-label="Photography">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
     </a>
       </nav>
@@ -176,7 +302,7 @@
     </div>
   </footer>
 
-<script src="/js/app.js?v=20260703-mobile"></script>
+<script src="/js/app.js?v=20260722-modern"></script>
   <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
