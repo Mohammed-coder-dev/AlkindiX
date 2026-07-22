@@ -3,7 +3,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/linkedin",    "destination": "https://www.linkedin.com/in/alkindi-network/", "permanent": false },
+    { "source": "/linkedin",    "destination": "https://www.linkedin.com/in/mohammed--alkindi/", "permanent": false },
     { "source": "/github",      "destination": "https://github.com/MohammedAlkindi/",          "permanent": false },
     { "source": "/memoir",      "destination": "/creative/memoir",                              "permanent": true  },
     { "source": "/photography", "destination": "/creative/photography",                         "permanent": true  },

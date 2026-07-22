@@ -16,6 +16,10 @@ desktop.ini
 # Claude Code
 .claude/
 
+# Local agent guidance (not published)
+/CLAUDE.md
+/AGENTS.md
+
 # Node (if tooling is ever added)
 node_modules/
 
