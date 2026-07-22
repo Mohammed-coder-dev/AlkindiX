@@ -10,8 +10,28 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-<url>
-    <loc>https://alkindix.com/memoir</loc>
+  <url>
+    <loc>https://alkindix.com/projects</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alkindix.com/research</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alkindix.com/creative</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alkindix.com/creative/photography</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alkindix.com/creative/memoir</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
