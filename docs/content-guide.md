@@ -1,70 +1,40 @@
 # Content Guide
 
-How to update each part of the site without touching the layout or styles.
+## Home
 
-## About page (`public/about.html`)
+Keep `public/index.html` concise: one introduction and one primary action. Detailed
+project, research, and creative content belongs on its dedicated page.
 
-### Bio text
+## About
 
-Edit the paragraphs inside `<div class="about-body">`. Each `<p>` is a paragraph of body copy. The `<h3>` tags are subsection headings ("Research interests", etc.).
+`public/about.html` contains the short profile, working areas, experience, education,
+and the compact personal-practice note. Keep the page selective; the linked PDF is the
+complete resume.
 
-### Sidebar meta
+## Projects
 
-Edit the `<span class="meta-item__value">` text inside `<div class="about-sidebar__meta">`:
+`public/projects.html` presents three selected systems. Public repositories may include
+a GitHub link. Private professional work should use a factual summary without an empty
+or placeholder repository link.
 
-```html
-<div class="meta-item">
-  <span class="meta-item__label">Based in</span>
-  <span class="meta-item__value">New York · Lisbon · Kyoto</span>
-</div>
-```
+## Research
 
-### Principles grid
+`public/research.html` separates formal studies from exploratory integer work. Avoid
+claims that are not supported by a report, repository, or documented result.
 
-Each principle is a `<div class="principle-card">`. To add one, copy an existing card and update the number, title, and description. The grid uses `auto-fill` with `minmax(280px, 1fr)` so new cards reflow automatically.
+## Creative work
 
-### Timeline
+`public/creative/index.html` links to the photography archive and Architect of Silence.
+The photography page lists every numbered image in `public/images/photography/`.
+When the archive changes, update the gallery markup in
+`public/creative/photography/index.html` and keep image loading lazy after the first row.
 
-Each entry is a `<div class="timeline-item">` inside `<div class="timeline">`. To add a milestone, copy an existing item and update the year, heading, and description paragraph. Items are displayed top-to-bottom in DOM order — newest first by convention.
+## Shared navigation and footer
 
----
+Navigation and footer markup is duplicated across the HTML pages. Update every public
+page when a shared destination or social link changes.
 
-## Memoir page (`public/memoir.html`)
+## Search metadata
 
-Each excerpt is a card component. To add a new excerpt, copy an existing card block and update:
-- The eyebrow label (chapter number / section)
-- The heading
-- The body text
-- Any pull-quote if present
-
----
-
-## Home page (`public/index.html`)
-
-### Hero text
-
-Edit the `<h1>` and `<p class="hero__sub">` inside `<section class="hero">`.
-
-### Hero buttons
-
-Edit or add `<a class="btn …">` elements inside `<div class="hero__actions">`.
-
-### Social bar
-
-The fixed bottom bar lists social links as `<a class="social-bar__link">` elements. Each contains an inline SVG icon and an `aria-label`. To add a platform, copy an existing link and replace the `href`, `aria-label`, and SVG.
-
----
-
-## Shared navigation (`public/*.html`)
-
-The nav is duplicated across all HTML files — update each one when adding or renaming a link. The `app.js` active-link logic compares `window.location.pathname` to each `href`, so no additional changes are needed when updating links.
-
----
-
-## SEO
-
-- **Page title**: `<title>` in `<head>`
-- **Meta description**: `<meta name="description">`
-- **Canonical URL**: `<link rel="canonical" href="…">`
-- **Open Graph**: `og:title`, `og:description`, `og:type`
-- **Sitemap**: update `public/sitemap.xml` if a page is added or removed
+Each public page should have a descriptive title, meta description, and canonical URL.
+Update `public/sitemap.xml` when a canonical route is added or removed.

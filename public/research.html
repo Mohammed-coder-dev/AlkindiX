@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="canonical" href="https://alkindix.com/research"/>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
-  <link rel="stylesheet" href="/css/styles.css?v=20260722-modern"/>
+  <link rel="stylesheet" href="/css/styles.css?v=20260722-final"/>
   <style>
     .page-hero {
       padding: 6rem 0 4rem;
@@ -75,6 +75,7 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: rgba(255,255,255,0.28);
+      white-space: nowrap;
     }
 
     .project-card__tag {
@@ -187,6 +188,11 @@
 
     @media (max-width: 768px) {
       .projects-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .project-card { padding: 1.75rem; }
+      .project-card__meta { align-items: flex-start; flex-direction: column; gap: 0.55rem; }
     }
   </style>
 </head>
@@ -390,7 +396,7 @@
     </div>
   </footer>
 
-<script src="/js/app.js?v=20260722-modern"></script>
+<script src="/js/app.js?v=20260722-final"></script>
   <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

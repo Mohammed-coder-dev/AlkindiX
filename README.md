@@ -1,68 +1,53 @@
-# Alkindi - alkindix.com
+# Alkindi
 
-[![CI](https://github.com/MohammedAlkindi/AlkindiX/actions/workflows/ci.yml/badge.svg)](https://github.com/MohammedAlkindi/AlkindiX/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Live](https://img.shields.io/badge/live-alkindix.com-brightgreen)](https://alkindix.com)
 
-Personal portfolio for systems, computation, research tooling, and selected creative work.
+Personal portfolio for Mohammed Alkindi's projects, research, photography, and writing.
 
 ## Pages
 
-| URL | Description |
-|-----|-------------|
+| URL | Content |
+| --- | --- |
 | [`/`](https://alkindix.com/) | Home |
-| [`/about`](https://alkindix.com/about) | About |
-| [`/memoir`](https://alkindix.com/memoir) | Memoir |
-| [`/linkedin`](https://alkindix.com/linkedin) | → LinkedIn |
-| [`/github`](https://alkindix.com/github) | → GitHub |
+| [`/about`](https://alkindix.com/about) | Profile, experience, and education |
+| [`/projects`](https://alkindix.com/projects) | Selected systems and product work |
+| [`/research`](https://alkindix.com/research) | Research and computational studies |
+| [`/creative`](https://alkindix.com/creative) | Photography and writing |
+| [`/creative/photography`](https://alkindix.com/creative/photography) | Complete photography archive |
+| [`/creative/memoir`](https://alkindix.com/creative/memoir) | Architect of Silence |
+
+## Development
+
+The site uses static HTML, CSS, and vanilla JavaScript. There is no build step.
+
+```powershell
+python -m http.server 4174 --directory public
+```
+
+Open `http://localhost:4174` after starting the server.
 
 ## Structure
 
-```
-AlkindiX/
-├── public/
-│   ├── index.html       # Home
-│   ├── about.html       # About
-│   ├── memoir.html      # Memoir
-│   ├── css/
-│   │   └── styles.css   # Shared design system
-│   ├── js/
-│   │   └── app.js       # Shared behaviour (nav, scroll, reveal)
-│   ├── robots.txt       # Crawler rules
-│   ├── sitemap.xml      # Sitemap
-│   └── favicon.svg
-├── .github/
-│   └── workflows/
-│       └── ci.yml       # HTML lint + link checker
-├── vercel.json          # Routing, redirects, caching headers
-├── .htmlhintrc          # HTML linting rules
-├── .editorconfig        # Editor formatting
-└── LICENSE
+```text
+public/
+  creative/
+    memoir/
+    photography/
+  css/styles.css
+  images/photography/
+  js/app.js
+  about.html
+  index.html
+  projects.html
+  research.html
+vercel.json
 ```
 
-## Local development
+## Deployment
 
-No build step. Open any page directly in a browser:
+Vercel serves `public/` and deploys `main` automatically. Redirects in
+`vercel.json` consolidate the former PhotographyX and Architect of Silence domains
+under `alkindix.com`.
 
-```bash
-open public/index.html
-# or serve locally:
-npx serve public
-```
-
-## Deploy
-
-Push to `main` → Vercel deploys automatically. No build step required.
-
-Domain alias configured in `vercel.json`:
-
-- `architectofsilence.com` → `/memoir`
-
-## Docs
-
-| Document | Description |
-|----------|-------------|
-| [docs/architecture.md](docs/architecture.md) | File roles, routing, JS behaviour, caching |
-| [docs/design-system.md](docs/design-system.md) | CSS tokens, typography, components |
-| [docs/content-guide.md](docs/content-guide.md) | How to update pages and edit copy |
-| [docs/deployment.md](docs/deployment.md) | Vercel setup, domains, headers, local dev |
+See [`docs/`](docs/) for architecture, content, design, and deployment notes.

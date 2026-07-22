@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="canonical" href="https://alkindix.com/projects"/>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
-  <link rel="stylesheet" href="/css/styles.css?v=20260722-modern"/>
+  <link rel="stylesheet" href="/css/styles.css?v=20260722-final"/>
   <style>
     .page-hero {
       padding: 6rem 0 4rem;
@@ -82,6 +82,7 @@
       text-transform: uppercase;
       letter-spacing: 0.12em;
       color: rgba(255,255,255,0.28);
+      white-space: nowrap;
     }
 
     .project-card__tag {
@@ -139,69 +140,11 @@
       border-color: rgba(255,255,255,0.2);
     }
 
-    .project-card__note {
-      font-family: "Space Mono", monospace;
-      font-size: 0.66rem;
-      line-height: 1.55;
-      color: rgba(255,255,255,0.42);
-      border-top: 1px solid var(--line-subtle);
-      padding-top: 0.85rem;
-      margin-top: 0.2rem;
+    @media (max-width: 480px) {
+      .project-card { padding: 1.75rem; }
+      .project-card__meta { align-items: flex-start; flex-direction: column; gap: 0.55rem; }
     }
 
-    /* Recognition strip */
-    .recognition-section {
-      padding: 5rem 0;
-      border-top: 1px solid var(--line-subtle);
-    }
-
-    .recognition-list {
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-    }
-
-    .recognition-item {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      padding: 1.5rem 2rem;
-      background: var(--bg-elevated);
-      border-bottom: 1px solid var(--line-subtle);
-    }
-
-    .recognition-item:last-child { border-bottom: none; }
-
-    .recognition-item__year {
-      font-family: "Space Mono", monospace;
-      font-size: 0.68rem;
-      color: rgba(255,255,255,0.28);
-      letter-spacing: 0.1em;
-      min-width: 3rem;
-    }
-
-    .recognition-item__body { flex: 1; }
-
-    .recognition-item__body strong {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text);
-      display: block;
-      margin-bottom: 0.2rem;
-    }
-
-    .recognition-item__body span {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    @media (max-width: 768px) {
-      .recognition-item { gap: 1rem; padding: 1.25rem 1.25rem; }
-    }
   </style>
 </head>
 <body>
@@ -248,15 +191,9 @@
       <div class="container">
         <span class="eyebrow">Selected work</span>
         <h2>Built systems</h2>
-        <div class="filter-bar" data-filter-group aria-label="Project filters">
-          <button class="filter-pill active" type="button" data-project-filter="all" aria-pressed="true">All</button>
-          <button class="filter-pill" type="button" data-project-filter="research" aria-pressed="false">Research</button>
-          <button class="filter-pill" type="button" data-project-filter="operations" aria-pressed="false">Operations</button>
-          <button class="filter-pill" type="button" data-project-filter="public" aria-pressed="false">Public</button>
-        </div>
         <div class="projects-grid">
 
-          <div class="project-card" data-project-category="research" data-reveal>
+          <div class="project-card" data-reveal>
             <div class="project-card__meta">
               <span class="project-card__year">2025 - 2026</span>
               <span class="project-card__tag">Research Infrastructure</span>
@@ -272,21 +209,20 @@
             </div>
           </div>
 
-          <div class="project-card" data-project-category="operations" data-reveal>
+          <div class="project-card" data-reveal>
             <div class="project-card__meta">
               <span class="project-card__year">2026 - present</span>
               <span class="project-card__tag">Analytics - Reporting</span>
             </div>
             <h3>Shell Reporting System</h3>
             <p>
-              Private reporting automation built during a Shell data analytics internship.
-              The public summary is intentionally limited to workflow design, validation,
-              dashboard generation, and structured operational reporting.
+              Reporting automation developed during a data analytics internship at Shell.
+              It supports data validation, KPI extraction, dashboard generation, and
+              consistent operational reporting.
             </p>
-            <div class="project-card__note">Repository kept private because it describes internal reporting workflows.</div>
           </div>
 
-          <div class="project-card" data-project-category="public" data-reveal>
+          <div class="project-card" data-reveal>
             <div class="project-card__meta">
               <span class="project-card__year">2026</span>
               <span class="project-card__tag">Guidance - Education</span>
@@ -306,36 +242,6 @@
       </div>
     </section>
 
-    <!-- RECOGNITION -->
-    <section class="recognition-section">
-      <div class="container">
-        <span class="eyebrow">Recognition</span>
-        <h2>Awards &amp; milestones</h2>
-        <div class="recognition-list" data-reveal>
-          <div class="recognition-item">
-            <span class="recognition-item__year">2026</span>
-            <div class="recognition-item__body">
-              <strong>MIT Bitcoin Hackathon - BridgX</strong>
-              <span>Recognized among 22 of 47 competing projects</span>
-            </div>
-          </div>
-          <div class="recognition-item">
-            <span class="recognition-item__year">2025</span>
-            <div class="recognition-item__body">
-              <strong>Thiel Fellowship Semifinalist</strong>
-              <span>Top ~3% of 3,000+ applicants - financial distress research</span>
-            </div>
-          </div>
-          <div class="recognition-item">
-            <span class="recognition-item__year">2025</span>
-            <div class="recognition-item__body">
-              <strong>MIT E14 Lab engagement</strong>
-              <span>ProofX research infrastructure collaboration</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
   <footer class="footer" role="contentinfo">
     <div class="container footer__inner">
@@ -367,7 +273,7 @@
     </div>
   </footer>
 
-<script src="/js/app.js?v=20260722-modern"></script>
+<script src="/js/app.js?v=20260722-final"></script>
   <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

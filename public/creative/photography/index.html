@@ -4,13 +4,13 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Photography - Alkindi</title>
-  <meta name="description" content="Photography by Alkindi - a quiet archive of field images, visual studies, and geometry in ordinary scenes."/>
+  <meta name="description" content="Photography by Mohammed Alkindi - a complete archive of landscapes, portraits, light, and geometry in ordinary scenes."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="canonical" href="https://alkindix.com/creative/photography"/>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
-  <link rel="stylesheet" href="/css/styles.css?v=20260722-modern"/>
+  <link rel="stylesheet" href="/css/styles.css?v=20260722-final"/>
   <style>
     .page-hero {
       padding: 6rem 0 5rem;
@@ -45,31 +45,14 @@
       line-height: 1.75;
     }
 
-    .archive-note {
-      padding: 3.25rem 0;
-      border-bottom: 1px solid var(--line-subtle);
-    }
-
-    .archive-note__grid {
-      display: grid;
-      grid-template-columns: 0.8fr 1.7fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .archive-note p {
-      max-width: 720px;
-      color: var(--muted);
-      opacity: 1;
-    }
-
     .gallery-section {
-      padding: 5rem 0;
+      padding: 4rem 0 5rem;
     }
 
     .photo-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      grid-auto-flow: dense;
       gap: 1px;
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
@@ -109,7 +92,6 @@
     }
 
     @media (max-width: 900px) {
-      .archive-note__grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .photo-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
@@ -150,32 +132,17 @@
       <div class="hero-visual hero-visual--creative" aria-hidden="true"></div>
       <div class="container">
         <span class="page-hero__label"><a href="/creative" style="color:inherit;">Creative</a> / Photography</span>
-        <h1>PhotographyX,<br/><em>inside AlkindiX.</em></h1>
+        <h1>Photography</h1>
         <p class="page-hero__sub">
-          A compact visual archive of field images, quiet geometry, and scenes where
-          structure appears without needing to announce itself.
+          Landscapes, portraits, light, and quiet geometry observed across ordinary scenes.
         </p>
       </div>
     </div>
 
-    <section class="archive-note">
-      <div class="container archive-note__grid">
-        <div>
-          <span class="eyebrow">Migration</span>
-          <h2>One archive</h2>
-        </div>
-        <p>
-          PhotographyX is being folded into AlkindiX so the technical, written, and
-          visual work point to the same public identity. The page keeps the visual
-          work separate enough to breathe, but no longer depends on a second domain.
-        </p>
-      </div>
-    </section>
-
     <section class="gallery-section">
       <div class="container">
         <span class="eyebrow">Archive</span>
-        <h2>Selected frames</h2>
+        <h2>All photographs</h2>
         <div class="filter-bar" data-filter-group aria-label="Photography filters">
           <button class="filter-pill active" type="button" data-gallery-filter="all" aria-pressed="true">All</button>
           <button class="filter-pill" type="button" data-gallery-filter="horizontal" aria-pressed="false">Horizontal</button>
@@ -183,35 +150,275 @@
         </div>
 
         <div class="photo-grid" data-gallery>
-          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h26.jpg" data-lightbox-caption="Horizontal study">
-            <img src="/images/photography/h26.jpg" alt="Horizontal landscape photograph from the Alkindi archive" loading="lazy"/>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v1.jpg" aria-label="Open photograph 1 of 90">
+            <img src="/images/photography/v1.jpg" alt="Vertical photograph 1 of 55 by Mohammed Alkindi" loading="eager" decoding="async" fetchpriority="high"/>
           </button>
-          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v44.jpg" data-lightbox-caption="Vertical study">
-            <img src="/images/photography/v44.jpg" alt="Vertical photograph from the Alkindi archive" loading="lazy"/>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h1.jpg" aria-label="Open photograph 2 of 90">
+            <img src="/images/photography/h1.jpg" alt="Horizontal photograph 1 of 35 by Mohammed Alkindi" loading="eager" decoding="async"/>
           </button>
-          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v52.jpg" data-lightbox-caption="Vertical study">
-            <img src="/images/photography/v52.jpg" alt="Vertical photograph from the Alkindi archive" loading="lazy"/>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v2.jpg" aria-label="Open photograph 3 of 90">
+            <img src="/images/photography/v2.jpg" alt="Vertical photograph 2 of 55 by Mohammed Alkindi" loading="eager" decoding="async"/>
           </button>
-          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h25.jpg" data-lightbox-caption="Horizontal study">
-            <img src="/images/photography/h25.jpg" alt="Horizontal photograph from the Alkindi archive" loading="lazy"/>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h2.jpg" aria-label="Open photograph 4 of 90">
+            <img src="/images/photography/h2.jpg" alt="Horizontal photograph 2 of 35 by Mohammed Alkindi" loading="eager" decoding="async"/>
           </button>
-          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v55.jpg" data-lightbox-caption="Vertical study">
-            <img src="/images/photography/v55.jpg" alt="Vertical photograph from the Alkindi archive" loading="lazy"/>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v3.jpg" aria-label="Open photograph 5 of 90">
+            <img src="/images/photography/v3.jpg" alt="Vertical photograph 3 of 55 by Mohammed Alkindi" loading="eager" decoding="async"/>
           </button>
-          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v53.jpg" data-lightbox-caption="Vertical study">
-            <img src="/images/photography/v53.jpg" alt="Vertical photograph from the Alkindi archive" loading="lazy"/>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v4.jpg" aria-label="Open photograph 6 of 90">
+            <img src="/images/photography/v4.jpg" alt="Vertical photograph 4 of 55 by Mohammed Alkindi" loading="eager" decoding="async"/>
           </button>
-          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h14.jpg" data-lightbox-caption="Horizontal study">
-            <img src="/images/photography/h14.jpg" alt="Horizontal photograph from the Alkindi archive" loading="lazy"/>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h3.jpg" aria-label="Open photograph 7 of 90">
+            <img src="/images/photography/h3.jpg" alt="Horizontal photograph 3 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
           </button>
-          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v34.jpg" data-lightbox-caption="Vertical study">
-            <img src="/images/photography/v34.jpg" alt="Vertical photograph from the Alkindi archive" loading="lazy"/>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v5.jpg" aria-label="Open photograph 8 of 90">
+            <img src="/images/photography/v5.jpg" alt="Vertical photograph 5 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
           </button>
-          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v48.jpg" data-lightbox-caption="Vertical study">
-            <img src="/images/photography/v48.jpg" alt="Vertical photograph from the Alkindi archive" loading="lazy"/>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h4.jpg" aria-label="Open photograph 9 of 90">
+            <img src="/images/photography/h4.jpg" alt="Horizontal photograph 4 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
           </button>
-          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h19.jpg" data-lightbox-caption="Horizontal study">
-            <img src="/images/photography/h19.jpg" alt="Horizontal photograph from the Alkindi archive" loading="lazy"/>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v6.jpg" aria-label="Open photograph 10 of 90">
+            <img src="/images/photography/v6.jpg" alt="Vertical photograph 6 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v7.jpg" aria-label="Open photograph 11 of 90">
+            <img src="/images/photography/v7.jpg" alt="Vertical photograph 7 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h5.jpg" aria-label="Open photograph 12 of 90">
+            <img src="/images/photography/h5.jpg" alt="Horizontal photograph 5 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v8.jpg" aria-label="Open photograph 13 of 90">
+            <img src="/images/photography/v8.jpg" alt="Vertical photograph 8 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v9.jpg" aria-label="Open photograph 14 of 90">
+            <img src="/images/photography/v9.jpg" alt="Vertical photograph 9 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h6.jpg" aria-label="Open photograph 15 of 90">
+            <img src="/images/photography/h6.jpg" alt="Horizontal photograph 6 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v10.jpg" aria-label="Open photograph 16 of 90">
+            <img src="/images/photography/v10.jpg" alt="Vertical photograph 10 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h7.jpg" aria-label="Open photograph 17 of 90">
+            <img src="/images/photography/h7.jpg" alt="Horizontal photograph 7 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v11.jpg" aria-label="Open photograph 18 of 90">
+            <img src="/images/photography/v11.jpg" alt="Vertical photograph 11 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v12.jpg" aria-label="Open photograph 19 of 90">
+            <img src="/images/photography/v12.jpg" alt="Vertical photograph 12 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h8.jpg" aria-label="Open photograph 20 of 90">
+            <img src="/images/photography/h8.jpg" alt="Horizontal photograph 8 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v13.jpg" aria-label="Open photograph 21 of 90">
+            <img src="/images/photography/v13.jpg" alt="Vertical photograph 13 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h9.jpg" aria-label="Open photograph 22 of 90">
+            <img src="/images/photography/h9.jpg" alt="Horizontal photograph 9 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v14.jpg" aria-label="Open photograph 23 of 90">
+            <img src="/images/photography/v14.jpg" alt="Vertical photograph 14 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v15.jpg" aria-label="Open photograph 24 of 90">
+            <img src="/images/photography/v15.jpg" alt="Vertical photograph 15 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h10.jpg" aria-label="Open photograph 25 of 90">
+            <img src="/images/photography/h10.jpg" alt="Horizontal photograph 10 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v16.jpg" aria-label="Open photograph 26 of 90">
+            <img src="/images/photography/v16.jpg" alt="Vertical photograph 16 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h11.jpg" aria-label="Open photograph 27 of 90">
+            <img src="/images/photography/h11.jpg" alt="Horizontal photograph 11 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v17.jpg" aria-label="Open photograph 28 of 90">
+            <img src="/images/photography/v17.jpg" alt="Vertical photograph 17 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v18.jpg" aria-label="Open photograph 29 of 90">
+            <img src="/images/photography/v18.jpg" alt="Vertical photograph 18 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h12.jpg" aria-label="Open photograph 30 of 90">
+            <img src="/images/photography/h12.jpg" alt="Horizontal photograph 12 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v19.jpg" aria-label="Open photograph 31 of 90">
+            <img src="/images/photography/v19.jpg" alt="Vertical photograph 19 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v20.jpg" aria-label="Open photograph 32 of 90">
+            <img src="/images/photography/v20.jpg" alt="Vertical photograph 20 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h13.jpg" aria-label="Open photograph 33 of 90">
+            <img src="/images/photography/h13.jpg" alt="Horizontal photograph 13 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v21.jpg" aria-label="Open photograph 34 of 90">
+            <img src="/images/photography/v21.jpg" alt="Vertical photograph 21 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h14.jpg" aria-label="Open photograph 35 of 90">
+            <img src="/images/photography/h14.jpg" alt="Horizontal photograph 14 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v22.jpg" aria-label="Open photograph 36 of 90">
+            <img src="/images/photography/v22.jpg" alt="Vertical photograph 22 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v23.jpg" aria-label="Open photograph 37 of 90">
+            <img src="/images/photography/v23.jpg" alt="Vertical photograph 23 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h15.jpg" aria-label="Open photograph 38 of 90">
+            <img src="/images/photography/h15.jpg" alt="Horizontal photograph 15 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v24.jpg" aria-label="Open photograph 39 of 90">
+            <img src="/images/photography/v24.jpg" alt="Vertical photograph 24 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h16.jpg" aria-label="Open photograph 40 of 90">
+            <img src="/images/photography/h16.jpg" alt="Horizontal photograph 16 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v25.jpg" aria-label="Open photograph 41 of 90">
+            <img src="/images/photography/v25.jpg" alt="Vertical photograph 25 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v26.jpg" aria-label="Open photograph 42 of 90">
+            <img src="/images/photography/v26.jpg" alt="Vertical photograph 26 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h17.jpg" aria-label="Open photograph 43 of 90">
+            <img src="/images/photography/h17.jpg" alt="Horizontal photograph 17 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v27.jpg" aria-label="Open photograph 44 of 90">
+            <img src="/images/photography/v27.jpg" alt="Vertical photograph 27 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h18.jpg" aria-label="Open photograph 45 of 90">
+            <img src="/images/photography/h18.jpg" alt="Horizontal photograph 18 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v28.jpg" aria-label="Open photograph 46 of 90">
+            <img src="/images/photography/v28.jpg" alt="Vertical photograph 28 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v29.jpg" aria-label="Open photograph 47 of 90">
+            <img src="/images/photography/v29.jpg" alt="Vertical photograph 29 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h19.jpg" aria-label="Open photograph 48 of 90">
+            <img src="/images/photography/h19.jpg" alt="Horizontal photograph 19 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v30.jpg" aria-label="Open photograph 49 of 90">
+            <img src="/images/photography/v30.jpg" alt="Vertical photograph 30 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v31.jpg" aria-label="Open photograph 50 of 90">
+            <img src="/images/photography/v31.jpg" alt="Vertical photograph 31 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h20.jpg" aria-label="Open photograph 51 of 90">
+            <img src="/images/photography/h20.jpg" alt="Horizontal photograph 20 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v32.jpg" aria-label="Open photograph 52 of 90">
+            <img src="/images/photography/v32.jpg" alt="Vertical photograph 32 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h21.jpg" aria-label="Open photograph 53 of 90">
+            <img src="/images/photography/h21.jpg" alt="Horizontal photograph 21 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v33.jpg" aria-label="Open photograph 54 of 90">
+            <img src="/images/photography/v33.jpg" alt="Vertical photograph 33 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v34.jpg" aria-label="Open photograph 55 of 90">
+            <img src="/images/photography/v34.jpg" alt="Vertical photograph 34 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h22.jpg" aria-label="Open photograph 56 of 90">
+            <img src="/images/photography/h22.jpg" alt="Horizontal photograph 22 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v35.jpg" aria-label="Open photograph 57 of 90">
+            <img src="/images/photography/v35.jpg" alt="Vertical photograph 35 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h23.jpg" aria-label="Open photograph 58 of 90">
+            <img src="/images/photography/h23.jpg" alt="Horizontal photograph 23 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v36.jpg" aria-label="Open photograph 59 of 90">
+            <img src="/images/photography/v36.jpg" alt="Vertical photograph 36 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v37.jpg" aria-label="Open photograph 60 of 90">
+            <img src="/images/photography/v37.jpg" alt="Vertical photograph 37 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h24.jpg" aria-label="Open photograph 61 of 90">
+            <img src="/images/photography/h24.jpg" alt="Horizontal photograph 24 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v38.jpg" aria-label="Open photograph 62 of 90">
+            <img src="/images/photography/v38.jpg" alt="Vertical photograph 38 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h25.jpg" aria-label="Open photograph 63 of 90">
+            <img src="/images/photography/h25.jpg" alt="Horizontal photograph 25 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v39.jpg" aria-label="Open photograph 64 of 90">
+            <img src="/images/photography/v39.jpg" alt="Vertical photograph 39 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v40.jpg" aria-label="Open photograph 65 of 90">
+            <img src="/images/photography/v40.jpg" alt="Vertical photograph 40 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h26.jpg" aria-label="Open photograph 66 of 90">
+            <img src="/images/photography/h26.jpg" alt="Horizontal photograph 26 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v41.jpg" aria-label="Open photograph 67 of 90">
+            <img src="/images/photography/v41.jpg" alt="Vertical photograph 41 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v42.jpg" aria-label="Open photograph 68 of 90">
+            <img src="/images/photography/v42.jpg" alt="Vertical photograph 42 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h27.jpg" aria-label="Open photograph 69 of 90">
+            <img src="/images/photography/h27.jpg" alt="Horizontal photograph 27 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v43.jpg" aria-label="Open photograph 70 of 90">
+            <img src="/images/photography/v43.jpg" alt="Vertical photograph 43 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h28.jpg" aria-label="Open photograph 71 of 90">
+            <img src="/images/photography/h28.jpg" alt="Horizontal photograph 28 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v44.jpg" aria-label="Open photograph 72 of 90">
+            <img src="/images/photography/v44.jpg" alt="Vertical photograph 44 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v45.jpg" aria-label="Open photograph 73 of 90">
+            <img src="/images/photography/v45.jpg" alt="Vertical photograph 45 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h29.jpg" aria-label="Open photograph 74 of 90">
+            <img src="/images/photography/h29.jpg" alt="Horizontal photograph 29 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v46.jpg" aria-label="Open photograph 75 of 90">
+            <img src="/images/photography/v46.jpg" alt="Vertical photograph 46 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h30.jpg" aria-label="Open photograph 76 of 90">
+            <img src="/images/photography/h30.jpg" alt="Horizontal photograph 30 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v47.jpg" aria-label="Open photograph 77 of 90">
+            <img src="/images/photography/v47.jpg" alt="Vertical photograph 47 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v48.jpg" aria-label="Open photograph 78 of 90">
+            <img src="/images/photography/v48.jpg" alt="Vertical photograph 48 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h31.jpg" aria-label="Open photograph 79 of 90">
+            <img src="/images/photography/h31.jpg" alt="Horizontal photograph 31 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v49.jpg" aria-label="Open photograph 80 of 90">
+            <img src="/images/photography/v49.jpg" alt="Vertical photograph 49 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h32.jpg" aria-label="Open photograph 81 of 90">
+            <img src="/images/photography/h32.jpg" alt="Horizontal photograph 32 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v50.jpg" aria-label="Open photograph 82 of 90">
+            <img src="/images/photography/v50.jpg" alt="Vertical photograph 50 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v51.jpg" aria-label="Open photograph 83 of 90">
+            <img src="/images/photography/v51.jpg" alt="Vertical photograph 51 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h33.jpg" aria-label="Open photograph 84 of 90">
+            <img src="/images/photography/h33.jpg" alt="Horizontal photograph 33 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v52.jpg" aria-label="Open photograph 85 of 90">
+            <img src="/images/photography/v52.jpg" alt="Vertical photograph 52 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v53.jpg" aria-label="Open photograph 86 of 90">
+            <img src="/images/photography/v53.jpg" alt="Vertical photograph 53 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h34.jpg" aria-label="Open photograph 87 of 90">
+            <img src="/images/photography/h34.jpg" alt="Horizontal photograph 34 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v54.jpg" aria-label="Open photograph 88 of 90">
+            <img src="/images/photography/v54.jpg" alt="Vertical photograph 54 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button photo-button--wide" type="button" data-gallery-item="horizontal" data-lightbox-src="/images/photography/h35.jpg" aria-label="Open photograph 89 of 90">
+            <img src="/images/photography/h35.jpg" alt="Horizontal photograph 35 of 35 by Mohammed Alkindi" loading="lazy" decoding="async"/>
+          </button>
+          <button class="photo-button" type="button" data-gallery-item="vertical" data-lightbox-src="/images/photography/v55.jpg" aria-label="Open photograph 90 of 90">
+            <img src="/images/photography/v55.jpg" alt="Vertical photograph 55 of 55 by Mohammed Alkindi" loading="lazy" decoding="async"/>
           </button>
         </div>
       </div>
@@ -221,21 +428,48 @@
   <div class="lightbox" data-lightbox hidden role="dialog" aria-modal="true" aria-label="Selected photograph">
     <div class="lightbox__inner">
       <div class="lightbox__top">
-        <span class="lightbox__caption" data-lightbox-caption></span>
+        <span class="lightbox__caption" data-lightbox-caption aria-live="polite"></span>
         <button class="lightbox__close" type="button" data-lightbox-close aria-label="Close photograph">&times;</button>
       </div>
-      <img data-lightbox-image alt=""/>
+      <div class="lightbox__stage">
+        <button class="lightbox__nav" type="button" data-lightbox-prev aria-label="Previous photograph">&#8592;</button>
+        <img data-lightbox-image alt=""/>
+        <button class="lightbox__nav" type="button" data-lightbox-next aria-label="Next photograph">&#8594;</button>
+      </div>
     </div>
   </div>
 
   <footer class="footer" role="contentinfo">
     <div class="container footer__inner">
       <span class="muted" style="font-size:0.85rem;">&copy; 2026 Alkindi</span>
+      <nav class="footer__social" aria-label="Social links">
+        <a class="footer__social-link" href="https://www.linkedin.com/in/alkindi-network/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a class="footer__social-link" href="https://github.com/MohammedAlkindi/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a class="footer__social-link" href="mailto:alkindi.ceo@gmail.com" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+        <a class="footer__social-link" href="https://www.instagram.com/alkindi.ceo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a class="footer__social-link" href="https://x.com/alkindi_ceo" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L2.25 2.25h6.946l4.261 5.632 4.787-5.632Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a class="footer__social-link" href="https://www.facebook.com/profile.php?id=61589597771423" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a class="footer__social-link" href="/creative/photography" aria-label="Photography" aria-current="page">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </a>
+      </nav>
       <a class="to-top" href="#" aria-label="Back to top">&#8593;</a>
     </div>
   </footer>
 
-<script src="/js/app.js?v=20260722-modern"></script>
+<script src="/js/app.js?v=20260722-final"></script>
   <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

@@ -41,32 +41,6 @@ if (navToggle && navOverlay) {
   });
 }
 
-// Projects dropdown
-const dropdown = document.querySelector('.nav__dropdown');
-const dropdownBtn = dropdown?.querySelector('.nav__dropdown-btn');
-
-if (dropdown && dropdownBtn) {
-  dropdownBtn.addEventListener('click', e => {
-    e.stopPropagation();
-    const open = dropdown.classList.toggle('active');
-    dropdownBtn.setAttribute('aria-expanded', open);
-  });
-
-  document.addEventListener('click', e => {
-    if (!dropdown.contains(e.target)) {
-      dropdown.classList.remove('active');
-      dropdownBtn.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  dropdown.querySelectorAll('.nav__dropdown-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      dropdown.classList.remove('active');
-      dropdownBtn.setAttribute('aria-expanded', 'false');
-    });
-  });
-}
-
 // Nav scroll state
 const nav = document.querySelector('.nav');
 const progressBar = document.createElement('div');
@@ -76,18 +50,18 @@ document.body.appendChild(progressBar);
 window.addEventListener('scroll', () => {
   nav?.classList.toggle('scrolled', window.scrollY > 40);
   const h = document.documentElement;
-  progressBar.style.width = (window.scrollY / (h.scrollHeight - h.clientHeight) * 100) + '%';
+  const scrollableDistance = h.scrollHeight - h.clientHeight;
+  const progress = scrollableDistance > 0 ? window.scrollY / scrollableDistance * 100 : 0;
+  progressBar.style.width = progress + '%';
 }, { passive: true });
 
 // Active nav link based on current path
 const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
-document.querySelectorAll('.nav__menu a, .nav__links a, .nav__dropdown-menu a').forEach(a => {
+document.querySelectorAll('.nav__menu a, .nav__links a').forEach(a => {
   const href = a.getAttribute('href');
   const hrefPath = href ? new URL(href, window.location.href).pathname.replace(/\/$/, '') : '';
   if (hrefPath === currentPath) {
     a.classList.add('active');
-    const parentDropdown = a.closest('.nav__dropdown');
-    if (parentDropdown) parentDropdown.classList.add('active');
   }
 });
 
@@ -99,66 +73,6 @@ const revealObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
 document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
-
-// Counter animation
-function animateCounter(el) {
-  const target = parseInt(el.dataset.count);
-  const dur = 1600;
-  const step = target / (dur / 16);
-  let cur = 0;
-  const t = setInterval(() => {
-    cur = Math.min(cur + step, target);
-    el.textContent = Math.floor(cur);
-    if (cur >= target) clearInterval(t);
-  }, 16);
-}
-
-const counterObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { animateCounter(e.target); counterObserver.unobserve(e.target); }
-  });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
-
-// Quiet text rotator
-document.querySelectorAll('[data-rotator]').forEach(el => {
-  const items = (el.dataset.rotator || '').split('|').map(item => item.trim()).filter(Boolean);
-  if (items.length < 2) return;
-
-  let index = 0;
-  el.textContent = items[index];
-
-  window.setInterval(() => {
-    index = (index + 1) % items.length;
-    el.classList.add('is-changing');
-
-    window.setTimeout(() => {
-      el.textContent = items[index];
-      el.classList.remove('is-changing');
-    }, 180);
-  }, 2600);
-});
-
-// Project filters
-document.querySelectorAll('[data-project-filter]').forEach(button => {
-  button.addEventListener('click', () => {
-    const filter = button.dataset.projectFilter;
-    const group = button.closest('[data-filter-group]');
-    const scope = button.closest('section') || document;
-
-    group?.querySelectorAll('[data-project-filter]').forEach(item => {
-      const active = item === button;
-      item.classList.toggle('active', active);
-      item.setAttribute('aria-pressed', active ? 'true' : 'false');
-    });
-
-    scope.querySelectorAll('[data-project-category]').forEach(card => {
-      const match = filter === 'all' || card.dataset.projectCategory === filter;
-      card.toggleAttribute('hidden', !match);
-    });
-  });
-});
 
 // Photography filters
 document.querySelectorAll('[data-gallery-filter]').forEach(button => {
@@ -185,6 +99,28 @@ const lightbox = document.querySelector('[data-lightbox]');
 const lightboxImage = lightbox?.querySelector('[data-lightbox-image]');
 const lightboxCaption = lightbox?.querySelector('[data-lightbox-caption]');
 const lightboxClose = lightbox?.querySelector('[data-lightbox-close]');
+const lightboxPrevious = lightbox?.querySelector('[data-lightbox-prev]');
+const lightboxNext = lightbox?.querySelector('[data-lightbox-next]');
+let lightboxItems = [];
+let lightboxIndex = 0;
+let lightboxTrigger = null;
+
+function showLightboxImage() {
+  const button = lightboxItems[lightboxIndex];
+  if (!button || !lightboxImage) return;
+
+  lightboxImage.src = button.dataset.lightboxSrc;
+  lightboxImage.alt = `Photograph ${lightboxIndex + 1} of ${lightboxItems.length}`;
+  if (lightboxCaption) {
+    lightboxCaption.textContent = `${String(lightboxIndex + 1).padStart(2, '0')} / ${String(lightboxItems.length).padStart(2, '0')}`;
+  }
+}
+
+function moveLightbox(step) {
+  if (!lightboxItems.length) return;
+  lightboxIndex = (lightboxIndex + step + lightboxItems.length) % lightboxItems.length;
+  showLightboxImage();
+}
 
 function closeLightbox() {
   if (!lightbox) return;
@@ -192,15 +128,16 @@ function closeLightbox() {
   lightboxImage?.removeAttribute('src');
   lightboxImage?.setAttribute('alt', '');
   document.body.style.overflow = '';
+  lightboxTrigger?.focus();
 }
 
 document.querySelectorAll('[data-lightbox-src]').forEach(button => {
   button.addEventListener('click', () => {
     if (!lightbox || !lightboxImage) return;
-    const image = button.querySelector('img');
-    lightboxImage.src = button.dataset.lightboxSrc;
-    lightboxImage.alt = image?.alt || 'Selected photograph';
-    if (lightboxCaption) lightboxCaption.textContent = button.dataset.lightboxCaption || '';
+    lightboxItems = [...document.querySelectorAll('[data-lightbox-src]')].filter(item => !item.hidden);
+    lightboxIndex = Math.max(0, lightboxItems.indexOf(button));
+    lightboxTrigger = button;
+    showLightboxImage();
     lightbox.removeAttribute('hidden');
     document.body.style.overflow = 'hidden';
     lightboxClose?.focus();
@@ -208,18 +145,30 @@ document.querySelectorAll('[data-lightbox-src]').forEach(button => {
 });
 
 lightboxClose?.addEventListener('click', closeLightbox);
+lightboxPrevious?.addEventListener('click', () => moveLightbox(-1));
+lightboxNext?.addEventListener('click', () => moveLightbox(1));
 lightbox?.addEventListener('click', event => {
   if (event.target === lightbox) closeLightbox();
 });
 
 document.addEventListener('keydown', event => {
+  if (!lightbox || lightbox.hasAttribute('hidden')) return;
   if (event.key === 'Escape') closeLightbox();
+  if (event.key === 'ArrowLeft') moveLightbox(-1);
+  if (event.key === 'ArrowRight') moveLightbox(1);
 });
 
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
+    const href = a.getAttribute('href');
+    if (href === '#') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
       const top = target.getBoundingClientRect().top + window.scrollY - 80;

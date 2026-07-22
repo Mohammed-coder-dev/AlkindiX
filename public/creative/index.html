@@ -4,13 +4,13 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Creative - Alkindi</title>
-  <meta name="description" content="Photography, memoir, and personal creative practice by Alkindi."/>
+  <meta name="description" content="Photography and long-form writing by Mohammed Alkindi."/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="canonical" href="https://alkindix.com/creative"/>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
-  <link rel="stylesheet" href="/css/styles.css?v=20260722-modern"/>
+  <link rel="stylesheet" href="/css/styles.css?v=20260722-final"/>
   <style>
     .page-hero {
       padding: 6rem 0 5rem;
@@ -49,12 +49,13 @@
 
     .works-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1px;
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
       overflow: hidden;
-      margin-top: 2.5rem;
+      margin: 2.5rem auto 0;
+      max-width: 900px;
     }
 
     .work-card {
@@ -143,11 +144,11 @@
     <div class="page-hero page-hero--visual">
       <div class="hero-visual hero-visual--creative" aria-hidden="true"></div>
       <div class="container">
-        <span class="page-hero__label">Creative - Alkindi</span>
-        <h1>Creative work,<br/><em>kept in one place.</em></h1>
+        <span class="page-hero__label">Creative</span>
+        <h1>Photography<br/><em>and writing.</em></h1>
         <p class="page-hero__sub">
-          Photography, memoir, and personal practice alongside the technical work.
-          One archive, one domain, less scattered visibility.
+          A visual archive and long-form personal writing, collected alongside
+          the technical work.
         </p>
       </div>
     </div>
@@ -161,10 +162,9 @@
             <span class="work-card__label">Visual work</span>
             <p class="work-card__title">Photography</p>
             <p class="work-card__desc">
-              The PhotographyX archive, now hosted inside AlkindiX: field images,
-              quiet geometry, and visual studies.
+              Field images, quiet geometry, and observations from ordinary scenes.
             </p>
-            <span class="work-card__cta">View photography -></span>
+            <span class="work-card__cta">View photography -&gt;</span>
           </a>
           <a class="work-card" href="/creative/memoir" data-reveal>
             <span class="work-card__label">Long-form writing</span>
@@ -173,16 +173,7 @@
               Architect of Silence: memoir fragments about selfhood, discipline,
               silence, and the systems that shape a person.
             </p>
-            <span class="work-card__cta">Read memoir -></span>
-          </a>
-          <a class="work-card" href="/about" data-reveal>
-            <span class="work-card__label">Personal practice</span>
-            <p class="work-card__title">Life outside code</p>
-            <p class="work-card__desc">
-              A smaller window into the habits behind the work: sport, observation,
-              reading, and slower creative process.
-            </p>
-            <span class="work-card__cta">About Alkindi -></span>
+            <span class="work-card__cta">Read memoir -&gt;</span>
           </a>
         </div>
       </div>
@@ -219,7 +210,7 @@
     </div>
   </footer>
 
-<script src="/js/app.js?v=20260722-modern"></script>
+<script src="/js/app.js?v=20260722-final"></script>
   <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

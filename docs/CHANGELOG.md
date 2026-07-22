@@ -1,12 +1,13 @@
 # Changelog
 
-All notable changes to this project will be documented here.
+## Unreleased
 
-## [Unreleased]
+- Restored the minimal single-hero homepage.
+- Consolidated Projects around ProofX, Shell reporting work, and OmanX.
+- Integrated the complete 90-photo PhotographyX archive.
+- Moved PhotographyX and Architect of Silence under canonical AlkindiX routes.
+- Simplified portfolio copy, personal-practice links, and shared interactions.
 
-## [1.0.0] — 2025
-- Initial public release
-- Four pages: Home, About, Photography, Memoir
-- Masonry photo gallery with lightbox
-- Clean URL routing via Vercel
-- Domain aliases: photographyx.org → /photography, architectofsilence.com → /memoir
+## 1.0.0 - 2025
+
+- Initial public release.

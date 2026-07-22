@@ -1,71 +1,36 @@
 # Architecture
 
-## Overview
+AlkindiX is a zero-build static site served from `public/` by Vercel. It uses HTML,
+one shared stylesheet, and one shared JavaScript file.
 
-AlkindiX is a zero-build static site served by Vercel. There are no frameworks, bundlers, or build steps — just HTML, CSS, and vanilla JavaScript.
+## Public routes
 
-## File roles
+| Route | Source |
+| --- | --- |
+| `/` | `public/index.html` |
+| `/about` | `public/about.html` |
+| `/projects` | `public/projects.html` |
+| `/research` | `public/research.html` |
+| `/creative` | `public/creative/index.html` |
+| `/creative/photography` | `public/creative/photography/index.html` |
+| `/creative/memoir` | `public/creative/memoir/index.html` |
 
-| File | Purpose |
-|------|---------|
-| `public/index.html` | Home page — centred hero, social bar |
-| `public/about.html` | About page — bio grid, principles, timeline |
-| `public/memoir.html` | Memoir — excerpt cards |
-| `public/css/styles.css` | Shared design system (tokens, nav, buttons, cards, reveal, footer, social bar) |
-| `public/js/app.js` | Shared behaviour (mobile nav, scroll progress, active link, scroll reveal, counter animation, smooth scroll, page fade-in) |
-| `public/robots.txt` | Crawler directives |
-| `public/sitemap.xml` | Pages indexed by search engines |
-| `public/favicon.svg` | SVG favicon, scales to any size |
-| `vercel.json` | URL rewrites, redirects, security headers, cache policy |
+Legacy routes for `/memoir`, `/photography`, `/systems`, and `/integers` redirect
+to their current destinations.
 
-## Routing
+## Shared files
 
-Vercel rewrites clean URLs to the files in `public/`:
+| File | Responsibility |
+| --- | --- |
+| `public/css/styles.css` | Design tokens, navigation, buttons, interaction states, footer, and responsive rules |
+| `public/js/app.js` | Mobile navigation, active links, scroll state, reveal effects, gallery filters, and lightbox behavior |
+| `public/images/photography/` | Web-optimized photography archive |
+| `public/sitemap.xml` | Canonical public pages |
+| `vercel.json` | Output directory, redirects, security headers, and cache policy |
 
-```
-/              → public/index.html
-/about         → public/about.html
-/memoir        → public/memoir.html
-/robots.txt    → public/robots.txt
-/sitemap.xml   → public/sitemap.xml
-```
+All JavaScript features initialize only when their matching elements exist.
 
-Short-link redirects (non-permanent):
+## Domain consolidation
 
-```
-/linkedin  → linkedin.com/in/alkindi-network/
-/github    → github.com/MohammedAlkindi/
-```
-
-Domain alias (permanent 301):
-
-```
-architectofsilence.com/*   → alkindix.com/memoir
-```
-
-## JavaScript behaviour (`app.js`)
-
-All pages include `app.js`. It initialises only what is present in the DOM, so unused features are no-ops.
-
-| Feature | Trigger | Mechanism |
-|---------|---------|-----------|
-| Mobile nav | `.nav__toggle` click | Toggle `.active` class, `aria-expanded` |
-| Nav scroll state | `window.scroll` | `.scrolled` class on `.nav` above 40 px |
-| Scroll progress bar | `window.scroll` | Injected `div.scroll-progress`, width set by % scrolled |
-| Active nav link | Page load | Compares `window.location.pathname` to each `<a>` href |
-| Scroll reveal | `[data-reveal]` elements | `IntersectionObserver`, adds `.visible` class |
-| Counter animation | `[data-count]` elements | `IntersectionObserver`, RAF-driven integer count-up |
-| Smooth scroll | `a[href^="#"]` | `scrollTo({ behavior: 'smooth' })` |
-| Page fade-in | `DOMContentLoaded` | Adds `.loaded` to `<body>` (opacity 0 → 1) |
-
-## Caching policy
-
-Set in `vercel.json`:
-
-| Asset type | `Cache-Control` |
-|------------|----------------|
-| `public/images/*` | `public, max-age=31536000, immutable` |
-| `*.css`, `*.js` | `public, max-age=31536000, immutable` |
-| Everything else | Vercel default |
-
-Because assets are immutable-cached for one year, any file update requires a filename change (or a new Vercel deployment clears the edge cache automatically).
+`photographyx.org` redirects to `/creative/photography`, and
+`architectofsilence.com` redirects to `/creative/memoir`.
