@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="canonical" href="https://alkindix.com/projects"/>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
-  <link rel="stylesheet" href="/css/styles.css?v=20260703-contextual"/>
+  <link rel="stylesheet" href="/css/styles.css?v=20260722-modern"/>
   <style>
     .page-hero {
       padding: 6rem 0 4rem;
@@ -67,6 +67,8 @@
     }
 
     .project-card:hover { background: #161616; }
+
+    .project-card[hidden] { display: none; }
 
     .project-card__meta {
       display: flex;
@@ -135,6 +137,16 @@
     .project-card__links a:hover {
       color: var(--accent);
       border-color: rgba(255,255,255,0.2);
+    }
+
+    .project-card__note {
+      font-family: "Space Mono", monospace;
+      font-size: 0.66rem;
+      line-height: 1.55;
+      color: rgba(255,255,255,0.42);
+      border-top: 1px solid var(--line-subtle);
+      padding-top: 0.85rem;
+      margin-top: 0.2rem;
     }
 
     /* Recognition strip */
@@ -236,17 +248,23 @@
       <div class="container">
         <span class="eyebrow">Selected work</span>
         <h2>Built systems</h2>
+        <div class="filter-bar" data-filter-group aria-label="Project filters">
+          <button class="filter-pill active" type="button" data-project-filter="all" aria-pressed="true">All</button>
+          <button class="filter-pill" type="button" data-project-filter="research" aria-pressed="false">Research</button>
+          <button class="filter-pill" type="button" data-project-filter="operations" aria-pressed="false">Operations</button>
+          <button class="filter-pill" type="button" data-project-filter="public" aria-pressed="false">Public</button>
+        </div>
         <div class="projects-grid">
 
-          <div class="project-card" data-reveal>
+          <div class="project-card" data-project-category="research" data-reveal>
             <div class="project-card__meta">
               <span class="project-card__year">2025 - 2026</span>
               <span class="project-card__tag">Research Infrastructure</span>
             </div>
             <h3>ProofX</h3>
             <p>
-              Computational infrastructure for large-scale experimentation in discrete
-              mathematics and integer dynamics. Built to support reproducible experiments,
+              Open research infrastructure for bounded experimentation in discrete
+              mathematics and integer dynamics. Built around reproducible runs,
               sequence analysis, and traceable research workflows.
             </p>
             <div class="project-card__links">
@@ -254,23 +272,21 @@
             </div>
           </div>
 
-          <div class="project-card" data-reveal>
+          <div class="project-card" data-project-category="operations" data-reveal>
             <div class="project-card__meta">
               <span class="project-card__year">2026 - present</span>
               <span class="project-card__tag">Analytics - Reporting</span>
             </div>
             <h3>Shell Reporting System</h3>
             <p>
-              Production reporting system for industrial operations. Handles KPI extraction,
-              data validation, dashboard generation, and structured reporting workflows
-              for operational decision support.
+              Private reporting automation built during a Shell data analytics internship.
+              The public summary is intentionally limited to workflow design, validation,
+              dashboard generation, and structured operational reporting.
             </p>
-            <div class="project-card__links">
-              <a href="https://github.com/MohammedAlkindi/Shell" target="_blank" rel="noopener">GitHub</a>
-            </div>
+            <div class="project-card__note">Repository kept private because it describes internal reporting workflows.</div>
           </div>
 
-          <div class="project-card" data-reveal>
+          <div class="project-card" data-project-category="public" data-reveal>
             <div class="project-card__meta">
               <span class="project-card__year">2026</span>
               <span class="project-card__tag">Guidance - Education</span>
@@ -278,8 +294,8 @@
             <h3>OmanX</h3>
             <p>
               Guidance system for Omani scholarship students preparing to study in the
-              United States. It organizes approved sources, checklists, and escalation
-              paths into a clearer onboarding workflow.
+              United States. It organizes official sources, checklists, and escalation
+              paths into a clearer student onboarding workflow.
             </p>
             <div class="project-card__links">
               <a href="https://github.com/MohammedAlkindi/OmanX" target="_blank" rel="noopener">GitHub</a>
@@ -343,7 +359,7 @@
     <a class="footer__social-link" href="https://www.facebook.com/profile.php?id=61589597771423" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
     </a>
-    <a class="footer__social-link" href="https://photographyx.org" target="_blank" rel="noopener noreferrer" aria-label="Photography">
+    <a class="footer__social-link" href="/creative/photography" aria-label="Photography">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
     </a>
       </nav>
@@ -351,7 +367,7 @@
     </div>
   </footer>
 
-<script src="/js/app.js?v=20260703-contextual"></script>
+<script src="/js/app.js?v=20260722-modern"></script>
   <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
