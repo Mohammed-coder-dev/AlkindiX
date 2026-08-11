@@ -1,7 +1,7 @@
 # Alkindi
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Live](https://img.shields.io/badge/live-alkindix.com-brightgreen)](https://alkindix.com)
+[![Live](https://img.shields.io/badge/live-alkindix.com-brightgreen)](https://www.alkindix.com)
 
 Personal portfolio for Mohammed Alkindi's projects, research, photography, and writing.
 
@@ -9,13 +9,13 @@ Personal portfolio for Mohammed Alkindi's projects, research, photography, and w
 
 | URL | Content |
 | --- | --- |
-| [`/`](https://alkindix.com/) | Home |
-| [`/about`](https://alkindix.com/about) | Profile, experience, and education |
-| [`/projects`](https://alkindix.com/projects) | Selected systems and product work |
-| [`/research`](https://alkindix.com/research) | Research and computational studies |
-| [`/creative`](https://alkindix.com/creative) | Photography and writing |
-| [`/creative/photography`](https://alkindix.com/creative/photography) | Complete photography archive |
-| [`/creative/memoir`](https://alkindix.com/creative/memoir) | Architect of Silence |
+| [`/`](https://www.alkindix.com/) | Home |
+| [`/about`](https://www.alkindix.com/about) | Profile, experience, and education |
+| [`/projects`](https://www.alkindix.com/projects) | Selected systems and product work |
+| [`/research`](https://www.alkindix.com/research) | Research and computational studies |
+| [`/creative`](https://www.alkindix.com/creative) | Photography and writing |
+| [`/creative/photography`](https://www.alkindix.com/creative/photography) | Complete photography archive |
+| [`/creative/memoir`](https://www.alkindix.com/creative/memoir) | Architect of Silence |
 
 ## Development
 
