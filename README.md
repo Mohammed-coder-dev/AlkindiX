@@ -47,7 +47,7 @@ vercel.json
 ## Deployment
 
 Vercel serves `public/` and deploys `main` automatically. Redirects in
-`vercel.json` consolidate the former PhotographyX and Architect of Silence domains
-under `alkindix.com`.
+`vercel.json` consolidate the former Architect of Silence domain under
+`alkindix.com`.
 
 See [`docs/`](docs/) for architecture, content, design, and deployment notes.

@@ -13,7 +13,6 @@ preview deployments through the connected GitHub repository.
 | Domain | Destination |
 | --- | --- |
 | `alkindix.com` | Primary site |
-| `photographyx.org` | `alkindix.com/creative/photography` |
 | `architectofsilence.com` | `alkindix.com/creative/memoir` |
 
 Each domain must also be attached to the Vercel project and configured at its DNS

@@ -12,9 +12,7 @@
     { "source": "/systems.html","destination": "/projects",                                     "permanent": true  },
 
     { "source": "/(.*)", "has": [{ "type": "host", "value": "architectofsilence.com" }],     "destination": "https://alkindix.com/creative/memoir", "permanent": true },
-    { "source": "/(.*)", "has": [{ "type": "host", "value": "www.architectofsilence.com" }], "destination": "https://alkindix.com/creative/memoir", "permanent": true },
-    { "source": "/(.*)", "has": [{ "type": "host", "value": "photographyx.org" }],          "destination": "https://alkindix.com/creative/photography", "permanent": true },
-    { "source": "/(.*)", "has": [{ "type": "host", "value": "www.photographyx.org" }],      "destination": "https://alkindix.com/creative/photography", "permanent": true }
+    { "source": "/(.*)", "has": [{ "type": "host", "value": "www.architectofsilence.com" }], "destination": "https://alkindix.com/creative/memoir", "permanent": true }
   ],
   "headers": [
     {
