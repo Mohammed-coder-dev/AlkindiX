@@ -330,6 +330,69 @@
       </div>
     </section>
 
+
+    <!-- OPEN SOURCE -->
+    <section class="projects-section">
+      <div class="container">
+        <span class="eyebrow">Open source</span>
+        <h2>Merged upstream</h2>
+        <div class="projects-grid">
+
+          <div class="project-card" data-reveal>
+            <div class="project-card__meta">
+              <span class="project-card__year">2026</span>
+              <span class="project-card__tag">watchdog - 7.4k stars</span>
+            </div>
+            <h3>Filesystem events on Windows</h3>
+            <p>
+              Renaming a file to a different case emitted a phantom deletion before
+              the rename; the false event is now coalesced away. Plus a documentation
+              correction on BaseThread daemon behaviour.
+            </p>
+            <div class="project-card__links">
+              <a href="https://github.com/gorakhargosh/watchdog/pull/1204" target="_blank" rel="noopener">PR #1204</a>
+              <a href="https://github.com/gorakhargosh/watchdog/pull/1205" target="_blank" rel="noopener">PR #1205</a>
+            </div>
+          </div>
+
+          <div class="project-card" data-reveal>
+            <div class="project-card__meta">
+              <span class="project-card__year">2026</span>
+              <span class="project-card__tag">simple-statistics - 3.5k stars</span>
+            </div>
+            <h3>Correctness and types in a statistics library</h3>
+            <p>
+              Rank correlation returned a different answer for the same paired data
+              depending on row order whenever values tied; ties now share their
+              average rank. Three further fixes covering null-returning types and
+              line endings that blocked linting on a fresh Windows clone.
+            </p>
+            <div class="project-card__links">
+              <a href="https://github.com/simple-statistics/simple-statistics/pulls?q=is%3Apr+author%3AMohammedAlkindi+is%3Amerged" target="_blank" rel="noopener">4 merged</a>
+            </div>
+          </div>
+
+          <div class="project-card" data-reveal>
+            <div class="project-card__meta">
+              <span class="project-card__year">2026</span>
+              <span class="project-card__tag">NegPy - portability</span>
+            </div>
+            <h3>Non-ASCII paths and platform assumptions</h3>
+            <p>
+              Three merged fixes to a film-negative processing tool: a Windows updater
+              that broke on any profile path containing non-ASCII characters, POSIX-only
+              path handling in script generation, and codepage-dependent source reads
+              in the test suite.
+            </p>
+            <div class="project-card__links">
+              <a href="https://github.com/marcinz606/NegPy/pulls?q=is%3Apr+author%3AMohammedAlkindi+is%3Amerged" target="_blank" rel="noopener">3 merged</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
   <footer class="footer" role="contentinfo">
     <div class="container footer__inner">
